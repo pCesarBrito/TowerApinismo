@@ -3,7 +3,7 @@
 <html class="scroll-smooth" lang="pt-BR"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Tower Alpinismo - Serviço em Altura</title>
+<title>Tower Alpinismo - Alpinismo Industrial e Serviços em Altura</title>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -44,6 +44,7 @@
                         "primary-container": "#bf5500",
                         "on-surface-variant": "#574237",
                         "primary": "#984300",
+                        "brand-orange": "#DE6A18",
                         "surface-tint": "#9c4500",
                         "error-container": "#ffdad6",
                         "surface-bright": "#f8f9ff",
@@ -96,12 +97,12 @@
             }
         }
     </script>
-<style>
+<style class="custom-scrollbar">
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
         .hard-shadow {
-            box-shadow: 4px 4px 0px 0px #1A1D20;
+            box-shadow: 4px 4px 0px 0px #0b1c30;
         }
         .hover-lift:hover {
             transform: translateY(-4px);
@@ -123,219 +124,436 @@
         .animate-pulse-custom {
             animation: pulse-orange 2s infinite;
         }
+
+        /* Lightbox Styles */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        /* Mobile Menu */
+        #mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+    
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 1.5rem;
+            padding-bottom: 1rem;
+        }
+        .scroll-item {
+            flex: 0 0 300px;
+            scroll-snap-align: start;
+        }
+        @media (min-width: 1024px) {
+            .scroll-item {
+                flex: 0 0 calc(25% - 1.25rem);
+            }
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md overflow-x-hidden">
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 rounded-none bg-white/95 dark:bg-zinc-950/95 backdrop-blur-sm border-b border-zinc-200 shadow-sm h-20">
+<nav class="fixed top-0 w-full z-50 rounded-none bg-white/95 backdrop-blur-sm border-b border-zinc-200 shadow-sm h-20">
 <div class="flex justify-between items-center h-full px-6 md:px-12 max-w-screen-2xl mx-auto">
 <div class="flex items-center gap-3">
 <img alt="Tower Alpinismo Logo" class="h-14 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0ujjRulCIR3-F2MXr1fmf_qOggvM7ILKEcABhFMTCkwmi8_-RF0UPSVrfKeouSzvW1uz2rt5K56poxTU0hIYiKFdx5ZrEtAWUEq4-Kg3bpjT356JeusqtVAiw1yg5pJjSO2fvBOTRJuO9Jc7nS3Uh2X5-FkvqaV_iEDFvBz6oW7f_rxUz9FXsO9lOO-KiHFTiuCmYfWiev9yvDinfVchfWmco0VIeKnABjwZ5yYMS1UXgzryHHlGewKQ-1URpsHByDfM7RJv5H2a"/>
-<span class="text-xl font-black text-zinc-900 font-headline-lg uppercase tracking-tight hidden sm:inline-block">Tower Alpinismo</span>
+<span class="text-xl font-black text-on-background font-headline-lg uppercase tracking-tight hidden sm:inline-block">Tower Alpinismo</span>
 </div>
+<!-- Desktop Nav -->
 <div class="hidden md:flex items-center gap-8 font-label-bold">
-<a class="text-orange-600 border-b-2 border-orange-600 pb-1 font-bold tracking-tight uppercase" href="#home">Home</a>
-<a class="text-zinc-700 hover:text-orange-600 transition-colors font-bold tracking-tight uppercase" href="#services">Services</a>
-<a class="text-zinc-700 hover:text-orange-600 transition-colors font-bold tracking-tight uppercase" href="#safety">Safety</a>
-<a class="text-zinc-700 hover:text-orange-600 transition-colors font-bold tracking-tight uppercase" href="#location">Location</a>
-<a class="text-zinc-700 hover:text-orange-600 transition-colors font-bold tracking-tight uppercase" href="#contact">Contact</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-bold tracking-tight uppercase" href="#home">Home</a>
+<a class="text-on-background hover:text-primary transition-colors font-bold tracking-tight uppercase" href="#services">Serviços</a>
+<a class="text-on-background hover:text-primary transition-colors font-bold tracking-tight uppercase" href="#portfolio">Portfólio</a>
+<a class="text-on-background hover:text-primary transition-colors font-bold tracking-tight uppercase" href="#about">Sobre Nós</a>
+<a class="text-on-background hover:text-primary transition-colors font-bold tracking-tight uppercase" href="#contact">Contato</a>
 </div>
-<button class="bg-primary-container text-white px-6 py-3 font-label-bold uppercase tracking-wider hard-shadow hover:bg-primary transition-all duration-300 active:opacity-80">
-                Request Quote
+<div class="flex items-center gap-4">
+<button class="hidden lg:block bg-primary text-white px-6 py-3 font-label-bold uppercase tracking-wider hard-shadow hover:brightness-110 transition-all active:opacity-80" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                Orçamento
             </button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-background p-2" id="menu-toggle">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
 </div>
 </nav>
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 z-[60] bg-on-background md:hidden" id="mobile-menu">
+<div class="flex flex-col h-full p-8">
+<div class="flex justify-between items-center mb-12">
+<img alt="Tower Alpinismo Logo" class="h-12 w-auto brightness-0 invert" src="https://lh3.googleusercontent.com/aida/ADBb0ujjRulCIR3-F2MXr1fmf_qOggvM7ILKEcABhFMTCkwmi8_-RF0UPSVrfKeouSzvW1uz2rt5K56poxTU0hIYiKFdx5ZrEtAWUEq4-Kg3bpjT356JeusqtVAiw1yg5pJjSO2fvBOTRJuO9Jc7nS3Uh2X5-FkvqaV_iEDFvBz6oW7f_rxUz9FXsO9lOO-KiHFTiuCmYfWiev9yvDinfVchfWmco0VIeKnABjwZ5yYMS1UXgzryHHlGewKQ-1URpsHByDfM7RJv5H2a"/>
+<button class="text-white" id="menu-close">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-8 text-2xl font-headline-md text-white uppercase tracking-widest">
+<a class="mobile-link" href="#home">Home</a>
+<a class="mobile-link" href="#services">Serviços</a>
+<a class="mobile-link" href="#portfolio">Portfólio</a>
+<a class="mobile-link" href="#about">Sobre Nós</a>
+<a class="mobile-link" href="#contact">Contato</a>
+</nav>
+<div class="mt-auto">
+<button class="w-full bg-primary text-white py-4 font-label-bold uppercase tracking-widest hard-shadow" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); document.getElementById('mobile-menu').classList.remove('open'); document.body.style.overflow = '';">
+                Solicitar Orçamento
+            </button>
+</div>
+</div>
+</div>
 <!-- Hero Carousel Section -->
 <section class="relative h-[90vh] md:h-screen w-full overflow-hidden bg-zinc-950" id="home">
-<!-- Slides -->
 <div class="absolute inset-0 z-0">
 <!-- Slide 1 -->
 <div class="carousel-slide active absolute inset-0">
-<img alt="Industrial Alpinism 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvNfeRDxkoTkLfaTj-AAdcRC3AraNUwm6952HNcYfsxoWaxYvs4zuwnnz-yuulk3-nZDIG1wNH_ZUgd4-YVVJ_o3oNZuMlx-0kOOgouS9ykEnwWFoK6jnU3z4bYxL0A9ua6lF6GkknmQWH3YcTwOaDWvtuUyMZ_g0gNe3KNXh66N-ugrr6mOfzkFHg2rjjqaju1ikbr7ux15wUStOrS-t3EYADpxiXMp1Z_RwcIT1tFJOFwRGxwMNoDOqQodfEcr035QGYS7WZ7iQ"/>
+<img alt="Alpinismo Industrial" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvNfeRDxkoTkLfaTj-AAdcRC3AraNUwm6952HNcYfsxoWaxYvs4zuwnnz-yuulk3-nZDIG1wNH_ZUgd4-YVVJ_o3oNZuMlx-0kOOgouS9ykEnwWFoK6jnU3z4bYxL0A9ua6lF6GkknmQWH3YcTwOaDWvtuUyMZ_g0gNe3KNXh66N-ugrr6mOfzkFHg2rjjqaju1ikbr7ux15wUStOrS-t3EYADpxiXMp1Z_RwcIT1tFJOFwRGxwMNoDOqQodfEcr035QGYS7WZ7iQ"/>
 <div class="absolute inset-0 bg-gradient-to-r from-on-background/80 via-on-background/40 to-transparent"></div>
 <div class="relative z-10 h-full flex flex-col justify-center px-6 md:px-24 max-w-container-max mx-auto text-white">
 <div class="bg-primary w-20 h-2 mb-6"></div>
-<h2 class="font-headline-xl text-4xl md:text-headline-xl max-w-3xl mb-6">Especialistas em Soluções Verticais e Engenharia em Altura</h2>
-<p class="font-body-lg text-lg md:text-body-lg max-w-xl mb-10 text-zinc-200">Líderes em acesso por corda, garantindo segurança e precisão técnica em infraestruturas industriais e civis de alta complexidade.</p>
+<h2 class="font-headline-xl text-4xl md:text-headline-xl max-w-3xl mb-6">Alpinismo Industrial: A Evolução Além dos Andaimes</h2>
+<p class="font-body-lg text-lg md:text-body-lg max-w-xl mb-10 text-zinc-200">Substituímos métodos tradicionais por soluções verticais que garantem 50% mais agilidade, custos reduzidos e segurança absoluta em qualquer altura.</p>
 </div>
 </div>
 <!-- Slide 2 -->
 <div class="carousel-slide absolute inset-0">
-<img alt="Tower Maintenance" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpHzufdvMwYn7uSQuzL5vgosLKwFmSruhYz3WekJ2zQ8FAsv-WBtZr_cLgBJ7dVt43TI0nmT4zvjWeUZjG6_UpD509mgpXtP6CvrXVcBqGgC7PdkBYRUfhL73fTApTkK8PuXZyqp8zdwckzAFecSUECrDbs_n7jSjeRynD6CaQCJ5mlJNTOMDBjKySQP4TT-RaM1iDe0Qp2B85LK3wVylH4FZjVbRP6d4dBv4BU-spGMB0yv16IGnGiKdDRBOFR1SX7EB0VCgfGOo"/>
+<img alt="Agilidade e Eficiência" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpHzufdvMwYn7uSQuzL5vgosLKwFmSruhYz3WekJ2zQ8FAsv-WBtZr_cLgBJ7dVt43TI0nmT4zvjWeUZjG6_UpD509mgpXtP6CvrXVcBqGgC7PdkBYRUfhL73fTApTkK8PuXZyqp8zdwckzAFecSUECrDbs_n7jSjeRynD6CaQCJ5mlJNTOMDBjKySQP4TT-RaM1iDe0Qp2B85LK3wVylH4FZjVbRP6d4dBv4BU-spGMB0yv16IGnGiKdDRBOFR1SX7EB0VCgfGOo"/>
 <div class="absolute inset-0 bg-gradient-to-r from-on-background/80 via-on-background/40 to-transparent"></div>
 <div class="relative z-10 h-full flex flex-col justify-center px-6 md:px-24 max-w-container-max mx-auto text-white">
 <div class="bg-primary w-20 h-2 mb-6"></div>
-<h2 class="font-headline-xl text-4xl md:text-headline-xl max-w-3xl mb-6">Manutenção Industrial de Alta Performance</h2>
-<p class="font-body-lg text-lg md:text-body-lg max-w-xl mb-10 text-zinc-200">Integração perfeita entre engenharia e técnicas de acesso para resultados impecáveis em ambientes hostis.</p>
-</div>
-</div>
-<!-- Slide 3 -->
-<div class="carousel-slide absolute inset-0">
-<img alt="Rope Access Safety" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqKM9rDuTwKkfyDNZqVWQcAhmg5PgnknQ8IRE1pVL4pXSo3yeOHANnyEiXDVjoMIwspA3YTgy4H3B9iu4bnjYolB_GbJia_lDSbJTA5FkdtrnWoF39KULpncWAwfLtAlG9rbckVRoLJ0MSkGqB2hDbNsaPIWRySkrX4fMMHstP34MsiIYctq-J28Ecafe1h3x-RW-6A2rye-ptHa8QB7iS6iVf32MeTz_h9_UkLeTyhL-nQ093Eji5ESZQQub5w63WtGmcdFE13Ho"/>
-<div class="absolute inset-0 bg-gradient-to-r from-on-background/80 via-on-background/40 to-transparent"></div>
-<div class="relative z-10 h-full flex flex-col justify-center px-6 md:px-24 max-w-container-max mx-auto text-white">
-<div class="bg-primary w-20 h-2 mb-6"></div>
-<h2 class="font-headline-xl text-4xl md:text-headline-xl max-w-3xl mb-6">Segurança e Certificação Internacional</h2>
-<p class="font-body-lg text-lg md:text-body-lg max-w-xl mb-10 text-zinc-200">Equipe IRATA Nível 3 preparada para os desafios mais rigorosos de acesso e resgate vertical.</p>
+<h2 class="font-headline-xl text-4xl md:text-headline-xl max-w-3xl mb-6">Agilidade Estratégica e Custo-Benefício</h2>
+<p class="font-body-lg text-lg md:text-body-lg max-w-xl mb-10 text-zinc-200">Sem o tempo e o custo de montagem de andaimes, nossa equipe acessa locais críticos com precisão técnica e eficiência operacional máxima.</p>
 </div>
 </div>
 </div>
-<!-- Static Content & Controls Overlay -->
 <div class="relative z-20 h-full flex flex-col justify-end px-6 md:px-24 max-w-container-max mx-auto pb-20 pointer-events-none">
 <div class="flex flex-wrap gap-4 pointer-events-auto">
-<button class="bg-primary py-4 px-8 font-label-bold uppercase tracking-widest text-white hard-shadow hover:bg-orange-400 transition-colors">
-                    Nossos Serviços
-                </button>
-<button class="border-2 border-white py-4 px-8 font-label-bold uppercase tracking-widest text-white hover:bg-white hover:text-on-background transition-all">
-                    Falar com Especialista
-                </button>
+<a class="bg-primary py-4 px-8 font-label-bold uppercase tracking-widest text-white hard-shadow hover:brightness-110 transition-colors" href="#portfolio">
+                Ver Portfólio
+            </a>
+<a class="border-2 border-white py-4 px-8 font-label-bold uppercase tracking-widest text-white hover:bg-white hover:text-on-background transition-all" href="#contact">
+                Falar com Especialista
+            </a>
 </div>
 </div>
-<!-- Carousel Indicators -->
 <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-4 z-30">
 <div class="carousel-dot w-12 h-1 bg-white opacity-50 cursor-pointer transition-opacity" data-index="0"></div>
 <div class="carousel-dot w-12 h-1 bg-white opacity-50 cursor-pointer transition-opacity" data-index="1"></div>
-<div class="carousel-dot w-12 h-1 bg-white opacity-50 cursor-pointer transition-opacity" data-index="2"></div>
 </div>
 </section>
-<script>
-        const slides = document.querySelectorAll('.carousel-slide');
-        const dots = document.querySelectorAll('.carousel-dot');
-        let currentSlide = 0;
-
-        function updateCarousel() {
-            slides.forEach((slide, index) => {
-                slide.classList.toggle('active', index === currentSlide);
-                dots[index].classList.toggle('opacity-100', index === currentSlide);
-                dots[index].classList.toggle('opacity-50', index !== currentSlide);
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateCarousel();
-        }
-
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentSlide = index;
-                updateCarousel();
-            });
-        });
-
-        setInterval(nextSlide, 5000);
-        updateCarousel();
-    </script>
 <!-- Services Section -->
 <section class="py-stack-lg px-6 md:px-24 max-w-screen-2xl mx-auto" id="services">
 <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
 <div class="max-w-2xl">
-<span class="font-label-bold text-primary tracking-[0.3em] uppercase block mb-4">Expertise Técnica</span>
-<h2 class="font-headline-xl text-headline-xl text-on-background">Serviços Especializados</h2>
+<span class="font-label-bold text-primary tracking-[0.3em] uppercase block mb-4">Nossos Serviços</span>
+<h2 class="font-headline-xl text-headline-xl text-on-background">Alpinismo Industrial</h2>
 </div>
 <p class="font-body-md text-secondary max-w-sm">
-                Soluções completas para manutenção, inspeção e reparo em locais de difícil acesso, seguindo as normas NR-35 e IRATA.
-            </p>
+            Especialistas em acesso por corda com foco em ambientes industriais, portuários e comerciais de alta complexidade.
+        </p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
 <!-- Card 1 -->
 <div class="bg-white border border-outline-variant p-base group hover-lift transition-all duration-300">
-<div class="aspect-[3/4] overflow-hidden mb-6 relative">
-<img alt="Industrial Maintenance" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk1JTonxNoHYIVU2R9nta8ZLIjf_1EK1CP4K7ys_xd2LdqQn3K9nyUQa4cXtuDpb2Z1ESmUCsmQEqMgppzB6FY5skOS4lxUn4psh3KJepjydrq5cKrafUQ7Ij6jVIYeL3IbnL-oOh5R-d4dq4KTBAeo8W_5KNjmO4FEO23QB7U9x5dTzzVhQiNMHGXnihJgpMOuBawNX-UiIeMNweD_bVplsEdSe5bnxSluCgZD9-Vcf4p9TL0b0rH7O9NLin8UnodjTOuw-qqQ5o"/>
-<div class="absolute top-4 right-4 bg-zinc-900 text-white px-3 py-1 font-label-bold text-xs uppercase">NR-35</div>
+<div class="aspect-video overflow-hidden mb-6 relative">
+<img alt="Alpinismo Industrial" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk1JTonxNoHYIVU2R9nta8ZLIjf_1EK1CP4K7ys_xd2LdqQn3K9nyUQa4cXtuDpb2Z1ESmUCsmQEqMgppzB6FY5skOS4lxUn4psh3KJepjydrq5cKrafUQ7Ij6jVIYeL3IbnL-oOh5R-d4dq4KTBAeo8W_5KNjmO4FEO23QB7U9x5dTzzVhQiNMHGXnihJgpMOuBawNX-UiIeMNweD_bVplsEdSe5bnxSluCgZD9-Vcf4p9TL0b0rH7O9NLin8UnodjTOuw-qqQ5o"/>
 </div>
-<h3 class="font-headline-md text-headline-md mb-3 px-2">Industrial Maintenance</h3>
-<p class="font-body-md text-secondary px-2 pb-4">
-                    Reparos estruturais, mecânicos e elétricos em torres, chaminés e silos industriais.
-                </p>
+<h3 class="font-headline-md text-xl mb-3 px-2">Manutenção Industrial</h3>
+<p class="font-body-md text-secondary px-2 pb-4">Acesso seguro por corda para manutenções em locais restritos, eliminando a necessidade de andaimes pesados.</p>
 </div>
 <!-- Card 2 -->
 <div class="bg-white border border-outline-variant p-base group hover-lift transition-all duration-300">
-<div class="aspect-[3/4] overflow-hidden mb-6 relative">
-<img alt="Structural Inspection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpHzufdvMwYn7uSQuzL5vgosLKwFmSruhYz3WekJ2zQ8FAsv-WBtZr_cLgBJ7dVt43TI0nmT4zvjWeUZjG6_UpD509mgpXtP6CvrXVcBqGgC7PdkBYRUfhL73fTApTkK8PuXZyqp8zdwckzAFecSUECrDbs_n7jSjeRynD6CaQCJ5mlJNTOMDBjKySQP4TT-RaM1iDe0Qp2B85LK3wVylH4FZjVbRP6d4dBv4BU-spGMB0yv16IGnGiKdDRBOFR1SX7EB0VCgfGOo"/>
-<div class="absolute top-4 right-4 bg-zinc-900 text-white px-3 py-1 font-label-bold text-xs uppercase">Engineering</div>
+<div class="aspect-video overflow-hidden mb-6 relative">
+<img alt="Limpeza de Fachadas" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqKM9rDuTwKkfyDNZqVWQcAhmg5PgnknQ8IRE1pVL4pXSo3yeOHANnyEiXDVjoMIwspA3YTgy4H3B9iu4bnjYolB_GbJia_lDSbJTA5FkdtrnWoF39KULpncWAwfLtAlG9rbckVRoLJ0MSkGqB2hDbNsaPIWRySkrX4fMMHstP34MsiIYctq-J28Ecafe1h3x-RW-6A2rye-ptHa8QB7iS6iVf32MeTz_h9_UkLeTyhL-nQ093Eji5ESZQQub5w63WtGmcdFE13Ho"/>
 </div>
-<h3 class="font-headline-md text-headline-md mb-3 px-2">Structural Inspection</h3>
-<p class="font-body-md text-secondary px-2 pb-4">
-                    Ensaios não destrutivos e diagnósticos técnicos de integridade estrutural em altura.
-                </p>
+<h3 class="font-headline-md text-xl mb-3 px-2">Limpeza Técnica</h3>
+<p class="font-body-md text-secondary px-2 pb-4">Limpeza profunda em vidro, pele de vidro e revestimentos metálicos com técnicas especializadas.</p>
 </div>
 <!-- Card 3 -->
 <div class="bg-white border border-outline-variant p-base group hover-lift transition-all duration-300">
-<div class="aspect-[3/4] overflow-hidden mb-6 relative">
-<img alt="Vertical Painting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqKM9rDuTwKkfyDNZqVWQcAhmg5PgnknQ8IRE1pVL4pXSo3yeOHANnyEiXDVjoMIwspA3YTgy4H3B9iu4bnjYolB_GbJia_lDSbJTA5FkdtrnWoF39KULpncWAwfLtAlG9rbckVRoLJ0MSkGqB2hDbNsaPIWRySkrX4fMMHstP34MsiIYctq-J28Ecafe1h3x-RW-6A2rye-ptHa8QB7iS6iVf32MeTz_h9_UkLeTyhL-nQ093Eji5ESZQQub5w63WtGmcdFE13Ho"/>
-<div class="absolute top-4 right-4 bg-zinc-900 text-white px-3 py-1 font-label-bold text-xs uppercase">Finish</div>
+<div class="aspect-video overflow-hidden mb-6 relative">
+<img alt="Pintura Técnica" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeGB5CFDIbOm8mRo0FIp9rk8qOSu-DjcZI-lRRmco9Sf98cJvYmMa7WI_Kzl2XvZdY0CkIxC4xwZ3FuSB_e-0ewzhy1WNrju9np3ckocs7Bs5VOVpvzcKsKKLiF2xgl1LVswfwmNnW7bbc2wmlp-VRqWYbXFCvCw-EQPukbPkBiF2J8314iGO97CMvrG4FRUrLQjyryzK-h_1WCMefgSYxvXl91qcA-ZhHHCd5SG9zGAJS-K00cJtwCMcqaiFHqttB3GsfbVKOW4E"/>
 </div>
-<h3 class="font-headline-md text-headline-md mb-3 px-2">Vertical Painting</h3>
-<p class="font-body-md text-secondary px-2 pb-4">
-                    Pintura industrial e civil com acabamento de alta resistência em superfícies verticais.
-                </p>
+<h3 class="font-headline-md text-xl mb-3 px-2">Pintura e Tratamento</h3>
+<p class="font-body-md text-secondary px-2 pb-4">Revitalização e pintura industrial/civil com equipamentos de alta performance em superfícies verticais.</p>
+</div>
+</div>
+</section><section class="py-stack-lg bg-on-background" id="specialized-services">
+<div class="max-w-screen-2xl mx-auto px-6 md:px-24 text-white">
+<div class="text-center mb-16">
+<h2 class="font-headline-xl text-headline-xl mb-4 uppercase tracking-wider">NOSSOS SERVIÇOS</h2>
+<div class="w-24 h-1.5 bg-brand-orange mx-auto mb-6"></div>
+<p class="text-zinc-400 font-body-md max-w-2xl mx-auto">
+                Conheça abaixo todos os serviços prestados pela Tower Alpinismo.
+            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-white p-10 flex flex-col items-start text-on-background hard-shadow hover-lift transition-all duration-300 rounded-xl">
+<div class="mb-6">
+<span class="material-symbols-outlined text-5xl text-brand-orange">engineering</span>
+</div>
+<h3 class="font-headline-md text-xl mb-6 uppercase tracking-tight">Alpinismo Industrial</h3>
+<ul class="space-y-3 font-body-md text-secondary">
+<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Corte e solda</li>
+<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Pintura</li>
+<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Limpeza Estrutural</li>
+<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Montagem e manutenção de estruturas</li>
+</ul>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-10 flex flex-col items-start text-on-background hard-shadow hover-lift transition-all duration-300 rounded-xl">
+<div class="mb-6">
+<span class="material-symbols-outlined text-5xl text-brand-orange">cleaning_services</span>
+</div>
+<h3 class="font-headline-md text-xl mb-6 uppercase tracking-tight">Serviços de Limpeza Técnica</h3>
+<ul class="space-y-3 font-body-md text-secondary">
+<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Limpeza de fachadas (Vidros, Pastilhas, ACM, Alvenaria)</li>
+<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Acabamento e limpeza pós-obra</li>
+</ul>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-10 flex flex-col items-start text-on-background hard-shadow hover-lift transition-all duration-300 rounded-xl">
+<div class="mb-6">
+<span class="material-symbols-outlined text-5xl text-brand-orange">format_paint</span>
+</div>
+<h3 class="font-headline-md text-xl mb-6 uppercase tracking-tight">Serviços de Pintura Técnica</h3>
+<ul class="space-y-3 font-body-md text-secondary">
+<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Caixas d'água</li>
+<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Estruturas metálicas</li>
+<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Pintura externa em geral</li>
+<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Tratamento de fissuras e trincas</li>
+</ul>
 </div>
 <!-- Card 4 -->
-<div class="bg-white border border-outline-variant p-base group hover-lift transition-all duration-300">
-<div class="aspect-[3/4] overflow-hidden mb-6 relative">
-<img alt="Safety Consulting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeGB5CFDIbOm8mRo0FIp9rk8qOSu-DjcZI-lRRmco9Sf98cJvYmMa7WI_Kzl2XvZdY0CkIxC4xwZ3FuSB_e-0ewzhy1WNrju9np3ckocs7Bs5VOVpvzcKsKKLiF2xgl1LVswfwmNnW7bbc2wmlp-VRqWYbXFCvCw-EQPukbPkBiF2J8314iGO97CMvrG4FRUrLQjyryzK-h_1WCMefgSYxvXl91qcA-ZhHHCd5SG9zGAJS-K00cJtwCMcqaiFHqttB3GsfbVKOW4E"/>
-<div class="absolute top-4 right-4 bg-zinc-900 text-white px-3 py-1 font-label-bold text-xs uppercase">Protocol</div>
+<div class="bg-white p-10 flex flex-col items-start text-on-background hard-shadow hover-lift transition-all duration-300 rounded-xl">
+<div class="mb-6">
+<span class="material-symbols-outlined text-5xl text-brand-orange">assignment_turned_in</span>
 </div>
-<h3 class="font-headline-md text-headline-md mb-3 px-2">Safety Consulting</h3>
-<p class="font-body-md text-secondary px-2 pb-4">
-                    Treinamentos, elaboração de PET e consultoria completa em segurança do trabalho.
-                </p>
+<h3 class="font-headline-md text-xl mb-6 uppercase tracking-tight">Inspeção Estrutural/Portuária</h3>
+<ul class="space-y-3 font-body-md text-secondary">
+<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Inspeção em Estrutura Metálica NR-13</li>
+<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Inspeção em Ponte Rolante</li>
+<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Inspeção Portuária atendendo todos os Requisitos da NR-29</li>
+</ul>
+</div>
+<!-- Card 5 -->
+<div class="bg-white p-10 flex flex-col items-start text-on-background hard-shadow hover-lift transition-all duration-300 rounded-xl">
+<div class="mb-6">
+<span class="material-symbols-outlined text-5xl text-brand-orange">construction</span>
+</div>
+<h3 class="font-headline-md text-xl mb-6 uppercase tracking-tight">Outros Serviços</h3>
+<ul class="space-y-3 font-body-md text-secondary">
+<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Impermeabilização de Estruturas</li>
+<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Reparos</li>
+<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Manutenção de Geradores</li>
+<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Montagem e desmontagem de ornamentações de natal</li>
+</ul>
+</div>
+<!-- Card 6 -->
+<div class="bg-white p-10 flex flex-col items-start text-on-background hard-shadow hover-lift transition-all duration-300 rounded-xl">
+<div class="mb-6">
+<span class="material-symbols-outlined text-5xl text-brand-orange">medical_services</span>
+</div>
+<h3 class="font-headline-md text-xl mb-6 uppercase tracking-tight">Resgate Técnico</h3>
+<ul class="space-y-3 font-body-md text-secondary">
+<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Resgate em espaço confinado e em altura</li>
+</ul>
+</div>
 </div>
 </div>
 </section>
-<!-- Safety Section -->
-<section class="bg-zinc-900 py-stack-lg overflow-hidden" id="safety">
-<div class="max-w-screen-2xl mx-auto px-6 md:px-24 flex flex-col lg:flex-row gap-16 items-center">
-<div class="w-full lg:w-1/2 relative">
-<div class="absolute -top-10 -left-10 w-40 h-40 border-l-8 border-t-8 border-primary opacity-30"></div>
-<img alt="Safety Detail" class="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700 hard-shadow border-4 border-zinc-800" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMeLTa0RV3QysjDAbVdr3x2_QjfMYvPx3h3-Rm9tpKXu8xfWln0kbteO63RUB9A9yZAS5uOS5FsdsHxTupyiKM5vwXTvOMigpwEBRalPNzfI3uJppDkzNsnNiQrM1YqgW1uyxc20A75RjQlwkifDMT2HO9InIxcry1lrhGdMMojxnboshXynsGD8HghXunKp_W6UuELDtbKV9o96fGx1QLignQXplI18ARkeFTnj2N2XGG1sIhVzBcnUQSnS7QJwPvF3CkRCMoD6w"/>
+<!-- Portfolio Gallery Section -->
+<section class="py-stack-lg bg-surface-container-low" id="portfolio">
+<div class="max-w-screen-2xl mx-auto px-6 md:px-24 relative">
+<div class="text-center mb-16">
+<span class="font-label-bold text-primary tracking-[0.3em] uppercase block mb-4">Portfólio em Foco</span>
+<h2 class="font-headline-xl text-headline-xl text-on-background mb-4">Nossos Projetos em Ação</h2>
+<div class="w-24 h-1.5 bg-primary mx-auto mb-6"></div>
+<p class="text-secondary font-body-md max-w-2xl mx-auto">
+                Uma vitrine técnica de nossas operações mais complexas, onde segurança e eficiência se encontram em cada detalhe.
+            </p>
 </div>
-<div class="w-full lg:w-1/2 text-white">
-<span class="font-label-bold text-primary tracking-[0.3em] uppercase block mb-4">Compromisso Real</span>
-<h2 class="font-headline-xl text-headline-xl mb-8">Segurança Absoluta em Cada Centímetro</h2>
-<p class="font-body-lg text-zinc-400 mb-10 leading-relaxed">
-                    Nossa metodologia de trabalho é fundamentada na mitigação total de riscos. Utilizamos apenas equipamentos certificados internacionalmente e mantemos uma equipe em constante atualização técnica.
-                </p>
-<div class="grid grid-cols-2 gap-8 mb-12">
-<div class="border-l-4 border-primary pl-6">
-<span class="block text-3xl font-black mb-1">100%</span>
-<span class="font-label-bold text-zinc-500 uppercase text-xs">Conformidade NR-35</span>
-</div>
-<div class="border-l-4 border-primary pl-6">
-<span class="block text-3xl font-black mb-1">ZERO</span>
-<span class="font-label-bold text-zinc-500 uppercase text-xs">Acidentes Registrados</span>
+<button class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-primary/80 hover:bg-primary text-white p-2 rounded-full hidden md:flex items-center justify-center transition-all shadow-lg" id="portfolio-prev"><span class="material-symbols-outlined">chevron_left</span></button><div class="scroll-container hide-scrollbar">
+<!-- Gallery Item 1 -->
+<div class="group relative overflow-hidden bg-zinc-200 hard-shadow hover-lift cursor-pointer scroll-item aspect-square">
+<img alt="Manutenção de Turbina Eólica" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 gallery-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvNfeRDxkoTkLfaTj-AAdcRC3AraNUwm6952HNcYfsxoWaxYvs4zuwnnz-yuulk3-nZDIG1wNH_ZUgd4-YVVJ_o3oNZuMlx-0kOOgouS9ykEnwWFoK6jnU3z4bYxL0A9ua6lF6GkknmQWH3YcTwOaDWvtuUyMZ_g0gNe3KNXh66N-ugrr6mOfzkFHg2rjjqaju1ikbr7ux15wUStOrS-t3EYADpxiXMp1Z_RwcIT1tFJOFwRGxwMNoDOqQodfEcr035QGYS7WZ7iQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-white font-label-bold text-xs uppercase tracking-widest mb-1">Industrial</span>
+<h4 class="text-white font-headline-md text-lg">Manutenção de Turbinas</h4>
 </div>
 </div>
-<div class="flex flex-wrap gap-4">
-<div class="bg-zinc-800 px-4 py-2 border border-zinc-700 font-label-bold text-xs uppercase tracking-widest flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-sm">verified</span> IRATA International
-                    </div>
-<div class="bg-zinc-800 px-4 py-2 border border-zinc-700 font-label-bold text-xs uppercase tracking-widest flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-sm">verified</span> ANEAC Brasil
-                    </div>
+<!-- Gallery Item 2 -->
+<div class="group relative overflow-hidden bg-zinc-200 hard-shadow hover-lift cursor-pointer scroll-item aspect-square">
+<img alt="Acesso por Corda em Pontes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 gallery-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpHzufdvMwYn7uSQuzL5vgosLKwFmSruhYz3WekJ2zQ8FAsv-WBtZr_cLgBJ7dVt43TI0nmT4zvjWeUZjG6_UpD509mgpXtP6CvrXVcBqGgC7PdkBYRUfhL73fTApTkK8PuXZyqp8zdwckzAFecSUECrDbs_n7jSjeRynD6CaQCJ5mlJNTOMDBjKySQP4TT-RaM1iDe0Qp2B85LK3wVylH4FZjVbRP6d4dBv4BU-spGMB0yv16IGnGiKdDRBOFR1SX7EB0VCgfGOo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-white font-label-bold text-xs uppercase tracking-widest mb-1">Infraestrutura</span>
+<h4 class="text-white font-headline-md text-lg">Inspeção de Estruturas</h4>
 </div>
+</div>
+<!-- Gallery Item 3 -->
+<div class="group relative overflow-hidden bg-zinc-200 hard-shadow hover-lift cursor-pointer scroll-item aspect-square">
+<img alt="Pintura Industrial em Altura" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 gallery-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk1JTonxNoHYIVU2R9nta8ZLIjf_1EK1CP4K7ys_xd2LdqQn3K9nyUQa4cXtuDpb2Z1ESmUCsmQEqMgppzB6FY5skOS4lxUn4psh3KJepjydrq5cKrafUQ7Ij6jVIYeL3IbnL-oOh5R-d4dq4KTBAeo8W_5KNjmO4FEO23QB7U9x5dTzzVhQiNMHGXnihJgpMOuBawNX-UiIeMNweD_bVplsEdSe5bnxSluCgZD9-Vcf4p9TL0b0rH7O9NLin8UnodjTOuw-qqQ5o"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-white font-label-bold text-xs uppercase tracking-widest mb-1">Tratamento</span>
+<h4 class="text-white font-headline-md text-lg">Pintura Técnica</h4>
+</div>
+</div>
+<!-- Gallery Item 4 -->
+<div class="group relative overflow-hidden bg-zinc-200 hard-shadow hover-lift cursor-pointer scroll-item aspect-square">
+<img alt="Limpeza de Pele de Vidro" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 gallery-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqKM9rDuTwKkfyDNZqVWQcAhmg5PgnknQ8IRE1pVL4pXSo3yeOHANnyEiXDVjoMIwspA3YTgy4H3B9iu4bnjYolB_GbJia_lDSbJTA5FkdtrnWoF39KULpncWAwfLtAlG9rbckVRoLJ0MSkGqB2hDbNsaPIWRySkrX4fMMHstP34MsiIYctq-J28Ecafe1h3x-RW-6A2rye-ptHa8QB7iS6iVf32MeTz_h9_UkLeTyhL-nQ093Eji5ESZQQub5w63WtGmcdFE13Ho"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-white font-label-bold text-xs uppercase tracking-widest mb-1">Predial</span>
+<h4 class="text-white font-headline-md text-lg">Limpeza Especializada</h4>
+</div>
+</div>
+<!-- Gallery Item 5 -->
+<div class="group relative overflow-hidden bg-zinc-200 hard-shadow hover-lift cursor-pointer scroll-item aspect-square">
+<img alt="Montagem Industrial" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 gallery-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeGB5CFDIbOm8mRo0FIp9rk8qOSu-DjcZI-lRRmco9Sf98cJvYmMa7WI_Kzl2XvZdY0CkIxC4xwZ3FuSB_e-0ewzhy1WNrju9np3ckocs7Bs5VOVpvzcKsKKLiF2xgl1LVswfwmNnW7bbc2wmlp-VRqWYbXFCvCw-EQPukbPkBiF2J8314iGO97CMvrG4FRUrLQjyryzK-h_1WCMefgSYxvXl91qcA-ZhHHCd5SG9zGAJS-K00cJtwCMcqaiFHqttB3GsfbVKOW4E"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-white font-label-bold text-xs uppercase tracking-widest mb-1">Montagem</span>
+<h4 class="text-white font-headline-md text-lg">Instalações Verticais</h4>
+</div>
+</div>
+<!-- Gallery Item 6 -->
+<div class="group relative overflow-hidden bg-zinc-200 hard-shadow hover-lift cursor-pointer scroll-item aspect-square">
+<img alt="Equipamentos de Segurança" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 gallery-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMeLTa0RV3QysjDAbVdr3x2_QjfMYvPx3h3-Rm9tpKXu8xfWln0kbteO63RUB9A9yZAS5uOS5FsdsHxTupyiKM5vwXTvOMigpwEBRalPNzfI3uJppDkzNsnNiQrM1YqgW1uyxc20A75RjQlwkifDMT2HO9InIxcry1lrhGdMMojxnboshXynsGD8HghXunKp_W6UuELDtbKV9o96fGx1QLignQXplI18ARkeFTnj2N2XGG1sIhVzBcnUQSnS7QJwPvF3CkRCMoD6w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-white font-label-bold text-xs uppercase tracking-widest mb-1">Certificação</span>
+<h4 class="text-white font-headline-md text-lg">Equipamentos de Elite</h4>
+</div>
+</div>
+</div><button class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-primary/80 hover:bg-primary text-white p-2 rounded-full hidden md:flex items-center justify-center transition-all shadow-lg" id="portfolio-next"><span class="material-symbols-outlined">chevron_right</span></button>
+<div class="mt-16 text-center">
+<button class="border-2 border-primary text-primary px-8 py-4 font-label-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300">
+                Solicitar Portfólio Completo
+            </button>
+</div>
+</div>
+</section>
+<!-- Lightbox Modal -->
+<div class="fixed inset-0 z-[100] bg-black/95 flex-col justify-center items-center hidden" id="lightbox">
+<button class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors" id="lightbox-close">
+<span class="material-symbols-outlined text-5xl">close</span>
+</button>
+<button class="absolute left-6 top-1/2 -translate-y-1/2 text-white/50 hover:text-primary transition-all" id="lightbox-prev">
+<span class="material-symbols-outlined text-6xl">chevron_left</span>
+</button>
+<div class="max-w-[90vw] max-h-[80vh] flex flex-col items-center gap-4">
+<img alt="Expanded View" class="max-w-full max-h-full object-contain border-2 border-white/10" id="lightbox-img" src=""/>
+<div class="text-white font-headline-md text-xl" id="lightbox-caption"></div>
+<div class="text-primary font-label-bold tracking-widest" id="lightbox-counter"></div>
+</div>
+<button class="absolute right-6 top-1/2 -translate-y-1/2 text-white/50 hover:text-primary transition-all" id="lightbox-next">
+<span class="material-symbols-outlined text-6xl">chevron_right</span>
+</button>
+</div>
+<!-- About Section -->
+<section class="py-stack-lg overflow-hidden" id="about" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBvNfeRDxkoTkLfaTj-AAdcRC3AraNUwm6952HNcYfsxoWaxYvs4zuwnnz-yuulk3-nZDIG1wNH_ZUgd4-YVVJ_o3oNZuMlx-0kOOgouS9ykEnwWFoK6jnU3z4bYxL0A9ua6lF6GkknmQWH3YcTwOaDWvtuUyMZ_g0gNe3KNXh66N-ugrr6mOfzkFHg2rjjqaju1ikbr7ux15wUStOrS-t3EYADpxiXMp1Z_RwcIT1tFJOFwRGxwMNoDOqQodfEcr035QGYS7WZ7iQ'); background-size: cover; background-position: center; background-attachment: fixed;">
+<div class="max-w-screen-2xl mx-auto px-6 md:px-24 flex flex-col lg:flex-row gap-16 items-center"><div class="w-full max-w-4xl mx-auto bg-brand-orange/90 backdrop-blur-sm p-10 md:p-16 border border-white/30 text-white">
+<span class="font-label-bold text-white/80 tracking-[0.3em] uppercase block mb-6">Quem Somos</span>
+<h2 class="font-headline-xl text-4xl md:text-headline-xl text-white mb-10">Especialistas em Soluções Verticais de Alta Performance</h2>
+<div class="space-y-8 font-body-lg text-white leading-relaxed">
+<p>
+            A <strong>Tower Alpinismo</strong> possui expertise e ampla experiência com prestação de serviços relacionados ao setor de alpinismo industrial e predial. Atendemos nossos clientes e parceiros com demandas imediatas e atendendo as necessidades do mercado industrial e predial, com a cultura de inovação ao que tange a redução dos pontos que impedem nos processos de qualificação e certificação.
+        </p>
+<p>
+            A Tower Alpinismo vem atuando no mercado Industrial e predial para acompanhar a fidelidade e confiança nas aplicações dos testes de qualificações e atingir as conclusões dos projetos.
+        </p>
+</div>
+<div class="mt-12 flex flex-wrap gap-6">
+<div class="flex items-center gap-3 border-l-4 border-white px-4">
+<span class="text-white font-bold uppercase tracking-wider">Certificação IRATA</span>
+</div>
+<div class="flex items-center gap-3 border-l-4 border-white px-4">
+<span class="text-white font-bold uppercase tracking-wider">Normas NR-35 / NR-18</span>
+</div>
+</div>
+</div></div>
+</section>
+<!-- Nossos Compromissos Section -->
+<section class="py-stack-lg px-6 md:px-24 max-w-screen-2xl mx-auto" id="commitments">
+<div class="text-center mb-16">
+<span class="font-label-bold text-primary tracking-[0.3em] uppercase block mb-4">Integridade e Propósito</span>
+<h2 class="font-headline-xl text-headline-xl text-on-background">Nossos Compromissos</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Missão Card -->
+<div class="bg-brand-orange p-10 flex flex-col items-center text-center text-white hard-shadow hover-lift transition-all duration-300 rounded-xl">
+<div class="mb-6">
+<span class="material-symbols-outlined text-6xl opacity-90">track_changes</span>
+</div>
+<h3 class="font-headline-md text-2xl mb-6 uppercase tracking-wider">MISSÃO</h3>
+<p class="font-body-md text-white/90 leading-relaxed">
+                Executar projetos e demandas com eficiência, segurança e transparência, superando as expectativas dos clientes.
+            </p>
+</div>
+<!-- Visão Card -->
+<div class="bg-brand-orange p-10 flex flex-col items-center text-center text-white hard-shadow hover-lift transition-all duration-300 rounded-xl">
+<div class="mb-6">
+<span class="material-symbols-outlined text-6xl opacity-90">visibility</span>
+</div>
+<h3 class="font-headline-md text-2xl mb-6 uppercase tracking-wider">VISÃO</h3>
+<p class="font-body-md text-white/90 leading-relaxed">
+                Ser referência nacional em manutenção industrial e predial através de técnicas de acesso por corda.
+            </p>
+</div>
+<!-- Valores Card -->
+<div class="bg-brand-orange p-10 flex flex-col items-center text-center text-white hard-shadow hover-lift transition-all duration-300 rounded-xl">
+<div class="mb-6">
+<span class="material-symbols-outlined text-6xl opacity-90">work</span>
+</div>
+<h3 class="font-headline-md text-2xl mb-6 uppercase tracking-wider">VALORES</h3>
+<p class="font-body-md text-white/90 leading-relaxed">
+                Ética, transparência, segurança dos colaboradores, responsabilidade socioambiental e excelência na execução.
+            </p>
 </div>
 </div>
 </section>
 <!-- Location Section -->
-<section class="py-stack-lg bg-surface-container-low" id="location">
+<section class="py-stack-lg bg-surface-container-low" id="contact">
 <div class="max-w-screen-2xl mx-auto px-6 md:px-24">
 <div class="text-center mb-16">
-<h2 class="font-headline-xl text-headline-xl text-on-background mb-4">Onde Atuamos</h2>
-<p class="text-secondary font-body-md max-w-2xl mx-auto">Base em São Paulo com capacidade logística para atender projetos de engenharia em todo o território nacional.</p>
+<h2 class="font-headline-xl text-headline-xl text-on-background mb-4">Fale Conosco</h2>
+<p class="text-secondary font-body-md max-w-2xl mx-auto">Prontos para atender projetos em todo o Brasil. Entre em contato para uma consultoria técnica especializada.</p>
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
 <div class="bg-white p-8 border border-outline-variant hard-shadow flex flex-col justify-center">
 <div class="mb-8">
 <span class="material-symbols-outlined text-4xl text-primary mb-4">location_on</span>
-<h4 class="font-headline-md text-headline-md mb-2">Sede Administrativa</h4>
-<p class="text-secondary font-body-md">Av. Paulista, 1000 - Bela Vista<br/>São Paulo - SP, 01310-100</p>
+<h4 class="font-headline-md text-headline-md mb-2">Localização</h4>
+<p class="text-secondary font-body-md">Sede Operacional: Av. Industrial, 4500<br/>São Paulo - SP, Brasil</p>
 </div>
 <div class="mb-8">
 <span class="material-symbols-outlined text-4xl text-primary mb-4">call</span>
 <h4 class="font-headline-md text-headline-md mb-2">Telefone</h4>
-<p class="text-secondary font-body-md">+55 (11) 3456-7890<br/>+55 (11) 98765-4321</p>
+<p class="text-secondary font-body-md">+55 (11) 98765-4321<br/>Comercial: +55 (11) 4004-0000</p>
 </div>
 <div>
 <span class="material-symbols-outlined text-4xl text-primary mb-4">mail</span>
@@ -344,66 +562,66 @@
 </div>
 </div>
 <div class="lg:col-span-2 h-[500px] bg-zinc-200 border border-outline-variant hard-shadow overflow-hidden relative">
-<iframe data-location="São Paulo" frameborder="0" height="100%" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=pt&amp;q=Av.%20Paulista,%201000,%20Sao%20Paulo&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%"></iframe>
+<iframe data-location="São Paulo" frameborder="0" height="100%" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=pt&amp;q=Sao%20Paulo%20Industrial&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%"></iframe>
 </div>
 </div>
 </div>
 </section>
 <!-- Footer -->
-<footer class="bg-zinc-900 text-white border-t-4 border-orange-600" id="contact">
+<footer class="bg-on-background text-white border-t-4 border-primary">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-6 py-16 md:px-24 w-full max-w-screen-2xl mx-auto">
 <div class="space-y-6">
+<div class="flex items-center gap-3">
+<img alt="Tower Alpinismo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0ujjRulCIR3-F2MXr1fmf_qOggvM7ILKEcABhFMTCkwmi8_-RF0UPSVrfKeouSzvW1uz2rt5K56poxTU0hIYiKFdx5ZrEtAWUEq4-Kg3bpjT356JeusqtVAiw1yg5pJjSO2fvBOTRJuO9Jc7nS3Uh2X5-FkvqaV_iEDFvBz6oW7f_rxUz9FXsO9lOO-KiHFTiuCmYfWiev9yvDinfVchfWmco0VIeKnABjwZ5yYMS1UXgzryHHlGewKQ-1URpsHByDfM7RJv5H2a"/>
 <div class="text-lg font-bold text-white uppercase tracking-tighter">Tower Alpinismo</div>
+</div>
 <p class="text-zinc-400 text-sm leading-relaxed font-body-md">
-                    Referência em engenharia de acesso e soluções em altura. Elevando o padrão de segurança e eficiência industrial desde 2010.
-                </p>
+                Referência em soluções de Alpinismo Industrial. Elevando a segurança e produtividade na manutenção técnica em todo o território nacional.
+            </p>
 <div class="flex gap-4">
-<a class="text-zinc-400 hover:text-orange-500 transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
-<a class="text-zinc-400 hover:text-orange-500 transition-colors" href="#"><span class="material-symbols-outlined">linked_camera</span></a>
-<a class="text-zinc-400 hover:text-orange-500 transition-colors" href="#"><span class="material-symbols-outlined">chat</span></a>
+<a class="text-zinc-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-zinc-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">linked_camera</span></a>
+<a class="text-zinc-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">chat</span></a>
 </div>
 </div>
 <div>
-<h4 class="font-label-bold uppercase tracking-widest text-orange-500 mb-8">Navegação</h4>
+<h4 class="font-label-bold uppercase tracking-widest text-primary mb-8">Navegação</h4>
 <ul class="space-y-4 font-body-md text-sm">
-<li><a class="text-zinc-400 hover:text-orange-500 hover:translate-x-1 transition-transform inline-block" href="#home"><span class="material-symbols-outlined text-xs mr-2">home</span>Início</a></li>
-<li><a class="text-zinc-400 hover:text-orange-500 hover:translate-x-1 transition-transform inline-block" href="#services"><span class="material-symbols-outlined text-xs mr-2">construction</span>Nossos Serviços</a></li>
-<li><a class="text-zinc-400 hover:text-orange-500 hover:translate-x-1 transition-transform inline-block" href="#safety"><span class="material-symbols-outlined text-xs mr-2">health_and_safety</span>Protocolos de Segurança</a></li>
-<li><a class="text-zinc-400 hover:text-orange-500 hover:translate-x-1 transition-transform inline-block" href="#location"><span class="material-symbols-outlined text-xs mr-2">map</span>Localização</a></li>
+<li><a class="text-zinc-400 hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#home">Home</a></li>
+<li><a class="text-zinc-400 hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#services">Serviços</a></li>
+<li><a class="text-zinc-400 hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#portfolio">Portfólio</a></li>
+<li><a class="text-zinc-400 hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#about">Sobre Nós</a></li>
 </ul>
 </div>
 <div>
-<h4 class="font-label-bold uppercase tracking-widest text-orange-500 mb-8">Certificações</h4>
+<h4 class="font-label-bold uppercase tracking-widest text-primary mb-8">Normas Técnicas</h4>
 <div class="flex flex-col gap-4">
 <div class="flex items-center gap-3 text-zinc-400 text-xs font-label-bold">
-<div class="w-8 h-8 bg-zinc-800 flex items-center justify-center border border-zinc-700">IR</div> IRATA LEVEL 3
-                    </div>
+<div class="w-10 h-10 bg-zinc-800 flex items-center justify-center border border-zinc-700 text-white">NR35</div> NR-35 TRABALHO EM ALTURA
+                </div>
 <div class="flex items-center gap-3 text-zinc-400 text-xs font-label-bold">
-<div class="w-8 h-8 bg-zinc-800 flex items-center justify-center border border-zinc-700">NR</div> NR-35 / NR-33
-                    </div>
-<div class="flex items-center gap-3 text-zinc-400 text-xs font-label-bold">
-<div class="w-8 h-8 bg-zinc-800 flex items-center justify-center border border-zinc-700">ISO</div> ISO 45001
-                    </div>
+<div class="w-10 h-10 bg-zinc-800 flex items-center justify-center border border-zinc-700 text-white">NR18</div> NR-18 CONSTRUÇÃO CIVIL
+                </div>
 </div>
 </div>
 <div>
-<h4 class="font-label-bold uppercase tracking-widest text-orange-500 mb-8">Contato Direto</h4>
+<h4 class="font-label-bold uppercase tracking-widest text-primary mb-8">Suporte</h4>
 <div class="space-y-4">
-<button class="w-full bg-primary py-3 px-4 font-label-bold flex items-center justify-center gap-2 text-white uppercase hover:bg-orange-400 transition-colors">
-<span class="material-symbols-outlined text-lg">chat_bubble</span> WhatsApp
-                    </button>
-<button class="w-full border border-zinc-700 py-3 px-4 font-label-bold flex items-center justify-center gap-2 text-white uppercase hover:bg-zinc-800 transition-colors">
+<button class="w-full bg-primary py-3 px-4 font-label-bold flex items-center justify-center gap-2 text-white uppercase hover:brightness-110 transition-all" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+<span class="material-symbols-outlined text-lg">chat_bubble</span> WhatsApp Comercial
+                </button>
+<button class="w-full border border-zinc-700 py-3 px-4 font-label-bold flex items-center justify-center gap-2 text-white uppercase hover:bg-zinc-800 transition-colors" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
 <span class="material-symbols-outlined text-lg">mail</span> Enviar E-mail
-                    </button>
+                </button>
 </div>
 </div>
 </div>
 <div class="border-t border-zinc-800 py-8 px-6 md:px-24">
 <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-body-md text-zinc-500 uppercase tracking-widest">
-<span>© 2024 Tower Alpinismo. Engineering and Vertical Solutions.</span>
+<span>© 2024 Tower Alpinismo. Soluções em Alpinismo Industrial.</span>
 <div class="flex gap-8">
-<a class="hover:text-orange-500" href="#">Privacy Policy</a>
-<a class="hover:text-orange-500" href="#">Terms of Service</a>
+<a class="hover:text-primary" href="#">Privacidade</a>
+<a class="hover:text-primary" href="#">Termos</a>
 </div>
 </div>
 </div>
@@ -414,4 +632,125 @@
 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
 </svg>
 </a>
+<script>
+    // Hero Carousel
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    let currentSlide = 0;
+
+    function updateCarousel() {
+        slides.forEach((slide, index) => {
+            slide.classList.toggle('active', index === currentSlide);
+            dots[index]?.classList.toggle('opacity-100', index === currentSlide);
+            dots[index]?.classList.toggle('opacity-50', index !== currentSlide);
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateCarousel();
+    }
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            updateCarousel();
+        });
+    });
+
+    setInterval(nextSlide, 5000);
+
+    // Mobile Menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
+
+    menuClose.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+    });
+
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+    });
+
+    // Portfolio Carousel Controls
+    const scrollContainer = document.querySelector('.scroll-container');
+    const prevBtn = document.getElementById('portfolio-prev');
+    const nextBtn = document.getElementById('portfolio-next');
+
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: -350, behavior: 'smooth' });
+        });
+        nextBtn.addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: 350, behavior: 'smooth' });
+        });
+    }
+
+    // Enhanced Lightbox Logic
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxCounter = document.getElementById('lightbox-counter');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
+    const galleryItems = document.querySelectorAll('.scroll-item');
+    
+    let currentImageIndex = 0;
+
+    function openLightbox(index) {
+        currentImageIndex = index;
+        const item = galleryItems[index];
+        const img = item.querySelector('.gallery-img');
+        const title = item.querySelector('h4').textContent;
+        
+        lightboxImg.src = img.src;
+        lightboxCaption.textContent = title;
+        lightboxCounter.textContent = `${index + 1} / ${galleryItems.length}`;
+        
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    function navigateLightbox(direction) {
+        currentImageIndex = (currentImageIndex + direction + galleryItems.length) % galleryItems.length;
+        openLightbox(currentImageIndex);
+    }
+
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => openLightbox(index));
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox(-1); });
+    lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox(1); });
+    
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.style.display === 'flex') {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        }
+    });
+</script>
 </body></html>
