@@ -1,756 +1,1066 @@
 <!DOCTYPE html>
+<html class="scroll-smooth" lang="pt-BR">
 
-<html class="scroll-smooth" lang="pt-BR"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Tower Alpinismo - Alpinismo Industrial e Serviços em Altura</title>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tower Alpinismo - Alpinismo Industrial e Serviços em Altura</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     "colors": {
-                        "on-tertiary-fixed": "#191c1d",
-                        "on-tertiary": "#ffffff",
-                        "primary-fixed": "#ffdbca",
-                        "tertiary-fixed-dim": "#c5c7c8",
-                        "on-error-container": "#93000a",
-                        "background": "#f8f9ff",
-                        "surface-container": "#e5eeff",
-                        "surface-container-lowest": "#ffffff",
-                        "inverse-on-surface": "#eaf1ff",
-                        "on-error": "#ffffff",
-                        "on-tertiary-container": "#fcfdfe",
-                        "on-tertiary-fixed-variant": "#454748",
-                        "on-primary-container": "#fffbff",
-                        "on-background": "#0b1c30",
-                        "tertiary-fixed": "#e1e3e4",
-                        "on-secondary-fixed": "#191c1f",
-                        "outline": "#8b7265",
-                        "on-primary-fixed-variant": "#773300",
-                        "secondary-fixed-dim": "#c5c6ca",
-                        "surface": "#f8f9ff",
-                        "secondary": "#5c5f62",
-                        "on-primary": "#ffffff",
-                        "on-secondary-container": "#606366",
-                        "secondary-container": "#dee0e4",
-                        "secondary-fixed": "#e1e2e6",
-                        "surface-container-highest": "#d3e4fe",
-                        "on-secondary-fixed-variant": "#44474a",
-                        "on-secondary": "#ffffff",
-                        "primary-container": "#bf5500",
-                        "on-surface-variant": "#574237",
-                        "primary": "#984300",
-                        "brand-orange": "#DE6A18",
-                        "surface-tint": "#9c4500",
-                        "error-container": "#ffdad6",
-                        "surface-bright": "#f8f9ff",
-                        "on-surface": "#0b1c30",
-                        "surface-container-high": "#dce9ff",
-                        "on-primary-fixed": "#331200",
-                        "surface-container-low": "#eff4ff",
-                        "error": "#ba1a1a",
-                        "tertiary": "#5a5c5d",
-                        "outline-variant": "#dec0b2",
-                        "primary-fixed-dim": "#ffb68e",
-                        "surface-variant": "#d3e4fe",
-                        "surface-dim": "#cbdbf5",
-                        "inverse-primary": "#ffb68e",
-                        "inverse-surface": "#213145",
-                        "tertiary-container": "#737576"
+                        "primary": "#DE6A18",
+                        "on-primary": "#FFFFFF",
+                        "background": "#0B1C30",
+                        "surface": "#12253D",
+                        "on-background": "#F8F9FF",
+                        "on-surface": "#F8F9FF",
+                        "steel-gray": "#445069",
+                        "outline": "#2A3C56",
+                        "brand-orange": "#DE6A18"
                     },
                     "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
+                        "none": "0",
+                        "sm": "0",
+                        "DEFAULT": "0",
+                        "md": "0",
+                        "lg": "0",
+                        "xl": "0",
+                        "full": "0"
                     },
                     "spacing": {
-                        "stack-md": "40px",
-                        "stack-lg": "80px",
-                        "stack-sm": "16px",
-                        "container-max": "1280px",
-                        "margin": "32px",
-                        "gutter": "24px",
+                        "stack-md": "64px",
+                        "stack-lg": "128px",
+                        "stack-sm": "24px",
+                        "container-max": "1440px",
+                        "margin": "40px",
+                        "gutter": "32px",
                         "base": "8px"
                     },
                     "fontFamily": {
-                        "headline-lg": ["Work Sans"],
-                        "headline-xl": ["Work Sans"],
-                        "label-bold": ["Work Sans"],
-                        "headline-md": ["Work Sans"],
-                        "body-lg": ["Work Sans"],
-                        "body-md": ["Work Sans"]
+                        "headline": ["Work Sans", "sans-serif"],
+                        "body": ["Work Sans", "sans-serif"]
                     },
                     "fontSize": {
-                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
-                        "label-bold": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
-                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                        "massive": ["clamp(4rem, 15vw, 12rem)", { "lineHeight": "0.9", "letterSpacing": "-0.05em", "fontWeight": "900" }],
+                        "headline-xl": ["clamp(2.5rem, 8vw, 5rem)", { "lineHeight": "1", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-tech": ["12px", { "lineHeight": "1", "letterSpacing": "0.2em", "fontWeight": "700", "textTransform": "uppercase" }]
                     }
                 }
             }
         }
     </script>
-<style class="custom-scrollbar">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700;800;900&display=swap');
+
+        :root {
+            --primary: #DE6A18;
+            --bg: #0B1C30;
+        }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
+        /* Technical Brutalist Accents */
+        .tech-border {
+            border: 1px solid #2A3C56;
+            position: relative;
+        }
+
+        .tech-border::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid var(--primary);
+            border-left: 2px solid var(--primary);
+        }
+
         .hard-shadow {
-            box-shadow: 4px 4px 0px 0px #0b1c30;
+            box-shadow: 8px 8px 0px 0px #DE6A18;
         }
+
         .hover-lift:hover {
-            transform: translateY(-4px);
-            box-shadow: 6px 6px 0px 0px #984300;
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px 0px #DE6A18;
         }
+
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0B1C30;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #DE6A18;
+        }
+
         .carousel-slide {
-            transition: opacity 1s ease-in-out;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
             opacity: 0;
+            transform: scale(1.1);
         }
+
         .carousel-slide.active {
             opacity: 1;
-        }
-    
-        @keyframes pulse-orange {
-            0% { box-shadow: 0 0 0 0 rgba(152, 67, 0, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(152, 67, 0, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(152, 67, 0, 0); }
-        }
-        .animate-pulse-custom {
-            animation: pulse-orange 2s infinite;
+            transform: scale(1);
         }
 
-        /* Lightbox Styles */
+        .grid-overlay {
+            background-image: radial-gradient(rgba(222, 106, 24, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Lightbox */
         #lightbox {
-            display: none;
-            position: fixed;
-            z-index: 100;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            justify-content: center;
-            align-items: center;
-        }
-        #lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
 
-        /* Mobile Menu */
-        #mobile-menu {
-            transform: translateX(100%);
-            transition: transform 0.3s ease-in-out;
+        #lightbox.is-visible {
+            opacity: 1;
+            visibility: visible;
         }
+
+        #lightbox-img {
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+
+        #lightbox-img.switching {
+            opacity: 0;
+            transform: scale(0.97);
+        }
+
+        .lightbox-nav {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #lightbox:hover .lightbox-nav,
+        .lightbox-nav:focus {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .lightbox-nav {
+                opacity: 1;
+            }
+        }
+
+        /* Hamburger Icon */
+        .hamburger {
+            width: 28px;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #F8F9FF;
+            transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+            transform-origin: center;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+            background: #DE6A18;
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+            background: #DE6A18;
+        }
+
+        #mobile-menu {
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            transition: clip-path 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
         #mobile-menu.open {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .mobile-link {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        #mobile-menu.open .mobile-link {
+            opacity: 1;
             transform: translateX(0);
         }
-    
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
+
+        #mobile-menu.open .mobile-link:nth-child(1) {
+            transition-delay: 0.15s;
         }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+
+        #mobile-menu.open .mobile-link:nth-child(2) {
+            transition-delay: 0.25s;
         }
+
+        #mobile-menu.open .mobile-link:nth-child(3) {
+            transition-delay: 0.35s;
+        }
+
+        #mobile-menu.open .mobile-link:nth-child(4) {
+            transition-delay: 0.40s;
+        }
+
+        #mobile-menu.open .mobile-link:nth-child(5) {
+            transition-delay: 0.45s;
+        }
+
         .scroll-container {
             display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
-            gap: 1.5rem;
-            padding-bottom: 1rem;
+            gap: 0;
         }
+
         .scroll-item {
-            flex: 0 0 300px;
+            flex: 0 0 100%;
             scroll-snap-align: start;
         }
+
         @media (min-width: 1024px) {
             .scroll-item {
-                flex: 0 0 calc(25% - 1.25rem);
+                flex: 0 0 33.33%;
             }
         }
     </style>
 </head>
+
 <body class="bg-background text-on-background font-body-md overflow-x-hidden">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 rounded-none bg-white/95 backdrop-blur-sm border-b border-zinc-200 shadow-sm h-20">
-<div class="flex justify-between items-center h-full px-6 md:px-12 max-w-screen-2xl mx-auto">
-<div class="flex items-center gap-3">
-<img alt="Tower Alpinismo Logo" class="h-14 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0ujjRulCIR3-F2MXr1fmf_qOggvM7ILKEcABhFMTCkwmi8_-RF0UPSVrfKeouSzvW1uz2rt5K56poxTU0hIYiKFdx5ZrEtAWUEq4-Kg3bpjT356JeusqtVAiw1yg5pJjSO2fvBOTRJuO9Jc7nS3Uh2X5-FkvqaV_iEDFvBz6oW7f_rxUz9FXsO9lOO-KiHFTiuCmYfWiev9yvDinfVchfWmco0VIeKnABjwZ5yYMS1UXgzryHHlGewKQ-1URpsHByDfM7RJv5H2a"/>
-<span class="text-xl font-black text-on-background font-headline-lg uppercase tracking-tight hidden sm:inline-block">Tower Alpinismo</span>
-</div>
-<!-- Desktop Nav -->
-<div class="hidden md:flex items-center gap-8 font-label-bold">
-<a class="text-primary border-b-2 border-primary pb-1 font-bold tracking-tight uppercase" href="#home">Home</a>
-<a class="text-on-background hover:text-primary transition-colors font-bold tracking-tight uppercase" href="#services">Serviços</a>
-<a class="text-on-background hover:text-primary transition-colors font-bold tracking-tight uppercase" href="#portfolio">Portfólio</a>
-<a class="text-on-background hover:text-primary transition-colors font-bold tracking-tight uppercase" href="#about">Sobre Nós</a>
-<a class="text-on-background hover:text-primary transition-colors font-bold tracking-tight uppercase" href="#contact">Contato</a>
-</div>
-<div class="flex items-center gap-4">
-<button class="hidden lg:block bg-primary text-white px-6 py-3 font-label-bold uppercase tracking-wider hard-shadow hover:brightness-110 transition-all active:opacity-80" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-                Orçamento
-            </button>
-<!-- Mobile Menu Toggle -->
-<button class="md:hidden text-on-background p-2" id="menu-toggle">
-<span class="material-symbols-outlined text-3xl">menu</span>
-</button>
-</div>
-</div>
-</nav>
-<!-- Mobile Menu Overlay -->
-<div class="fixed inset-0 z-[60] bg-on-background md:hidden" id="mobile-menu">
-<div class="flex flex-col h-full p-8">
-<div class="flex justify-between items-center mb-12">
-<img alt="Tower Alpinismo Logo" class="h-12 w-auto brightness-0 invert" src="https://lh3.googleusercontent.com/aida/ADBb0ujjRulCIR3-F2MXr1fmf_qOggvM7ILKEcABhFMTCkwmi8_-RF0UPSVrfKeouSzvW1uz2rt5K56poxTU0hIYiKFdx5ZrEtAWUEq4-Kg3bpjT356JeusqtVAiw1yg5pJjSO2fvBOTRJuO9Jc7nS3Uh2X5-FkvqaV_iEDFvBz6oW7f_rxUz9FXsO9lOO-KiHFTiuCmYfWiev9yvDinfVchfWmco0VIeKnABjwZ5yYMS1UXgzryHHlGewKQ-1URpsHByDfM7RJv5H2a"/>
-<button class="text-white" id="menu-close">
-<span class="material-symbols-outlined text-4xl">close</span>
-</button>
-</div>
-<nav class="flex flex-col gap-8 text-2xl font-headline-md text-white uppercase tracking-widest">
-<a class="mobile-link" href="#home">Home</a>
-<a class="mobile-link" href="#services">Serviços</a>
-<a class="mobile-link" href="#portfolio">Portfólio</a>
-<a class="mobile-link" href="#about">Sobre Nós</a>
-<a class="mobile-link" href="#contact">Contato</a>
-</nav>
-<div class="mt-auto">
-<button class="w-full bg-primary text-white py-4 font-label-bold uppercase tracking-widest hard-shadow" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); document.getElementById('mobile-menu').classList.remove('open'); document.body.style.overflow = '';">
-                Solicitar Orçamento
-            </button>
-</div>
-</div>
-</div>
-<!-- Hero Carousel Section -->
-<section class="relative h-[90vh] md:h-screen w-full overflow-hidden bg-zinc-950" id="home">
-<div class="absolute inset-0 z-0">
-<!-- Slide 1 -->
-<div class="carousel-slide active absolute inset-0">
-<img alt="Alpinismo Industrial" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvNfeRDxkoTkLfaTj-AAdcRC3AraNUwm6952HNcYfsxoWaxYvs4zuwnnz-yuulk3-nZDIG1wNH_ZUgd4-YVVJ_o3oNZuMlx-0kOOgouS9ykEnwWFoK6jnU3z4bYxL0A9ua6lF6GkknmQWH3YcTwOaDWvtuUyMZ_g0gNe3KNXh66N-ugrr6mOfzkFHg2rjjqaju1ikbr7ux15wUStOrS-t3EYADpxiXMp1Z_RwcIT1tFJOFwRGxwMNoDOqQodfEcr035QGYS7WZ7iQ"/>
-<div class="absolute inset-0 bg-gradient-to-r from-on-background/80 via-on-background/40 to-transparent"></div>
-<div class="relative z-10 h-full flex flex-col justify-center px-6 md:px-24 max-w-container-max mx-auto text-white">
-<div class="bg-primary w-20 h-2 mb-6"></div>
-<h2 class="font-headline-xl text-4xl md:text-headline-xl max-w-3xl mb-6">Alpinismo Industrial: A Evolução Além dos Andaimes</h2>
-<p class="font-body-lg text-lg md:text-body-lg max-w-xl mb-10 text-zinc-200">Substituímos métodos tradicionais por soluções verticais que garantem 50% mais agilidade, custos reduzidos e segurança absoluta em qualquer altura.</p>
-</div>
-</div>
-<!-- Slide 2 -->
-<div class="carousel-slide absolute inset-0">
-<img alt="Agilidade e Eficiência" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpHzufdvMwYn7uSQuzL5vgosLKwFmSruhYz3WekJ2zQ8FAsv-WBtZr_cLgBJ7dVt43TI0nmT4zvjWeUZjG6_UpD509mgpXtP6CvrXVcBqGgC7PdkBYRUfhL73fTApTkK8PuXZyqp8zdwckzAFecSUECrDbs_n7jSjeRynD6CaQCJ5mlJNTOMDBjKySQP4TT-RaM1iDe0Qp2B85LK3wVylH4FZjVbRP6d4dBv4BU-spGMB0yv16IGnGiKdDRBOFR1SX7EB0VCgfGOo"/>
-<div class="absolute inset-0 bg-gradient-to-r from-on-background/80 via-on-background/40 to-transparent"></div>
-<div class="relative z-10 h-full flex flex-col justify-center px-6 md:px-24 max-w-container-max mx-auto text-white">
-<div class="bg-primary w-20 h-2 mb-6"></div>
-<h2 class="font-headline-xl text-4xl md:text-headline-xl max-w-3xl mb-6">Agilidade Estratégica e Custo-Benefício</h2>
-<p class="font-body-lg text-lg md:text-body-lg max-w-xl mb-10 text-zinc-200">Sem o tempo e o custo de montagem de andaimes, nossa equipe acessa locais críticos com precisão técnica e eficiência operacional máxima.</p>
-</div>
-</div>
-</div>
-<div class="relative z-20 h-full flex flex-col justify-end px-6 md:px-24 max-w-container-max mx-auto pb-20 pointer-events-none">
-<div class="flex flex-wrap gap-4 pointer-events-auto">
-<a class="bg-primary py-4 px-8 font-label-bold uppercase tracking-widest text-white hard-shadow hover:brightness-110 transition-colors" href="#portfolio">
-                Ver Portfólio
-            </a>
-<a class="border-2 border-white py-4 px-8 font-label-bold uppercase tracking-widest text-white hover:bg-white hover:text-on-background transition-all" href="#contact">
-                Falar com Especialista
-            </a>
-</div>
-</div>
-<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-4 z-30">
-<div class="carousel-dot w-12 h-1 bg-white opacity-50 cursor-pointer transition-opacity" data-index="0"></div>
-<div class="carousel-dot w-12 h-1 bg-white opacity-50 cursor-pointer transition-opacity" data-index="1"></div>
-</div>
-</section>
-<!-- Services Section -->
-<section class="py-stack-lg px-6 md:px-24 max-w-screen-2xl mx-auto" id="services">
-<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-<div class="max-w-2xl">
-<span class="font-label-bold text-primary tracking-[0.3em] uppercase block mb-4">Nossos Serviços</span>
-<h2 class="font-headline-xl text-headline-xl text-on-background">Alpinismo Industrial</h2>
-</div>
-<p class="font-body-md text-secondary max-w-sm">
-            Especialistas em acesso por corda com foco em ambientes industriais, portuários e comerciais de alta complexidade.
-        </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-<!-- Card 1 -->
-<div class="bg-white border border-outline-variant p-base group hover-lift transition-all duration-300">
-<div class="aspect-video overflow-hidden mb-6 relative">
-<img alt="Alpinismo Industrial" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk1JTonxNoHYIVU2R9nta8ZLIjf_1EK1CP4K7ys_xd2LdqQn3K9nyUQa4cXtuDpb2Z1ESmUCsmQEqMgppzB6FY5skOS4lxUn4psh3KJepjydrq5cKrafUQ7Ij6jVIYeL3IbnL-oOh5R-d4dq4KTBAeo8W_5KNjmO4FEO23QB7U9x5dTzzVhQiNMHGXnihJgpMOuBawNX-UiIeMNweD_bVplsEdSe5bnxSluCgZD9-Vcf4p9TL0b0rH7O9NLin8UnodjTOuw-qqQ5o"/>
-</div>
-<h3 class="font-headline-md text-xl mb-3 px-2">Manutenção Industrial</h3>
-<p class="font-body-md text-secondary px-2 pb-4">Acesso seguro por corda para manutenções em locais restritos, eliminando a necessidade de andaimes pesados.</p>
-</div>
-<!-- Card 2 -->
-<div class="bg-white border border-outline-variant p-base group hover-lift transition-all duration-300">
-<div class="aspect-video overflow-hidden mb-6 relative">
-<img alt="Limpeza de Fachadas" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqKM9rDuTwKkfyDNZqVWQcAhmg5PgnknQ8IRE1pVL4pXSo3yeOHANnyEiXDVjoMIwspA3YTgy4H3B9iu4bnjYolB_GbJia_lDSbJTA5FkdtrnWoF39KULpncWAwfLtAlG9rbckVRoLJ0MSkGqB2hDbNsaPIWRySkrX4fMMHstP34MsiIYctq-J28Ecafe1h3x-RW-6A2rye-ptHa8QB7iS6iVf32MeTz_h9_UkLeTyhL-nQ093Eji5ESZQQub5w63WtGmcdFE13Ho"/>
-</div>
-<h3 class="font-headline-md text-xl mb-3 px-2">Limpeza Técnica</h3>
-<p class="font-body-md text-secondary px-2 pb-4">Limpeza profunda em vidro, pele de vidro e revestimentos metálicos com técnicas especializadas.</p>
-</div>
-<!-- Card 3 -->
-<div class="bg-white border border-outline-variant p-base group hover-lift transition-all duration-300">
-<div class="aspect-video overflow-hidden mb-6 relative">
-<img alt="Pintura Técnica" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeGB5CFDIbOm8mRo0FIp9rk8qOSu-DjcZI-lRRmco9Sf98cJvYmMa7WI_Kzl2XvZdY0CkIxC4xwZ3FuSB_e-0ewzhy1WNrju9np3ckocs7Bs5VOVpvzcKsKKLiF2xgl1LVswfwmNnW7bbc2wmlp-VRqWYbXFCvCw-EQPukbPkBiF2J8314iGO97CMvrG4FRUrLQjyryzK-h_1WCMefgSYxvXl91qcA-ZhHHCd5SG9zGAJS-K00cJtwCMcqaiFHqttB3GsfbVKOW4E"/>
-</div>
-<h3 class="font-headline-md text-xl mb-3 px-2">Pintura e Tratamento</h3>
-<p class="font-body-md text-secondary px-2 pb-4">Revitalização e pintura industrial/civil com equipamentos de alta performance em superfícies verticais.</p>
-</div>
-</div>
-</section><section class="py-stack-lg bg-on-background" id="specialized-services">
-<div class="max-w-screen-2xl mx-auto px-6 md:px-24 text-white">
-<div class="text-center mb-16">
-<h2 class="font-headline-xl text-headline-xl mb-4 uppercase tracking-wider">NOSSOS SERVIÇOS</h2>
-<div class="w-24 h-1.5 bg-brand-orange mx-auto mb-6"></div>
-<p class="text-zinc-400 font-body-md max-w-2xl mx-auto">
-                Conheça abaixo todos os serviços prestados pela Tower Alpinismo.
-            </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Card 1 -->
-<div class="bg-white p-10 flex flex-col items-start text-on-background hard-shadow hover-lift transition-all duration-300 rounded-xl">
-<div class="mb-6">
-<span class="material-symbols-outlined text-5xl text-brand-orange">engineering</span>
-</div>
-<h3 class="font-headline-md text-xl mb-6 uppercase tracking-tight">Alpinismo Industrial</h3>
-<ul class="space-y-3 font-body-md text-secondary">
-<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Corte e solda</li>
-<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Pintura</li>
-<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Limpeza Estrutural</li>
-<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Montagem e manutenção de estruturas</li>
-</ul>
-</div>
-<!-- Card 2 -->
-<div class="bg-white p-10 flex flex-col items-start text-on-background hard-shadow hover-lift transition-all duration-300 rounded-xl">
-<div class="mb-6">
-<span class="material-symbols-outlined text-5xl text-brand-orange">cleaning_services</span>
-</div>
-<h3 class="font-headline-md text-xl mb-6 uppercase tracking-tight">Serviços de Limpeza Técnica</h3>
-<ul class="space-y-3 font-body-md text-secondary">
-<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Limpeza de fachadas (Vidros, Pastilhas, ACM, Alvenaria)</li>
-<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Acabamento e limpeza pós-obra</li>
-</ul>
-</div>
-<!-- Card 3 -->
-<div class="bg-white p-10 flex flex-col items-start text-on-background hard-shadow hover-lift transition-all duration-300 rounded-xl">
-<div class="mb-6">
-<span class="material-symbols-outlined text-5xl text-brand-orange">format_paint</span>
-</div>
-<h3 class="font-headline-md text-xl mb-6 uppercase tracking-tight">Serviços de Pintura Técnica</h3>
-<ul class="space-y-3 font-body-md text-secondary">
-<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Caixas d'água</li>
-<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Estruturas metálicas</li>
-<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Pintura externa em geral</li>
-<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Tratamento de fissuras e trincas</li>
-</ul>
-</div>
-<!-- Card 4 -->
-<div class="bg-white p-10 flex flex-col items-start text-on-background hard-shadow hover-lift transition-all duration-300 rounded-xl">
-<div class="mb-6">
-<span class="material-symbols-outlined text-5xl text-brand-orange">assignment_turned_in</span>
-</div>
-<h3 class="font-headline-md text-xl mb-6 uppercase tracking-tight">Inspeção Estrutural/Portuária</h3>
-<ul class="space-y-3 font-body-md text-secondary">
-<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Inspeção em Estrutura Metálica NR-13</li>
-<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Inspeção em Ponte Rolante</li>
-<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Inspeção Portuária atendendo todos os Requisitos da NR-29</li>
-</ul>
-</div>
-<!-- Card 5 -->
-<div class="bg-white p-10 flex flex-col items-start text-on-background hard-shadow hover-lift transition-all duration-300 rounded-xl">
-<div class="mb-6">
-<span class="material-symbols-outlined text-5xl text-brand-orange">construction</span>
-</div>
-<h3 class="font-headline-md text-xl mb-6 uppercase tracking-tight">Outros Serviços</h3>
-<ul class="space-y-3 font-body-md text-secondary">
-<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Impermeabilização de Estruturas</li>
-<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Reparos</li>
-<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Manutenção de Geradores</li>
-<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Montagem e desmontagem de ornamentações de natal</li>
-</ul>
-</div>
-<!-- Card 6 -->
-<div class="bg-white p-10 flex flex-col items-start text-on-background hard-shadow hover-lift transition-all duration-300 rounded-xl">
-<div class="mb-6">
-<span class="material-symbols-outlined text-5xl text-brand-orange">medical_services</span>
-</div>
-<h3 class="font-headline-md text-xl mb-6 uppercase tracking-tight">Resgate Técnico</h3>
-<ul class="space-y-3 font-body-md text-secondary">
-<li class="flex items-start gap-2"><span class="text-brand-orange mt-1">•</span> Resgate em espaço confinado e em altura</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<!-- Portfolio Gallery Section -->
-<section class="py-stack-lg bg-surface-container-low" id="portfolio">
-<div class="max-w-screen-2xl mx-auto px-6 md:px-24 relative">
-<div class="text-center mb-16">
-<span class="font-label-bold text-primary tracking-[0.3em] uppercase block mb-4">Portfólio em Foco</span>
-<h2 class="font-headline-xl text-headline-xl text-on-background mb-4">Nossos Projetos em Ação</h2>
-<div class="w-24 h-1.5 bg-primary mx-auto mb-6"></div>
-<p class="text-secondary font-body-md max-w-2xl mx-auto">
-                Uma vitrine técnica de nossas operações mais complexas, onde segurança e eficiência se encontram em cada detalhe.
-            </p>
-</div>
-<button class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-primary/80 hover:bg-primary text-white p-2 rounded-full hidden md:flex items-center justify-center transition-all shadow-lg" id="portfolio-prev"><span class="material-symbols-outlined">chevron_left</span></button><div class="scroll-container hide-scrollbar">
-<!-- Gallery Item 1 -->
-<div class="group relative overflow-hidden bg-zinc-200 hard-shadow hover-lift cursor-pointer scroll-item aspect-square">
-<img alt="Manutenção de Turbina Eólica" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 gallery-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvNfeRDxkoTkLfaTj-AAdcRC3AraNUwm6952HNcYfsxoWaxYvs4zuwnnz-yuulk3-nZDIG1wNH_ZUgd4-YVVJ_o3oNZuMlx-0kOOgouS9ykEnwWFoK6jnU3z4bYxL0A9ua6lF6GkknmQWH3YcTwOaDWvtuUyMZ_g0gNe3KNXh66N-ugrr6mOfzkFHg2rjjqaju1ikbr7ux15wUStOrS-t3EYADpxiXMp1Z_RwcIT1tFJOFwRGxwMNoDOqQodfEcr035QGYS7WZ7iQ"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-<span class="text-white font-label-bold text-xs uppercase tracking-widest mb-1">Industrial</span>
-<h4 class="text-white font-headline-md text-lg">Manutenção de Turbinas</h4>
-</div>
-</div>
-<!-- Gallery Item 2 -->
-<div class="group relative overflow-hidden bg-zinc-200 hard-shadow hover-lift cursor-pointer scroll-item aspect-square">
-<img alt="Acesso por Corda em Pontes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 gallery-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpHzufdvMwYn7uSQuzL5vgosLKwFmSruhYz3WekJ2zQ8FAsv-WBtZr_cLgBJ7dVt43TI0nmT4zvjWeUZjG6_UpD509mgpXtP6CvrXVcBqGgC7PdkBYRUfhL73fTApTkK8PuXZyqp8zdwckzAFecSUECrDbs_n7jSjeRynD6CaQCJ5mlJNTOMDBjKySQP4TT-RaM1iDe0Qp2B85LK3wVylH4FZjVbRP6d4dBv4BU-spGMB0yv16IGnGiKdDRBOFR1SX7EB0VCgfGOo"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-<span class="text-white font-label-bold text-xs uppercase tracking-widest mb-1">Infraestrutura</span>
-<h4 class="text-white font-headline-md text-lg">Inspeção de Estruturas</h4>
-</div>
-</div>
-<!-- Gallery Item 3 -->
-<div class="group relative overflow-hidden bg-zinc-200 hard-shadow hover-lift cursor-pointer scroll-item aspect-square">
-<img alt="Pintura Industrial em Altura" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 gallery-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk1JTonxNoHYIVU2R9nta8ZLIjf_1EK1CP4K7ys_xd2LdqQn3K9nyUQa4cXtuDpb2Z1ESmUCsmQEqMgppzB6FY5skOS4lxUn4psh3KJepjydrq5cKrafUQ7Ij6jVIYeL3IbnL-oOh5R-d4dq4KTBAeo8W_5KNjmO4FEO23QB7U9x5dTzzVhQiNMHGXnihJgpMOuBawNX-UiIeMNweD_bVplsEdSe5bnxSluCgZD9-Vcf4p9TL0b0rH7O9NLin8UnodjTOuw-qqQ5o"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-<span class="text-white font-label-bold text-xs uppercase tracking-widest mb-1">Tratamento</span>
-<h4 class="text-white font-headline-md text-lg">Pintura Técnica</h4>
-</div>
-</div>
-<!-- Gallery Item 4 -->
-<div class="group relative overflow-hidden bg-zinc-200 hard-shadow hover-lift cursor-pointer scroll-item aspect-square">
-<img alt="Limpeza de Pele de Vidro" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 gallery-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqKM9rDuTwKkfyDNZqVWQcAhmg5PgnknQ8IRE1pVL4pXSo3yeOHANnyEiXDVjoMIwspA3YTgy4H3B9iu4bnjYolB_GbJia_lDSbJTA5FkdtrnWoF39KULpncWAwfLtAlG9rbckVRoLJ0MSkGqB2hDbNsaPIWRySkrX4fMMHstP34MsiIYctq-J28Ecafe1h3x-RW-6A2rye-ptHa8QB7iS6iVf32MeTz_h9_UkLeTyhL-nQ093Eji5ESZQQub5w63WtGmcdFE13Ho"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-<span class="text-white font-label-bold text-xs uppercase tracking-widest mb-1">Predial</span>
-<h4 class="text-white font-headline-md text-lg">Limpeza Especializada</h4>
-</div>
-</div>
-<!-- Gallery Item 5 -->
-<div class="group relative overflow-hidden bg-zinc-200 hard-shadow hover-lift cursor-pointer scroll-item aspect-square">
-<img alt="Montagem Industrial" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 gallery-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeGB5CFDIbOm8mRo0FIp9rk8qOSu-DjcZI-lRRmco9Sf98cJvYmMa7WI_Kzl2XvZdY0CkIxC4xwZ3FuSB_e-0ewzhy1WNrju9np3ckocs7Bs5VOVpvzcKsKKLiF2xgl1LVswfwmNnW7bbc2wmlp-VRqWYbXFCvCw-EQPukbPkBiF2J8314iGO97CMvrG4FRUrLQjyryzK-h_1WCMefgSYxvXl91qcA-ZhHHCd5SG9zGAJS-K00cJtwCMcqaiFHqttB3GsfbVKOW4E"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-<span class="text-white font-label-bold text-xs uppercase tracking-widest mb-1">Montagem</span>
-<h4 class="text-white font-headline-md text-lg">Instalações Verticais</h4>
-</div>
-</div>
-<!-- Gallery Item 6 -->
-<div class="group relative overflow-hidden bg-zinc-200 hard-shadow hover-lift cursor-pointer scroll-item aspect-square">
-<img alt="Equipamentos de Segurança" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 gallery-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMeLTa0RV3QysjDAbVdr3x2_QjfMYvPx3h3-Rm9tpKXu8xfWln0kbteO63RUB9A9yZAS5uOS5FsdsHxTupyiKM5vwXTvOMigpwEBRalPNzfI3uJppDkzNsnNiQrM1YqgW1uyxc20A75RjQlwkifDMT2HO9InIxcry1lrhGdMMojxnboshXynsGD8HghXunKp_W6UuELDtbKV9o96fGx1QLignQXplI18ARkeFTnj2N2XGG1sIhVzBcnUQSnS7QJwPvF3CkRCMoD6w"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-<span class="text-white font-label-bold text-xs uppercase tracking-widest mb-1">Certificação</span>
-<h4 class="text-white font-headline-md text-lg">Equipamentos de Elite</h4>
-</div>
-</div>
-</div><button class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-primary/80 hover:bg-primary text-white p-2 rounded-full hidden md:flex items-center justify-center transition-all shadow-lg" id="portfolio-next"><span class="material-symbols-outlined">chevron_right</span></button>
-<div class="mt-16 text-center">
-<button class="border-2 border-primary text-primary px-8 py-4 font-label-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300">
-                Solicitar Portfólio Completo
-            </button>
-</div>
-</div>
-</section>
-<!-- Lightbox Modal -->
-<div class="fixed inset-0 z-[100] bg-black/95 flex-col justify-center items-center hidden" id="lightbox">
-<button class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors" id="lightbox-close">
-<span class="material-symbols-outlined text-5xl">close</span>
-</button>
-<button class="absolute left-6 top-1/2 -translate-y-1/2 text-white/50 hover:text-primary transition-all" id="lightbox-prev">
-<span class="material-symbols-outlined text-6xl">chevron_left</span>
-</button>
-<div class="max-w-[90vw] max-h-[80vh] flex flex-col items-center gap-4">
-<img alt="Expanded View" class="max-w-full max-h-full object-contain border-2 border-white/10" id="lightbox-img" src=""/>
-<div class="text-white font-headline-md text-xl" id="lightbox-caption"></div>
-<div class="text-primary font-label-bold tracking-widest" id="lightbox-counter"></div>
-</div>
-<button class="absolute right-6 top-1/2 -translate-y-1/2 text-white/50 hover:text-primary transition-all" id="lightbox-next">
-<span class="material-symbols-outlined text-6xl">chevron_right</span>
-</button>
-</div>
-<!-- About Section -->
-<section class="py-stack-lg overflow-hidden" id="about" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBvNfeRDxkoTkLfaTj-AAdcRC3AraNUwm6952HNcYfsxoWaxYvs4zuwnnz-yuulk3-nZDIG1wNH_ZUgd4-YVVJ_o3oNZuMlx-0kOOgouS9ykEnwWFoK6jnU3z4bYxL0A9ua6lF6GkknmQWH3YcTwOaDWvtuUyMZ_g0gNe3KNXh66N-ugrr6mOfzkFHg2rjjqaju1ikbr7ux15wUStOrS-t3EYADpxiXMp1Z_RwcIT1tFJOFwRGxwMNoDOqQodfEcr035QGYS7WZ7iQ'); background-size: cover; background-position: center; background-attachment: fixed;">
-<div class="max-w-screen-2xl mx-auto px-6 md:px-24 flex flex-col lg:flex-row gap-16 items-center"><div class="w-full max-w-4xl mx-auto bg-brand-orange/90 backdrop-blur-sm p-10 md:p-16 border border-white/30 text-white">
-<span class="font-label-bold text-white/80 tracking-[0.3em] uppercase block mb-6">Quem Somos</span>
-<h2 class="font-headline-xl text-4xl md:text-headline-xl text-white mb-10">Especialistas em Soluções Verticais de Alta Performance</h2>
-<div class="space-y-8 font-body-lg text-white leading-relaxed">
-<p>
-            A <strong>Tower Alpinismo</strong> possui expertise e ampla experiência com prestação de serviços relacionados ao setor de alpinismo industrial e predial. Atendemos nossos clientes e parceiros com demandas imediatas e atendendo as necessidades do mercado industrial e predial, com a cultura de inovação ao que tange a redução dos pontos que impedem nos processos de qualificação e certificação.
-        </p>
-<p>
-            A Tower Alpinismo vem atuando no mercado Industrial e predial para acompanhar a fidelidade e confiança nas aplicações dos testes de qualificações e atingir as conclusões dos projetos.
-        </p>
-</div>
-<div class="mt-12 flex flex-wrap gap-6">
-<div class="flex items-center gap-3 border-l-4 border-white px-4">
-<span class="text-white font-bold uppercase tracking-wider">Certificação IRATA</span>
-</div>
-<div class="flex items-center gap-3 border-l-4 border-white px-4">
-<span class="text-white font-bold uppercase tracking-wider">Normas NR-35 / NR-18</span>
-</div>
-</div>
-</div></div>
-</section>
-<!-- Nossos Compromissos Section -->
-<section class="py-stack-lg px-6 md:px-24 max-w-screen-2xl mx-auto" id="commitments">
-<div class="text-center mb-16">
-<span class="font-label-bold text-primary tracking-[0.3em] uppercase block mb-4">Integridade e Propósito</span>
-<h2 class="font-headline-xl text-headline-xl text-on-background">Nossos Compromissos</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<!-- Missão Card -->
-<div class="bg-brand-orange p-10 flex flex-col items-center text-center text-white hard-shadow hover-lift transition-all duration-300 rounded-xl">
-<div class="mb-6">
-<span class="material-symbols-outlined text-6xl opacity-90">track_changes</span>
-</div>
-<h3 class="font-headline-md text-2xl mb-6 uppercase tracking-wider">MISSÃO</h3>
-<p class="font-body-md text-white/90 leading-relaxed">
-                Executar projetos e demandas com eficiência, segurança e transparência, superando as expectativas dos clientes.
-            </p>
-</div>
-<!-- Visão Card -->
-<div class="bg-brand-orange p-10 flex flex-col items-center text-center text-white hard-shadow hover-lift transition-all duration-300 rounded-xl">
-<div class="mb-6">
-<span class="material-symbols-outlined text-6xl opacity-90">visibility</span>
-</div>
-<h3 class="font-headline-md text-2xl mb-6 uppercase tracking-wider">VISÃO</h3>
-<p class="font-body-md text-white/90 leading-relaxed">
-                Ser referência nacional em manutenção industrial e predial através de técnicas de acesso por corda.
-            </p>
-</div>
-<!-- Valores Card -->
-<div class="bg-brand-orange p-10 flex flex-col items-center text-center text-white hard-shadow hover-lift transition-all duration-300 rounded-xl">
-<div class="mb-6">
-<span class="material-symbols-outlined text-6xl opacity-90">work</span>
-</div>
-<h3 class="font-headline-md text-2xl mb-6 uppercase tracking-wider">VALORES</h3>
-<p class="font-body-md text-white/90 leading-relaxed">
-                Ética, transparência, segurança dos colaboradores, responsabilidade socioambiental e excelência na execução.
-            </p>
-</div>
-</div>
-</section>
-<!-- Location Section -->
-<section class="py-stack-lg bg-surface-container-low" id="contact">
-<div class="max-w-screen-2xl mx-auto px-6 md:px-24">
-<div class="text-center mb-16">
-<h2 class="font-headline-xl text-headline-xl text-on-background mb-4">Fale Conosco</h2>
-<p class="text-secondary font-body-md max-w-2xl mx-auto">Prontos para atender projetos em todo o Brasil. Entre em contato para uma consultoria técnica especializada.</p>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-<div class="bg-white p-8 border border-outline-variant hard-shadow flex flex-col justify-center">
-<div class="mb-8">
-<span class="material-symbols-outlined text-4xl text-primary mb-4">location_on</span>
-<h4 class="font-headline-md text-headline-md mb-2">Localização</h4>
-<p class="text-secondary font-body-md">Sede Operacional: Av. Industrial, 4500<br/>São Paulo - SP, Brasil</p>
-</div>
-<div class="mb-8">
-<span class="material-symbols-outlined text-4xl text-primary mb-4">call</span>
-<h4 class="font-headline-md text-headline-md mb-2">Telefone</h4>
-<p class="text-secondary font-body-md">+55 (11) 98765-4321<br/>Comercial: +55 (11) 4004-0000</p>
-</div>
-<div>
-<span class="material-symbols-outlined text-4xl text-primary mb-4">mail</span>
-<h4 class="font-headline-md text-headline-md mb-2">E-mail</h4>
-<p class="text-secondary font-body-md">contato@toweralpinismo.com.br</p>
-</div>
-</div>
-<div class="lg:col-span-2 h-[500px] bg-zinc-200 border border-outline-variant hard-shadow overflow-hidden relative">
-<iframe data-location="São Paulo" frameborder="0" height="100%" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=pt&amp;q=Sao%20Paulo%20Industrial&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%"></iframe>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<footer class="bg-on-background text-white border-t-4 border-primary">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-6 py-16 md:px-24 w-full max-w-screen-2xl mx-auto">
-<div class="space-y-6">
-<div class="flex items-center gap-3">
-<img alt="Tower Alpinismo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0ujjRulCIR3-F2MXr1fmf_qOggvM7ILKEcABhFMTCkwmi8_-RF0UPSVrfKeouSzvW1uz2rt5K56poxTU0hIYiKFdx5ZrEtAWUEq4-Kg3bpjT356JeusqtVAiw1yg5pJjSO2fvBOTRJuO9Jc7nS3Uh2X5-FkvqaV_iEDFvBz6oW7f_rxUz9FXsO9lOO-KiHFTiuCmYfWiev9yvDinfVchfWmco0VIeKnABjwZ5yYMS1UXgzryHHlGewKQ-1URpsHByDfM7RJv5H2a"/>
-<div class="text-lg font-bold text-white uppercase tracking-tighter">Tower Alpinismo</div>
-</div>
-<p class="text-zinc-400 text-sm leading-relaxed font-body-md">
-                Referência em soluções de Alpinismo Industrial. Elevando a segurança e produtividade na manutenção técnica em todo o território nacional.
-            </p>
-<div class="flex gap-4">
-<a class="text-zinc-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
-<a class="text-zinc-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">linked_camera</span></a>
-<a class="text-zinc-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">chat</span></a>
-</div>
-</div>
-<div>
-<h4 class="font-label-bold uppercase tracking-widest text-primary mb-8">Navegação</h4>
-<ul class="space-y-4 font-body-md text-sm">
-<li><a class="text-zinc-400 hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#home">Home</a></li>
-<li><a class="text-zinc-400 hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#services">Serviços</a></li>
-<li><a class="text-zinc-400 hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#portfolio">Portfólio</a></li>
-<li><a class="text-zinc-400 hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#about">Sobre Nós</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-label-bold uppercase tracking-widest text-primary mb-8">Normas Técnicas</h4>
-<div class="flex flex-col gap-4">
-<div class="flex items-center gap-3 text-zinc-400 text-xs font-label-bold">
-<div class="w-10 h-10 bg-zinc-800 flex items-center justify-center border border-zinc-700 text-white">NR35</div> NR-35 TRABALHO EM ALTURA
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-outline h-20">
+        <div class="flex justify-between items-center h-full px-6 md:px-12 max-w-container-max mx-auto">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-primary flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white">architecture</span>
                 </div>
-<div class="flex items-center gap-3 text-zinc-400 text-xs font-label-bold">
-<div class="w-10 h-10 bg-zinc-800 flex items-center justify-center border border-zinc-700 text-white">NR18</div> NR-18 CONSTRUÇÃO CIVIL
+                <span class="text-xl font-black uppercase tracking-tighter hidden sm:inline-block">Tower<span
+                        class="text-primary">.</span>Alpinismo</span>
+            </div>
+
+            <div class="hidden md:flex items-center gap-10">
+                <a class="text-primary font-bold tracking-widest text-xs uppercase" href="#home">Home</a>
+                <a class="hover:text-primary transition-colors font-bold tracking-widest text-xs uppercase"
+                    href="#services">Serviços</a>
+                <a class="hover:text-primary transition-colors font-bold tracking-widest text-xs uppercase"
+                    href="#portfolio">Portfólio</a>
+                <a class="hover:text-primary transition-colors font-bold tracking-widest text-xs uppercase"
+                    href="#about">Sobre</a>
+                <a class="hover:text-primary transition-colors font-bold tracking-widest text-xs uppercase"
+                    href="#contact">Contato</a>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <button
+                    class="hidden lg:block border border-primary text-primary px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all"
+                    onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                    Solicitar Orçamento
+                </button>
+                <button class="md:hidden p-2" id="menu-toggle" aria-label="Abrir menu">
+                    <div class="hamburger" id="hamburger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-background flex flex-col p-8 md:hidden">
+        <div class="flex justify-between items-center mb-16">
+            <span class="text-xl font-black uppercase">Tower<span class="text-primary">.</span>Alpinismo</span>
+            <button id="menu-close">
+                <span class="material-symbols-outlined text-4xl">close</span>
+            </button>
+        </div>
+        <div class="flex flex-col gap-8">
+            <a class="text-4xl font-black uppercase mobile-link" href="#home">Home</a>
+            <a class="text-4xl font-black uppercase mobile-link text-steel-gray" href="#services">Serviços</a>
+            <a class="text-4xl font-black uppercase mobile-link text-steel-gray" href="#portfolio">Portfólio</a>
+            <a class="text-4xl font-black uppercase mobile-link text-steel-gray" href="#about">Sobre</a>
+            <a class="text-4xl font-black uppercase mobile-link text-steel-gray" href="#contact">Contato</a>
+        </div>
+    </div>
+
+    <!-- Hero Carousel Section -->
+    <section class="relative h-screen w-full overflow-hidden grid-overlay" id="home">
+        <div class="absolute inset-0 z-0">
+            <div class="carousel-slide active absolute inset-0">
+                <img alt="Alpinismo Industrial - Manutenção Estrutural" class="w-full h-full object-cover grayscale opacity-40"
+                    src="img/img0.png" />
+                <div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+            </div>
+            <div class="carousel-slide absolute inset-0">
+                <img alt="Equipamentos e Precisão Técnica" class="w-full h-full object-cover grayscale opacity-40"
+                    src="img/img1.png" />
+                <div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+            </div>
+            <div class="carousel-slide absolute inset-0">
+                <img alt="Planejamento e Controle de Operações" class="w-full h-full object-cover grayscale opacity-40"
+                    src="img/img2.png" />
+                <div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+            </div>
+            <div class="carousel-slide absolute inset-0">
+                <img alt="Estruturas de Grande Porte" class="w-full h-full object-cover grayscale opacity-40"
+                    src="img/img4.png" />
+                <div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+            </div>
+            <div class="carousel-slide absolute inset-0">
+                <img alt="Instalações de Alta Complexidade" class="w-full h-full object-cover grayscale opacity-40"
+                    src="img/img5.jpg" />
+                <div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+            </div>
+            <div class="carousel-slide absolute inset-0">
+                <img alt="Manutenção Especializada" class="w-full h-full object-cover grayscale opacity-40"
+                    src="img/img6.jpg" />
+                <div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+            </div>
+            <div class="carousel-slide absolute inset-0">
+                <img alt="Engenharia de Acesso" class="w-full h-full object-cover grayscale opacity-40"
+                    src="img/img7.jpg" />
+                <div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+            </div>
+        </div>
+
+        <div class="relative z-10 h-full flex flex-col justify-center px-6 md:px-12 max-w-container-max mx-auto">
+            <div class="flex items-center gap-4 mb-8">
+                <span class="w-12 h-[1px] bg-primary"></span>
+                <span class="text-primary font-bold tracking-[0.3em] text-xs uppercase">Especialistas em Altura</span>
+            </div>
+
+            <h1 class="font-massive text-massive uppercase mb-4 pointer-events-none">
+                Tower<br />
+                <span class="text-primary">Alpinismo</span>
+            </h1>
+
+            <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-12 mt-8">
+                <div class="max-w-md">
+                    <p class="text-zinc-400 text-lg md:text-xl leading-relaxed mb-8">
+                        Serviço vertical de precisão. Substituímos andaimes por agilidade e segurança absoluta em
+                        qualquer cenário industrial.
+                    </p>
+                    <div class="flex gap-4">
+                        <button
+                            class="bg-primary text-white px-10 py-5 font-bold uppercase tracking-widest hard-shadow hover-lift"
+                            onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">
+                            Portfólio
+                        </button>
+                        <button
+                            class="border border-outline px-10 py-5 font-bold uppercase tracking-widest hover:bg-white hover:text-background transition-all"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                            Consultoria
+                        </button>
+                    </div>
                 </div>
-</div>
-</div>
-<div>
-<h4 class="font-label-bold uppercase tracking-widest text-primary mb-8">Suporte</h4>
-<div class="space-y-4">
-<button class="w-full bg-primary py-3 px-4 font-label-bold flex items-center justify-center gap-2 text-white uppercase hover:brightness-110 transition-all" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-<span class="material-symbols-outlined text-lg">chat_bubble</span> WhatsApp Comercial
-                </button>
-<button class="w-full border border-zinc-700 py-3 px-4 font-label-bold flex items-center justify-center gap-2 text-white uppercase hover:bg-zinc-800 transition-colors" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-<span class="material-symbols-outlined text-lg">mail</span> Enviar E-mail
-                </button>
-</div>
-</div>
-</div>
-<div class="border-t border-zinc-800 py-8 px-6 md:px-24">
-<div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-body-md text-zinc-500 uppercase tracking-widest">
-<span>© 2024 Tower Alpinismo. Soluções em Alpinismo Industrial.</span>
-<div class="flex gap-8">
-<a class="hover:text-primary" href="#">Privacidade</a>
-<a class="hover:text-primary" href="#">Termos</a>
-</div>
-</div>
-</div>
-</footer>
-<!-- FAB for Quick Contact -->
-<a class="fixed bottom-8 right-8 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50 animate-pulse-custom" href="https://wa.me/5511987654321" target="_blank">
-<svg class="w-10 h-10" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
-</svg>
-</a>
-<script>
-    // Hero Carousel
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.carousel-dot');
-    let currentSlide = 0;
 
-    function updateCarousel() {
-        slides.forEach((slide, index) => {
-            slide.classList.toggle('active', index === currentSlide);
-            dots[index]?.classList.toggle('opacity-100', index === currentSlide);
-            dots[index]?.classList.toggle('opacity-50', index !== currentSlide);
-        });
-    }
+                <div class="hidden lg:flex flex-col items-end gap-2 font-label-tech text-steel-gray">
+                    <span>LAT: -23.5505 / LON: -46.6333</span>
+                    <span>HEIGHT OP: 150M+</span>
+                    <span>SAFETY COEF: 10:1</span>
+                </div>
+            </div>
+        </div>
 
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        updateCarousel();
-    }
+        <div class="absolute right-8 top-1/2 -translate-y-1/2 hidden xl:flex flex-col items-center gap-8">
+            <span class="vertical-text text-steel-gray font-bold tracking-[0.5em] text-xs uppercase">Industrial Rope
+                Access Specialists</span>
+            <div class="w-[1px] h-32 bg-outline"></div>
+        </div>
 
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentSlide = index;
-            updateCarousel();
-        });
-    });
+        <div class="absolute bottom-12 left-12 flex gap-4 z-30">
+            <div class="carousel-dot w-2 h-2 bg-primary cursor-pointer transition-all"></div>
+            <div class="carousel-dot w-2 h-2 bg-outline cursor-pointer transition-all hover:bg-primary/50"></div>
+            <div class="carousel-dot w-2 h-2 bg-outline cursor-pointer transition-all hover:bg-primary/50"></div>
+            <div class="carousel-dot w-2 h-2 bg-outline cursor-pointer transition-all hover:bg-primary/50"></div>
+            <div class="carousel-dot w-2 h-2 bg-outline cursor-pointer transition-all hover:bg-primary/50"></div>
+            <div class="carousel-dot w-2 h-2 bg-outline cursor-pointer transition-all hover:bg-primary/50"></div>
+            <div class="carousel-dot w-2 h-2 bg-outline cursor-pointer transition-all hover:bg-primary/50"></div>
+        </div>
+    </section>
 
-    setInterval(nextSlide, 5000);
+    <!-- Services Section -->
+    <section class="py-stack-lg px-6 md:px-12 max-w-container-max mx-auto relative" id="services">
+        <div class="absolute left-0 top-stack-lg hidden xl:block">
+            <span class="vertical-text text-steel-gray font-bold tracking-[1em] text-xs uppercase opacity-50">SERVIÇOS
+                TÉCNICOS</span>
+        </div>
 
-    // Mobile Menu
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuClose = document.getElementById('menu-close');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
+        <div class="flex flex-col lg:flex-row justify-between items-start mb-24 gap-12">
+            <div class="max-w-2xl">
+                <span class="font-label-tech text-primary block mb-6">// MÓDULO_DE_OPERACÕES</span>
+                <h2 class="font-headline-xl text-headline-xl uppercase">Alpinismo<br /><span
+                        class="text-steel-gray">Industrial</span></h2>
+            </div>
+            <div class="max-w-sm border-l-2 border-primary pl-8">
+                <p class="text-zinc-400 text-lg leading-relaxed">
+                    Acesso por corda de alta performance para cenários críticos. Redução de 60% no tempo de setup em
+                    comparação a métodos tradicionais.
+                </p>
+            </div>
+        </div>
 
-    menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.add('open');
-        document.body.style.overflow = 'hidden';
-    });
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-outline">
+            <div class="p-12 border-outline border-b md:border-r group hover:bg-primary transition-all duration-500">
+                <div class="mb-12">
+                    <span
+                        class="material-symbols-outlined text-5xl text-primary group-hover:text-white transition-colors">engineering</span>
+                </div>
+                <h3 class="font-headline-lg text-2xl uppercase mb-6 group-hover:text-white">Manutenção Estrutural</h3>
+                <p class="text-zinc-400 group-hover:text-white/80 leading-relaxed mb-8">Corte, solda e reparos em
+                    estruturas metálicas NR-13 de difícil acesso.</p>
+                <ul class="space-y-2 text-xs font-bold uppercase tracking-widest text-primary group-hover:text-white">
+                    <li>+ Soldagem Especializada</li>
+                    <li>+ Reparo de Fissuras</li>
+                </ul>
+            </div>
+            <div class="p-12 border-outline border-b lg:border-r group hover:bg-primary transition-all duration-500">
+                <div class="mb-12">
+                    <span
+                        class="material-symbols-outlined text-5xl text-primary group-hover:text-white transition-colors">cleaning_services</span>
+                </div>
+                <h3 class="font-headline-lg text-2xl uppercase mb-6 group-hover:text-white">Limpeza Técnica</h3>
+                <p class="text-zinc-400 group-hover:text-white/80 leading-relaxed mb-8">Limpeza profunda de fachadas
+                    ACM, vidros e silos industriais com químicos específicos.</p>
+                <ul class="space-y-2 text-xs font-bold uppercase tracking-widest text-primary group-hover:text-white">
+                    <li>+ Pele de Vidro</li>
+                    <li>+ Silos e Tanques</li>
+                </ul>
+            </div>
+            <div
+                class="p-12 border-outline border-b md:border-r lg:border-r-0 group hover:bg-primary transition-all duration-500">
+                <div class="mb-12">
+                    <span
+                        class="material-symbols-outlined text-5xl text-primary group-hover:text-white transition-colors">format_paint</span>
+                </div>
+                <h3 class="font-headline-lg text-2xl uppercase mb-6 group-hover:text-white">Pintura e Proteção</h3>
+                <p class="text-zinc-400 group-hover:text-white/80 leading-relaxed mb-8">Tratamento anticorrosivo e
+                    pintura técnica em altura com airless.</p>
+                <ul class="space-y-2 text-xs font-bold uppercase tracking-widest text-primary group-hover:text-white">
+                    <li>+ Epóxi e PU</li>
+                    <li>+ Hidrojateamento</li>
+                </ul>
+            </div>
+            <div
+                class="p-12 border-outline border-b md:border-b-0 lg:border-b-0 md:border-r group hover:bg-primary transition-all duration-500">
+                <div class="mb-12">
+                    <span
+                        class="material-symbols-outlined text-5xl text-primary group-hover:text-white transition-colors">assignment_turned_in</span>
+                </div>
+                <h3 class="font-headline-lg text-2xl uppercase mb-6 group-hover:text-white">Inspeção NR-35</h3>
+                <p class="text-zinc-400 group-hover:text-white/80 leading-relaxed mb-8">Relatórios técnicos detalhados e
+                    inspeção em pontes rolantes e estruturas portuárias.</p>
+                <ul class="space-y-2 text-xs font-bold uppercase tracking-widest text-primary group-hover:text-white">
+                    <li>+ Ensaios Não Destrutivos</li>
+                    <li>+ Laudos Técnicos</li>
+                </ul>
+            </div>
+            <div class="p-12 border-outline border-r group hover:bg-primary transition-all duration-500">
+                <div class="mb-12">
+                    <span
+                        class="material-symbols-outlined text-5xl text-primary group-hover:text-white transition-colors">construction</span>
+                </div>
+                <h3 class="font-headline-lg text-2xl uppercase mb-6 group-hover:text-white">Instalações Críticas</h3>
+                <p class="text-zinc-400 group-hover:text-white/80 leading-relaxed mb-8">Montagem de linhas de vida, SPDA
+                    e ornamentações de grande escala.</p>
+                <ul class="space-y-2 text-xs font-bold uppercase tracking-widest text-primary group-hover:text-white">
+                    <li>+ Linhas de Vida</li>
+                    <li>+ Sistemas de Queda</li>
+                </ul>
+            </div>
+            <div class="p-12 group hover:bg-primary transition-all duration-500">
+                <div class="mb-12">
+                    <span
+                        class="material-symbols-outlined text-5xl text-primary group-hover:text-white transition-colors">medical_services</span>
+                </div>
+                <h3 class="font-headline-lg text-2xl uppercase mb-6 group-hover:text-white">Resgate Técnico</h3>
+                <p class="text-zinc-400 group-hover:text-white/80 leading-relaxed mb-8">Prontidão para resgate em espaço
+                    confinado e planos de emergência vertical.</p>
+                <ul class="space-y-2 text-xs font-bold uppercase tracking-widest text-primary group-hover:text-white">
+                    <li>+ Equipe de Resgate</li>
+                    <li>+ Treinamento In-company</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-    menuClose.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-    });
+    <!-- Portfolio Archive Section -->
+    <section class="py-stack-lg bg-background relative overflow-hidden" id="portfolio">
+        <div class="absolute right-0 top-0 opacity-10 pointer-events-none">
+            <span class="text-[20rem] font-black text-white leading-none">ARCHIVE</span>
+        </div>
 
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
-            document.body.style.overflow = '';
-        });
-    });
+        <div class="px-6 md:px-12 max-w-container-max mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-24">
+                <div>
+                    <span class="font-label-tech text-primary block mb-6">// REGISTRO_DE_CAMPO</span>
+                    <h2 class="font-headline-xl text-headline-xl uppercase">Projetos<br /><span
+                            class="text-steel-gray">Executados</span></h2>
+                </div>
+                <div class="flex gap-4 mt-8 md:mt-0">
+                    <button
+                        class="w-12 h-12 border border-outline flex items-center justify-center hover:bg-primary hover:border-primary transition-all">
+                        <span class="material-symbols-outlined">west</span>
+                    </button>
+                    <button
+                        class="w-12 h-12 border border-outline flex items-center justify-center hover:bg-primary hover:border-primary transition-all">
+                        <span class="material-symbols-outlined">east</span>
+                    </button>
+                </div>
+            </div>
 
-    // Portfolio Carousel Controls
-    const scrollContainer = document.querySelector('.scroll-container');
-    const prevBtn = document.getElementById('portfolio-prev');
-    const nextBtn = document.getElementById('portfolio-next');
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="tech-border group cursor-pointer overflow-hidden" onclick="openLightbox(0)">
+                    <div
+                        class="aspect-[3/4] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <img alt="Refinaria Petroquímica"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img"
+                            src="img/img0.png" />
+                    </div>
+                    <div class="p-6 bg-surface border-t border-outline group-hover:bg-primary transition-colors">
+                        <span class="font-label-tech text-[10px] text-steel-gray group-hover:text-white/70">ID: TW-094 /
+                            2024</span>
+                        <h4 class="font-bold uppercase mt-2 group-hover:text-white">Refinaria Petroquímica</h4>
+                    </div>
+                </div>
+                <div class="tech-border group cursor-pointer overflow-hidden" onclick="openLightbox(1)">
+                    <div
+                        class="aspect-[3/4] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <img alt="Complexo Logístico"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img"
+                            src="img/img1.png" />
+                    </div>
+                    <div class="p-6 bg-surface border-t border-outline group-hover:bg-primary transition-colors">
+                        <span class="font-label-tech text-[10px] text-steel-gray group-hover:text-white/70">ID: TW-102 /
+                            2023</span>
+                        <h4 class="font-bold uppercase mt-2 group-hover:text-white">Complexo Logístico</h4>
+                    </div>
+                </div>
+                <div class="tech-border group cursor-pointer overflow-hidden" onclick="openLightbox(2)">
+                    <div
+                        class="aspect-[3/4] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <img alt="Terminal Portuário"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img"
+                            src="img/img2.png" />
+                    </div>
+                    <div class="p-6 bg-surface border-t border-outline group-hover:bg-primary transition-colors">
+                        <span class="font-label-tech text-[10px] text-steel-gray group-hover:text-white/70">ID: TW-088 /
+                            2024</span>
+                        <h4 class="font-bold uppercase mt-2 group-hover:text-white">Terminal Portuário</h4>
+                    </div>
+                </div>
+                <div class="tech-border group cursor-pointer overflow-hidden" onclick="openLightbox(3)">
+                    <div
+                        class="aspect-[3/4] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <img alt="Estrutura Off-shore"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img"
+                            src="img/img4.png" />
+                    </div>
+                    <div class="p-6 bg-surface border-t border-outline group-hover:bg-primary transition-colors">
+                        <span class="font-label-tech text-[10px] text-steel-gray group-hover:text-white/70">ID: TW-115 /
+                            2024</span>
+                        <h4 class="font-bold uppercase mt-2 group-hover:text-white">Estrutura Off-shore</h4>
+                    </div>
+                </div>
+                <div class="tech-border group cursor-pointer overflow-hidden" onclick="openLightbox(4)">
+                    <div
+                        class="aspect-[3/4] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <img alt="Instalação Industrial"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img"
+                            src="img/img5.jpg" />
+                    </div>
+                    <div class="p-6 bg-surface border-t border-outline group-hover:bg-primary transition-colors">
+                        <span class="font-label-tech text-[10px] text-steel-gray group-hover:text-white/70">ID: TW-122 /
+                            2024</span>
+                        <h4 class="font-bold uppercase mt-2 group-hover:text-white">Instalação Industrial</h4>
+                    </div>
+                </div>
+                <div class="tech-border group cursor-pointer overflow-hidden" onclick="openLightbox(5)">
+                    <div
+                        class="aspect-[3/4] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <img alt="Manutenção de Fachada"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img"
+                            src="img/img6.jpg" />
+                    </div>
+                    <div class="p-6 bg-surface border-t border-outline group-hover:bg-primary transition-colors">
+                        <span class="font-label-tech text-[10px] text-steel-gray group-hover:text-white/70">ID: TW-131 /
+                            2024</span>
+                        <h4 class="font-bold uppercase mt-2 group-hover:text-white">Manutenção de Fachada</h4>
+                    </div>
+                </div>
+                <div class="tech-border group cursor-pointer overflow-hidden" onclick="openLightbox(6)">
+                    <div
+                        class="aspect-[3/4] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <img alt="Inspeção Técnica"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img"
+                            src="img/img7.jpg" />
+                    </div>
+                    <div class="p-6 bg-surface border-t border-outline group-hover:bg-primary transition-colors">
+                        <span class="font-label-tech text-[10px] text-steel-gray group-hover:text-white/70">ID: TW-145 /
+                            2024</span>
+                        <h4 class="font-bold uppercase mt-2 group-hover:text-white">Inspeção Técnica</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    if (prevBtn && nextBtn) {
-        prevBtn.addEventListener('click', () => {
-            scrollContainer.scrollBy({ left: -350, behavior: 'smooth' });
-        });
-        nextBtn.addEventListener('click', () => {
-            scrollContainer.scrollBy({ left: 350, behavior: 'smooth' });
-        });
-    }
+    <!-- Lightbox Modal -->
+    <div class="fixed inset-0 z-[100] bg-background/95 flex items-center justify-center p-4 md:p-6" id="lightbox">
+        <!-- Close -->
+        <button
+            class="absolute top-6 right-6 md:top-12 md:right-12 z-20 text-white hover:text-primary transition-colors"
+            onclick="closeLightbox()">
+            <span class="material-symbols-outlined text-4xl md:text-5xl">close</span>
+        </button>
 
-    // Enhanced Lightbox Logic
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCaption = document.getElementById('lightbox-caption');
-    const lightboxCounter = document.getElementById('lightbox-counter');
-    const lightboxClose = document.getElementById('lightbox-close');
-    const lightboxPrev = document.getElementById('lightbox-prev');
-    const lightboxNext = document.getElementById('lightbox-next');
-    const galleryItems = document.querySelectorAll('.scroll-item');
-    
-    let currentImageIndex = 0;
+        <!-- Prev Arrow -->
+        <button
+            class="lightbox-nav absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-16 md:h-16 bg-background/60 backdrop-blur-sm border border-outline flex items-center justify-center hover:bg-primary hover:border-primary transition-all group"
+            onclick="navigateLightbox(-1)" aria-label="Imagem anterior">
+            <span
+                class="material-symbols-outlined text-2xl md:text-3xl text-white group-hover:scale-110 transition-transform">chevron_left</span>
+        </button>
 
-    function openLightbox(index) {
-        currentImageIndex = index;
-        const item = galleryItems[index];
-        const img = item.querySelector('.gallery-img');
-        const title = item.querySelector('h4').textContent;
-        
-        lightboxImg.src = img.src;
-        lightboxCaption.textContent = title;
-        lightboxCounter.textContent = `${index + 1} / ${galleryItems.length}`;
-        
-        lightbox.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    }
+        <!-- Next Arrow -->
+        <button
+            class="lightbox-nav absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-16 md:h-16 bg-background/60 backdrop-blur-sm border border-outline flex items-center justify-center hover:bg-primary hover:border-primary transition-all group"
+            onclick="navigateLightbox(1)" aria-label="Próxima imagem">
+            <span
+                class="material-symbols-outlined text-2xl md:text-3xl text-white group-hover:scale-110 transition-transform">chevron_right</span>
+        </button>
 
-    function closeLightbox() {
-        lightbox.style.display = 'none';
-        document.body.style.overflow = '';
-    }
+        <!-- Content -->
+        <div class="max-w-5xl w-full relative" id="lightbox-content">
+            <img class="w-full tech-border select-none" id="lightbox-img" src="" draggable="false" />
+            <div class="mt-6 flex justify-between items-center px-1">
+                <div>
+                    <h4 class="font-black uppercase text-lg md:text-2xl tracking-tighter" id="lightbox-caption"></h4>
+                    <span class="font-label-tech text-steel-gray text-[10px] mt-1 block" id="lightbox-counter"></span>
+                </div>
+                <div class="flex gap-3">
+                    <button
+                        class="w-10 h-10 md:w-12 md:h-12 border border-outline flex items-center justify-center hover:bg-primary hover:border-primary transition-all"
+                        onclick="navigateLightbox(-1)">
+                        <span class="material-symbols-outlined text-sm">west</span>
+                    </button>
+                    <button
+                        class="w-10 h-10 md:w-12 md:h-12 border border-outline flex items-center justify-center hover:bg-primary hover:border-primary transition-all"
+                        onclick="navigateLightbox(1)">
+                        <span class="material-symbols-outlined text-sm">east</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    function navigateLightbox(direction) {
-        currentImageIndex = (currentImageIndex + direction + galleryItems.length) % galleryItems.length;
-        openLightbox(currentImageIndex);
-    }
+    <!-- About Section -->
+    <section class="py-stack-lg bg-surface relative overflow-hidden" id="about">
+        <div class="absolute left-0 bottom-0 opacity-5 pointer-events-none">
+            <span class="text-[30rem] font-black text-primary leading-none">TOWER</span>
+        </div>
 
-    galleryItems.forEach((item, index) => {
-        item.addEventListener('click', () => openLightbox(index));
-    });
+        <div
+            class="px-6 md:px-12 max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center relative z-10">
+            <div class="relative">
+                <div class="tech-border">
+                    <img alt="Nossa Equipe" class="w-full grayscale hover:grayscale-0 transition-all duration-700"
+                        src="img/img0.png" />
+                </div>
+                <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-primary p-8 hidden md:block hard-shadow">
+                    <span class="text-white font-black text-4xl leading-tight">10+ ANOS DE CAMPO</span>
+                </div>
+            </div>
 
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox(-1); });
-    lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox(1); });
-    
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeLightbox();
-    });
+            <div>
+                <span class="font-label-tech text-primary block mb-6">// PERFIL_CORPORATIVO</span>
+                <h2 class="font-headline-xl text-headline-xl uppercase mb-12">Referência em<br /><span
+                        class="text-steel-gray">Engenharia Vertical</span></h2>
+                <div class="space-y-6 text-zinc-400 text-lg leading-relaxed mb-12">
+                    <p>
+                        A <strong class="text-on-background">Tower Alpinismo</strong> nasceu da necessidade de precisão
+                        absoluta em ambientes hostis. Não apenas "limpamos" ou "pintamos", nós executamos Serviços
+                        técnica em locais onde outros não chegam.
+                    </p>
+                    <p>
+                        Nossa cultura é baseada na redução sistemática de riscos e na otimização de tempo operacional.
+                        Atendemos o mercado industrial com a certificação rigorosa exigida por multinacionais e grandes
+                        infraestruturas brasileiras.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="border-l-2 border-primary pl-4">
+                        <span class="block font-black text-2xl uppercase">IRATA</span>
+                        <span class="text-xs text-steel-gray uppercase tracking-widest">Nível 1, 2 e 3</span>
+                    </div>
+                    <div class="border-l-2 border-primary pl-4">
+                        <span class="block font-black text-2xl uppercase">NR-35</span>
+                        <span class="text-xs text-steel-gray uppercase tracking-widest">Segurança Total</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    document.addEventListener('keydown', (e) => {
-        if (lightbox.style.display === 'flex') {
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') navigateLightbox(-1);
-            if (e.key === 'ArrowRight') navigateLightbox(1);
+    <!-- Commitments Section -->
+    <section class="py-stack-lg bg-background" id="commitments">
+        <div
+            class="px-6 md:px-12 max-w-container-max mx-auto border-y border-outline divide-y lg:divide-y-0 lg:divide-x divide-outline grid grid-cols-1 lg:grid-cols-3">
+            <div class="p-16 hover:bg-primary transition-all duration-500 group cursor-default text-center">
+                <div
+                    class="w-20 h-20 border border-outline flex items-center justify-center mb-8 mx-auto group-hover:bg-white/20 group-hover:border-white/30 transition-all">
+                    <span
+                        class="material-symbols-outlined text-4xl text-primary group-hover:text-white transition-colors">target</span>
+                </div>
+                <span
+                    class="font-label-tech text-primary block mb-8 group-hover:text-white/70 transition-colors">MISSÃO</span>
+                <h3 class="font-headline-lg text-2xl uppercase mb-6 group-hover:text-white transition-colors">Precisão
+                    Operacional</h3>
+                <p class="text-zinc-400 group-hover:text-white/80 transition-colors">Transformar desafios verticais em
+                    soluções ágeis, mantendo a integridade total
+                    de ativos e pessoas através de técnicas avançadas.</p>
+            </div>
+            <div class="p-16 hover:bg-primary transition-all duration-500 group cursor-default text-center">
+                <div
+                    class="w-20 h-20 border border-outline flex items-center justify-center mb-8 mx-auto group-hover:bg-white/20 group-hover:border-white/30 transition-all">
+                    <span
+                        class="material-symbols-outlined text-4xl text-primary group-hover:text-white transition-colors">visibility</span>
+                </div>
+                <span
+                    class="font-label-tech text-primary block mb-8 group-hover:text-white/70 transition-colors">VISÃO</span>
+                <h3 class="font-headline-lg text-2xl uppercase mb-6 group-hover:text-white transition-colors">Referência
+                    Técnica</h3>
+                <p class="text-zinc-400 group-hover:text-white/80 transition-colors">Ser o padrão ouro em acesso por
+                    corda no Brasil, definindo novos critérios de
+                    excelência e segurança para a indústria.</p>
+            </div>
+            <div class="p-16 hover:bg-primary transition-all duration-500 group cursor-default text-center">
+                <div
+                    class="w-20 h-20 border border-outline flex items-center justify-center mb-8 mx-auto group-hover:bg-white/20 group-hover:border-white/30 transition-all">
+                    <span
+                        class="material-symbols-outlined text-4xl text-primary group-hover:text-white transition-colors">work</span>
+                </div>
+                <span
+                    class="font-label-tech text-primary block mb-8 group-hover:text-white/70 transition-colors">VALORES</span>
+                <h3 class="font-headline-lg text-2xl uppercase mb-6 group-hover:text-white transition-colors">Cultura de
+                    Segurança</h3>
+                <p class="text-zinc-400 group-hover:text-white/80 transition-colors">Ética radical, transparência
+                    absoluta em laudos e a vida como prioridade
+                    inegociável em cada metro de subida.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5581999999999" target="_blank"
+        class="fixed bottom-8 right-8 bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+        aria-label="Contact via WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <!-- Contact Section -->
+    <section class="py-stack-lg bg-surface relative overflow-hidden" id="contact">
+        <div class="absolute right-0 bottom-0 opacity-5 pointer-events-none">
+            <span class="text-[18rem] font-black text-primary leading-none">CONTATO</span>
+        </div>
+
+        <div class="px-6 md:px-12 max-w-container-max mx-auto relative z-10">
+            <div class="mb-20">
+                <span class="font-label-tech text-primary block mb-6">// CANAL_DE_COMUNICAÇÃO</span>
+                <h2 class="font-headline-xl text-headline-xl uppercase">Fale<br /><span
+                        class="text-steel-gray">Conosco</span></h2>
+                <p class="text-zinc-400 text-lg leading-relaxed mt-6 max-w-xl">
+                    Projetos para atender projetos em todo o Brasil. Entre em contato para uma consultoria técnica
+                    especializada.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+                <!-- Info Column -->
+                <div class="space-y-12">
+                    <!-- Location -->
+                    <div class="flex gap-6 group">
+                        <div
+                            class="w-14 h-14 border border-outline flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:border-primary transition-all">
+                            <span
+                                class="material-symbols-outlined text-2xl text-primary group-hover:text-white transition-colors">location_on</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold uppercase tracking-widest text-xs text-primary mb-3">Localização</h3>
+                            <p class="text-on-background font-bold text-lg">Sede Operacional</p>
+                            <p class="text-zinc-400 leading-relaxed">
+                                Av. Industrial, 1250<br />
+                                São Paulo — SP, Brasil<br />
+                                CEP: 01000-000
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="flex gap-6 group">
+                        <div
+                            class="w-14 h-14 border border-outline flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:border-primary transition-all">
+                            <span
+                                class="material-symbols-outlined text-2xl text-primary group-hover:text-white transition-colors">call</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold uppercase tracking-widest text-xs text-primary mb-3">Telefone</h3>
+                            <p class="text-on-background leading-relaxed">
+                                <a href="tel:+5581999999999"
+                                    class="hover:text-primary transition-colors font-bold text-lg">+55 (81)
+                                    99999-9999</a>
+                            </p>
+                            <p class="text-zinc-400 text-sm mt-1">
+                                Comercial: +55 (81) 4002-8922
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="flex gap-6 group">
+                        <div
+                            class="w-14 h-14 border border-outline flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:border-primary transition-all">
+                            <span
+                                class="material-symbols-outlined text-2xl text-primary group-hover:text-white transition-colors">mail</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold uppercase tracking-widest text-xs text-primary mb-3">E-mail</h3>
+                            <p class="text-on-background leading-relaxed">
+                                <a href="mailto:contato@toweralpinismo.com.br"
+                                    class="hover:text-primary transition-colors font-bold text-lg">contato@toweralpinismo.com.br</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="pt-4">
+                        <a href="https://wa.me/5581999999999" target="_blank"
+                            class="inline-flex items-center gap-4 bg-primary text-white px-10 py-5 font-bold uppercase tracking-widest hard-shadow hover-lift transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="white">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                            </svg>
+                            Chamar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map Column -->
+                <div class="tech-border overflow-hidden">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1976831!2d-46.6388!3d-23.5505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzAxLjgiUyA0NsKwMzgnMTkuNyJX!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
+                        width="100%" height="100%"
+                        style="border:0; min-height: 480px; filter: grayscale(0.6) contrast(1.1);" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização Tower Alpinismo">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-background border-t border-outline py-12 px-6 md:px-12">
+        <div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-4">
+                <div class="w-8 h-8 bg-primary flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white text-sm">architecture</span>
+                </div>
+                <span class="font-black uppercase tracking-tighter text-sm">Tower<span
+                        class="text-primary">.</span>Alpinismo</span>
+            </div>
+            <div class="text-steel-gray text-[10px] font-bold uppercase tracking-widest">
+                © 2024 Tower Alpinismo // High Altitude Engineering
+            </div>
+            <div class="flex gap-6">
+                <a class="text-steel-gray hover:text-primary transition-colors" href="#"><span
+                        class="material-symbols-outlined">share</span></a>
+                <a class="text-steel-gray hover:text-primary transition-colors" href="#"><span
+                        class="material-symbols-outlined">distance</span></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hero Carousel
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        let currentSlide = 0;
+
+        function updateCarousel() {
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => {
+                d.classList.remove('bg-primary');
+                d.classList.add('bg-outline');
+            });
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.remove('bg-outline');
+            dots[currentSlide].classList.add('bg-primary');
         }
-    });
-</script>
-</body></html>
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateCarousel();
+        }, 6000);
+
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                currentSlide = idx;
+                updateCarousel();
+            });
+        });
+
+        // Mobile Menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            hamburgerIcon.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            hamburgerIcon.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('open')) {
+                    closeMobileMenu();
+                } else {
+                    openMobileMenu();
+                }
+            });
+        }
+
+        if (menuClose) {
+            menuClose.addEventListener('click', closeMobileMenu);
+        }
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+        const lightboxContent = document.getElementById('lightbox-content');
+        const galleryItems = document.querySelectorAll('.gallery-img');
+        let currentImgIdx = 0;
+        let isLightboxOpen = false;
+
+        function updateLightboxContent(idx) {
+            const item = galleryItems[idx];
+            lightboxImg.src = item.src;
+            lightboxCaption.textContent = item.alt;
+            lightboxCounter.textContent = `${idx + 1} / ${galleryItems.length}`;
+        }
+
+        function openLightbox(idx) {
+            currentImgIdx = idx;
+            updateLightboxContent(idx);
+            lightbox.classList.add('is-visible');
+            document.body.style.overflow = 'hidden';
+            isLightboxOpen = true;
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('is-visible');
+            document.body.style.overflow = '';
+            isLightboxOpen = false;
+        }
+
+        function navigateLightbox(dir) {
+            lightboxImg.classList.add('switching');
+            setTimeout(() => {
+                currentImgIdx = (currentImgIdx + dir + galleryItems.length) % galleryItems.length;
+                updateLightboxContent(currentImgIdx);
+                lightboxImg.classList.remove('switching');
+            }, 200);
+        }
+
+        if (lightbox) {
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (isLightboxOpen) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') navigateLightbox(-1);
+                if (e.key === 'ArrowRight') navigateLightbox(1);
+            }
+        });
+
+        // Touch swipe support for lightbox
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const SWIPE_THRESHOLD = 50;
+
+        if (lightboxContent) {
+            lightboxContent.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            lightboxContent.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > SWIPE_THRESHOLD) {
+                    navigateLightbox(diff > 0 ? 1 : -1);
+                }
+            }, { passive: true });
+        }
+    </script>
+</body>
+
+</html>
