@@ -367,10 +367,10 @@
 
         <!-- Navigation Arrows -->
         <div class="absolute inset-y-0 left-0 right-0 z-20 flex items-center justify-between px-6 md:px-12 pointer-events-none">
-            <button id="carousel-prev" class="w-14 h-14 rounded-full glass-btn flex items-center justify-center pointer-events-auto group">
+            <button id="carousel-prev" class="hidden md:flex w-14 h-14 rounded-full glass-btn items-center justify-center pointer-events-auto group">
                 <span class="material-symbols-outlined text-white group-hover:-translate-x-1 transition-transform">west</span>
             </button>
-            <button id="carousel-next" class="w-14 h-14 rounded-full glass-btn flex items-center justify-center pointer-events-auto group">
+            <button id="carousel-next" class="hidden md:flex w-14 h-14 rounded-full glass-btn items-center justify-center pointer-events-auto group">
                 <span class="material-symbols-outlined text-white group-hover:translate-x-1 transition-transform">east</span>
             </button>
         </div>
@@ -490,10 +490,10 @@
                     <h2 class="font-headline-xl text-headline-xl uppercase text-gradient">Projetos<br /><span class="text-on-background/50">Executados</span></h2>
                 </div>
                 <div class="flex gap-4">
-                    <button id="portfolio-prev" class="w-14 h-14 rounded-full glass-btn flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-on-background">
+                    <button id="portfolio-prev" class="hidden md:flex w-14 h-14 rounded-full glass-btn items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-on-background">
                         <span class="material-symbols-outlined">west</span>
                     </button>
-                    <button id="portfolio-next" class="w-14 h-14 rounded-full glass-btn flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-on-background">
+                    <button id="portfolio-next" class="hidden md:flex w-14 h-14 rounded-full glass-btn items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-on-background">
                         <span class="material-symbols-outlined">east</span>
                     </button>
                 </div>
@@ -502,7 +502,7 @@
 
         <div class="relative overflow-hidden w-full pl-6 md:pl-12 lg:pl-[calc((100vw-1440px)/2+48px)]" id="portfolio-container">
             <div class="flex transition-transform duration-700 ease-in-out gap-8" id="portfolio-track">
-                <div class="min-w-[75vw] md:min-w-[40vw] lg:min-w-[25vw] rounded-3xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl" onclick="openLightbox(0)">
+                <div class="min-w-[65vw] md:min-w-[33vw] lg:min-w-[22vw] rounded-3xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl" onclick="openLightbox(0)">
                     <div class="aspect-square overflow-hidden w-full h-full relative">
                         <img alt="Refinaria Petroquímica" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img" src="img/img0.png" />
                         <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
@@ -514,7 +514,7 @@
                     </div>
                 </div>
                 
-                <div class="min-w-[75vw] md:min-w-[40vw] lg:min-w-[25vw] rounded-3xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl" onclick="openLightbox(1)">
+                <div class="min-w-[65vw] md:min-w-[33vw] lg:min-w-[22vw] rounded-3xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl" onclick="openLightbox(1)">
                     <div class="aspect-square overflow-hidden w-full h-full relative">
                         <img alt="Complexo Logístico" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img" src="img/img1.png" />
                         <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
@@ -525,7 +525,7 @@
                     </div>
                 </div>
                 
-                <div class="min-w-[75vw] md:min-w-[40vw] lg:min-w-[25vw] rounded-3xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl" onclick="openLightbox(2)">
+                <div class="min-w-[65vw] md:min-w-[33vw] lg:min-w-[22vw] rounded-3xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl" onclick="openLightbox(2)">
                     <div class="aspect-square overflow-hidden w-full h-full relative">
                         <img alt="Terminal Portuário" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img" src="img/img2.png" />
                         <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
@@ -536,7 +536,7 @@
                     </div>
                 </div>
 
-                <div class="min-w-[75vw] md:min-w-[40vw] lg:min-w-[25vw] rounded-3xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl" onclick="openLightbox(3)">
+                <div class="min-w-[65vw] md:min-w-[33vw] lg:min-w-[22vw] rounded-3xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl" onclick="openLightbox(3)">
                     <div class="aspect-square overflow-hidden w-full h-full relative">
                         <img alt="Estrutura Off-shore" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img" src="img/img4.png" />
                         <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
@@ -547,7 +547,7 @@
                     </div>
                 </div>
 
-                <div class="min-w-[75vw] md:min-w-[40vw] lg:min-w-[25vw] rounded-3xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl" onclick="openLightbox(4)">
+                <div class="min-w-[65vw] md:min-w-[33vw] lg:min-w-[22vw] rounded-3xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl" onclick="openLightbox(4)">
                     <div class="aspect-square overflow-hidden w-full h-full relative">
                         <img alt="Instalação Industrial" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img" src="img/img5.jpg" />
                         <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
@@ -558,7 +558,7 @@
                     </div>
                 </div>
 
-                <div class="min-w-[75vw] md:min-w-[40vw] lg:min-w-[25vw] rounded-3xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl" onclick="openLightbox(5)">
+                <div class="min-w-[65vw] md:min-w-[33vw] lg:min-w-[22vw] rounded-3xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl" onclick="openLightbox(5)">
                     <div class="aspect-square overflow-hidden w-full h-full relative">
                         <img alt="Manutenção de Fachada" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img" src="img/img6.jpg" />
                         <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
@@ -580,12 +580,12 @@
         </button>
 
         <!-- Prev Arrow -->
-        <button class="lightbox-nav absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full glass-btn flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-white/70 group" onclick="navigateLightbox(-1)" aria-label="Imagem anterior">
+        <button class="lightbox-nav hidden md:flex absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full glass-btn items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-white/70 group" onclick="navigateLightbox(-1)" aria-label="Imagem anterior">
             <span class="material-symbols-outlined text-2xl group-hover:-translate-x-1 transition-transform">west</span>
         </button>
 
         <!-- Next Arrow -->
-        <button class="lightbox-nav absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full glass-btn flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-white/70 group" onclick="navigateLightbox(1)" aria-label="Próxima imagem">
+        <button class="lightbox-nav hidden md:flex absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full glass-btn items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-white/70 group" onclick="navigateLightbox(1)" aria-label="Próxima imagem">
             <span class="material-symbols-outlined text-2xl group-hover:translate-x-1 transition-transform">east</span>
         </button>
 
