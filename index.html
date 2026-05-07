@@ -5,11 +5,8 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Tower Alpinismo - Alpinismo Industrial e Serviços em Altura</title>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700;800;900&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
         tailwind.config = {
@@ -17,24 +14,15 @@
             theme: {
                 extend: {
                     "colors": {
-                        "primary": "#DE6A18",
+                        "primary": "#FF6B00",
                         "on-primary": "#FFFFFF",
-                        "background": "#0B1C30",
-                        "surface": "#12253D",
-                        "on-background": "#F8F9FF",
-                        "on-surface": "#F8F9FF",
-                        "steel-gray": "#445069",
-                        "outline": "#2A3C56",
-                        "brand-orange": "#DE6A18"
-                    },
-                    "borderRadius": {
-                        "none": "0",
-                        "sm": "0",
-                        "DEFAULT": "0",
-                        "md": "0",
-                        "lg": "0",
-                        "xl": "0",
-                        "full": "0"
+                        "background": "#050505",
+                        "surface": "#111111",
+                        "on-background": "#FAFAFA",
+                        "on-surface": "#FAFAFA",
+                        "steel-gray": "#888888",
+                        "outline": "#2A2A2A",
+                        "brand-orange": "#FF6B00"
                     },
                     "spacing": {
                         "stack-md": "64px",
@@ -46,96 +34,168 @@
                         "base": "8px"
                     },
                     "fontFamily": {
-                        "headline": ["Work Sans", "sans-serif"],
-                        "body": ["Work Sans", "sans-serif"]
+                        "headline": ["'Plus Jakarta Sans'", "sans-serif"],
+                        "body": ["'Plus Jakarta Sans'", "sans-serif"]
                     },
                     "fontSize": {
-                        "massive": ["clamp(4rem, 15vw, 12rem)", { "lineHeight": "0.9", "letterSpacing": "-0.05em", "fontWeight": "900" }],
-                        "headline-xl": ["clamp(2.5rem, 8vw, 5rem)", { "lineHeight": "1", "letterSpacing": "-0.03em", "fontWeight": "800" }],
-                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
-                        "label-tech": ["12px", { "lineHeight": "1", "letterSpacing": "0.2em", "fontWeight": "700", "textTransform": "uppercase" }]
+                        "massive": ["clamp(3.5rem, 12vw, 8rem)", { "lineHeight": "1", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-xl": ["clamp(2.5rem, 8vw, 4.5rem)", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-tech": ["13px", { "lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "600", "textTransform": "uppercase" }]
                     }
                 }
             }
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
         :root {
-            --primary: #DE6A18;
-            --bg: #0B1C30;
+            --primary: #FF6B00;
+            --bg: #050505;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: #FAFAFA;
         }
 
         .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
 
-        /* Technical Brutalist Accents */
-        .tech-border {
-            border: 1px solid #2A3C56;
-            position: relative;
+        .glass {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .tech-border::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: -1px;
-            width: 10px;
-            height: 10px;
-            border-top: 2px solid var(--primary);
-            border-left: 2px solid var(--primary);
+        .glass-card {
+            background: linear-gradient(145deg, rgba(30,30,30,0.4) 0%, rgba(15,15,15,0.8) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 24px;
         }
 
-        .hard-shadow {
-            box-shadow: 8px 8px 0px 0px #DE6A18;
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .hover-lift:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: 12px 12px 0px 0px #DE6A18;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(255, 107, 0, 0.15);
+            border-color: rgba(255, 107, 0, 0.3);
         }
 
-        .vertical-text {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
+        .text-gradient {
+            background: linear-gradient(135deg, #FFFFFF 0%, #888888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-primary {
+            background: linear-gradient(135deg, #FF6B00 0%, #FF9840 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 8px;
         }
-
         ::-webkit-scrollbar-track {
-            background: #0B1C30;
+            background: #050505;
         }
-
         ::-webkit-scrollbar-thumb {
-            background: #DE6A18;
+            background: #333;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
         }
 
         .carousel-slide {
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease;
             opacity: 0;
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
-
         .carousel-slide.active {
             opacity: 1;
             transform: scale(1);
         }
-
         .grid-overlay {
-            background-image: radial-gradient(rgba(222, 106, 24, 0.1) 1px, transparent 1px);
-            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
         }
+
+        /* Hamburger Icon */
+        .hamburger {
+            width: 24px;
+            height: 18px;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #FAFAFA;
+            transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+            border-radius: 2px;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+            background: var(--primary);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+            background: var(--primary);
+        }
+
+        #mobile-menu {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+        }
+        #mobile-menu.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .mobile-link {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        #mobile-menu.open .mobile-link {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #mobile-menu.open .mobile-link:nth-child(1) { transition-delay: 0.1s; }
+        #mobile-menu.open .mobile-link:nth-child(2) { transition-delay: 0.2s; }
+        #mobile-menu.open .mobile-link:nth-child(3) { transition-delay: 0.3s; }
+        #mobile-menu.open .mobile-link:nth-child(4) { transition-delay: 0.4s; }
+        #mobile-menu.open .mobile-link:nth-child(5) { transition-delay: 0.5s; }
 
         /* Lightbox */
         #lightbox {
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s ease, visibility 0.3s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         #lightbox.is-visible {
@@ -145,149 +205,81 @@
 
         #lightbox-img {
             transition: opacity 0.35s ease, transform 0.35s ease;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
 
         #lightbox-img.switching {
             opacity: 0;
             transform: scale(0.97);
         }
-
-        .lightbox-nav {
-            opacity: 0;
+        
+        .modern-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border-radius: 9999px;
+            z-index: 1;
+            background: transparent;
+        }
+        
+        .modern-button::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(45deg, #FF6B00, #FF9840);
+            z-index: -1;
             transition: opacity 0.3s ease;
         }
 
-        #lightbox:hover .lightbox-nav,
-        .lightbox-nav:focus {
-            opacity: 1;
+        .modern-button:hover::before {
+            opacity: 0.8;
         }
 
-        @media (max-width: 768px) {
-            .lightbox-nav {
-                opacity: 1;
-            }
+        .glass-btn {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 9999px;
+            transition: all 0.3s ease;
         }
-
-        /* Hamburger Icon */
-        .hamburger {
-            width: 28px;
-            height: 20px;
-            position: relative;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+        .glass-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
         }
-
-        .hamburger span {
-            display: block;
-            width: 100%;
-            height: 2px;
-            background: #F8F9FF;
-            transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-            transform-origin: center;
+        
+        .pulse-ring {
+            animation: pulse 2s infinite;
         }
-
-        .hamburger.active span:nth-child(1) {
-            transform: translateY(9px) rotate(45deg);
-            background: #DE6A18;
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-            transform: scaleX(0);
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: translateY(-9px) rotate(-45deg);
-            background: #DE6A18;
-        }
-
-        #mobile-menu {
-            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-            transition: clip-path 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-        }
-
-        #mobile-menu.open {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        }
-
-        .mobile-link {
-            opacity: 0;
-            transform: translateX(40px);
-            transition: opacity 0.4s ease, transform 0.4s ease;
-        }
-
-        #mobile-menu.open .mobile-link {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        #mobile-menu.open .mobile-link:nth-child(1) {
-            transition-delay: 0.15s;
-        }
-
-        #mobile-menu.open .mobile-link:nth-child(2) {
-            transition-delay: 0.25s;
-        }
-
-        #mobile-menu.open .mobile-link:nth-child(3) {
-            transition-delay: 0.35s;
-        }
-
-        #mobile-menu.open .mobile-link:nth-child(4) {
-            transition-delay: 0.40s;
-        }
-
-        #mobile-menu.open .mobile-link:nth-child(5) {
-            transition-delay: 0.45s;
-        }
-
-        .scroll-container {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 0;
-        }
-
-        .scroll-item {
-            flex: 0 0 100%;
-            scroll-snap-align: start;
-        }
-
-        @media (min-width: 1024px) {
-            .scroll-item {
-                flex: 0 0 33.33%;
-            }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
     </style>
 </head>
 
-<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<body class="bg-background text-on-background font-body overflow-x-hidden selection:bg-primary selection:text-white">
     <!-- TopNavBar -->
-    <nav class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-outline h-20">
+    <nav class="fixed top-0 w-full z-50 glass h-24 transition-all duration-300" id="navbar">
         <div class="flex justify-between items-center h-full px-6 md:px-12 max-w-container-max mx-auto">
             <a href="#home" class="flex items-center">
-                <img src="img/logo.png" alt="Tower Alpinismo" class="h-10 md:h-12 w-auto object-contain">
+                <img src="img/logo.png" alt="Tower Alpinismo" class="h-10 md:h-12 w-auto object-contain drop-shadow-lg">
             </a>
 
-            <div class="hidden md:flex items-center gap-10">
-                <a class="text-primary font-bold tracking-widest text-xs uppercase" href="#home">Home</a>
-                <a class="hover:text-primary transition-colors font-bold tracking-widest text-xs uppercase"
-                    href="#services">Serviços</a>
-                <a class="hover:text-primary transition-colors font-bold tracking-widest text-xs uppercase"
-                    href="#portfolio">Portfólio</a>
-                <a class="hover:text-primary transition-colors font-bold tracking-widest text-xs uppercase"
-                    href="#about">Sobre</a>
-                <a class="hover:text-primary transition-colors font-bold tracking-widest text-xs uppercase"
-                    href="#contact">Contato</a>
+            <div class="hidden md:flex items-center gap-10 bg-surface/50 px-8 py-3 rounded-full border border-white/5 backdrop-blur-md">
+                <a class="text-on-background/70 hover:text-primary transition-colors font-semibold text-sm" href="#home">Home</a>
+                <a class="text-on-background/70 hover:text-primary transition-colors font-semibold text-sm" href="#services">Serviços</a>
+                <a class="text-on-background/70 hover:text-primary transition-colors font-semibold text-sm" href="#portfolio">Portfólio</a>
+                <a class="text-on-background/70 hover:text-primary transition-colors font-semibold text-sm" href="#about">Sobre</a>
+                <a class="text-on-background/70 hover:text-primary transition-colors font-semibold text-sm" href="#contact">Contato</a>
             </div>
 
             <div class="flex items-center gap-6">
-                <button
-                    class="hidden lg:block border border-primary text-primary px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all"
-                    onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                <button class="hidden lg:flex items-center gap-2 modern-button text-white px-8 py-3 text-sm font-bold shadow-lg shadow-primary/20" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
                     Solicitar Orçamento
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
                 </button>
                 <button class="md:hidden p-2" id="menu-toggle" aria-label="Abrir menu">
                     <div class="hamburger" id="hamburger-icon">
@@ -301,295 +293,278 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-background flex flex-col p-8 md:hidden">
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-background/95 flex flex-col p-8 md:hidden">
         <div class="flex justify-between items-center mb-16">
             <img src="img/logo.png" alt="Tower Alpinismo" class="h-10 w-auto object-contain">
-            <button id="menu-close">
+            <button id="menu-close" class="text-white hover:text-primary transition-colors">
                 <span class="material-symbols-outlined text-4xl">close</span>
             </button>
         </div>
-        <div class="flex flex-col gap-8">
-            <a class="text-4xl font-black uppercase mobile-link" href="#home">Home</a>
-            <a class="text-4xl font-black uppercase mobile-link text-steel-gray" href="#services">Serviços</a>
-            <a class="text-4xl font-black uppercase mobile-link text-steel-gray" href="#portfolio">Portfólio</a>
-            <a class="text-4xl font-black uppercase mobile-link text-steel-gray" href="#about">Sobre</a>
-            <a class="text-4xl font-black uppercase mobile-link text-steel-gray" href="#contact">Contato</a>
+        <div class="flex flex-col gap-8 items-center text-center mt-10">
+            <a class="text-3xl font-bold mobile-link text-white hover:text-primary transition-colors" href="#home">Home</a>
+            <a class="text-3xl font-bold mobile-link text-white/70 hover:text-primary transition-colors" href="#services">Serviços</a>
+            <a class="text-3xl font-bold mobile-link text-white/70 hover:text-primary transition-colors" href="#portfolio">Portfólio</a>
+            <a class="text-3xl font-bold mobile-link text-white/70 hover:text-primary transition-colors" href="#about">Sobre</a>
+            <a class="text-3xl font-bold mobile-link text-white/70 hover:text-primary transition-colors" href="#contact">Contato</a>
         </div>
     </div>
 
     <!-- Hero Carousel Section -->
-    <section class="relative h-screen w-full overflow-hidden grid-overlay" id="home">
+    <section class="relative h-screen w-full overflow-hidden grid-overlay bg-background" id="home">
         <div class="absolute inset-0 z-0">
             <div class="carousel-slide active absolute inset-0">
-                <img alt="Alpinismo Industrial - Manutenção Estrutural"
-                    class="w-full h-full object-cover grayscale opacity-40" src="img/img0.png" />
-                <div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+                <img alt="Alpinismo Industrial - Manutenção Estrutural" class="w-full h-full object-cover opacity-40" src="img/img0.png" />
+                <div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
             </div>
             <div class="carousel-slide absolute inset-0">
-                <img alt="Equipamentos e Precisão Técnica" class="w-full h-full object-cover grayscale opacity-40"
-                    src="img/img1.png" />
-                <div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+                <img alt="Equipamentos e Precisão Técnica" class="w-full h-full object-cover opacity-40" src="img/img1.png" />
+                <div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
             </div>
             <div class="carousel-slide absolute inset-0">
-                <img alt="Planejamento e Controle de Operações" class="w-full h-full object-cover grayscale opacity-40"
-                    src="img/img2.png" />
-                <div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+                <img alt="Planejamento e Controle de Operações" class="w-full h-full object-cover opacity-40" src="img/img2.png" />
+                <div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
             </div>
             <div class="carousel-slide absolute inset-0">
-                <img alt="Estruturas de Grande Porte" class="w-full h-full object-cover grayscale opacity-40"
-                    src="img/img4.png" />
-                <div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+                <img alt="Estruturas de Grande Porte" class="w-full h-full object-cover opacity-40" src="img/img4.png" />
+                <div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
             </div>
         </div>
 
-        <div class="relative z-10 h-full flex flex-col justify-center px-6 md:px-12 max-w-container-max mx-auto">
+        <div class="relative z-10 h-full flex flex-col justify-center px-6 md:px-12 max-w-container-max mx-auto pt-20">
             <div class="flex items-center gap-4 mb-8">
-                <span class="w-12 h-[1px] bg-primary"></span>
-                <span class="text-primary font-bold tracking-[0.3em] text-xs uppercase">Especialistas em Altura</span>
+                <span class="w-12 h-[2px] bg-primary rounded-full"></span>
+                <span class="text-primary font-bold tracking-[0.2em] text-xs uppercase">Especialistas em Altura</span>
             </div>
 
-            <h1 class="font-massive text-massive uppercase mb-4 pointer-events-none">
+            <h1 class="font-massive text-massive uppercase mb-6 pointer-events-none text-gradient drop-shadow-2xl">
                 Tower<br />
-                <span class="text-primary">Alpinismo</span>
+                <span class="text-gradient-primary">Alpinismo</span>
             </h1>
 
-            <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-12 mt-8">
-                <div class="max-w-md">
-                    <p class="text-zinc-400 text-lg md:text-xl leading-relaxed mb-8">
-                        Serviço vertical de precisão. Substituímos andaimes por agilidade e segurança absoluta em
-                        qualquer cenário industrial.
+            <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-12 mt-4">
+                <div class="max-w-xl">
+                    <p class="text-on-background/80 text-lg md:text-xl leading-relaxed mb-10 font-light">
+                        Serviço vertical de precisão. Substituímos andaimes por agilidade e segurança absoluta em qualquer cenário industrial, com tecnologia de ponta e equipe certificada.
                     </p>
-                    <div class="flex gap-4">
-                        <button
-                            class="bg-primary text-white px-10 py-5 font-bold uppercase tracking-widest hard-shadow hover-lift"
-                            onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">
-                            Portfólio
+                    <div class="flex flex-wrap gap-4">
+                        <button class="modern-button text-white px-8 py-4 font-bold tracking-wide shadow-xl shadow-primary/20 flex items-center gap-2" onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">
+                            Ver Portfólio
+                            <span class="material-symbols-outlined text-sm">arrow_downward</span>
                         </button>
-                        <button
-                            class="border border-outline px-10 py-5 font-bold uppercase tracking-widest hover:bg-white hover:text-background transition-all"
-                            onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-                            Consultoria
+                        <button class="glass-btn text-white px-8 py-4 font-bold tracking-wide" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                            Falar com Especialista
                         </button>
                     </div>
                 </div>
 
-                <div class="hidden lg:flex flex-col items-end gap-2 font-label-tech text-steel-gray">
-                    <span>LAT: -23.5505 / LON: -46.6333</span>
+                <div class="hidden lg:flex flex-col items-end gap-3 font-label-tech text-on-background/50 bg-surface/30 p-6 rounded-2xl backdrop-blur-sm border border-white/5">
+                    <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> LAT: -23.5505 / LON: -46.6333</span>
                     <span>HEIGHT OP: 150M+</span>
                     <span>SAFETY COEF: 10:1</span>
                 </div>
             </div>
         </div>
 
-        <div class="absolute right-8 top-1/2 -translate-y-1/2 hidden xl:flex flex-col items-center gap-8">
-            <span class="vertical-text text-steel-gray font-bold tracking-[0.5em] text-xs uppercase">Industrial Rope
-                Access Specialists</span>
-            <div class="w-[1px] h-32 bg-outline"></div>
-        </div>
-
         <!-- Navigation Arrows -->
         <div class="absolute inset-y-0 left-0 right-0 z-20 flex items-center justify-between px-6 md:px-12 pointer-events-none">
-            <button id="carousel-prev" class="w-12 h-12 md:w-16 md:h-16 border border-outline bg-background/20 backdrop-blur-sm flex items-center justify-center hover:bg-primary hover:border-primary transition-all pointer-events-auto group">
-                <span class="material-symbols-outlined text-white group-hover:scale-110 transition-transform">west</span>
+            <button id="carousel-prev" class="w-14 h-14 rounded-full glass-btn flex items-center justify-center pointer-events-auto group">
+                <span class="material-symbols-outlined text-white group-hover:-translate-x-1 transition-transform">west</span>
             </button>
-            <button id="carousel-next" class="w-12 h-12 md:w-16 md:h-16 border border-outline bg-background/20 backdrop-blur-sm flex items-center justify-center hover:bg-primary hover:border-primary transition-all pointer-events-auto group">
-                <span class="material-symbols-outlined text-white group-hover:scale-110 transition-transform">east</span>
+            <button id="carousel-next" class="w-14 h-14 rounded-full glass-btn flex items-center justify-center pointer-events-auto group">
+                <span class="material-symbols-outlined text-white group-hover:translate-x-1 transition-transform">east</span>
             </button>
         </div>
 
-        <div class="absolute bottom-12 left-12 flex gap-4 z-30">
-            <div class="carousel-dot w-2 h-2 bg-primary cursor-pointer transition-all"></div>
-            <div class="carousel-dot w-2 h-2 bg-outline cursor-pointer transition-all hover:bg-primary/50"></div>
-            <div class="carousel-dot w-2 h-2 bg-outline cursor-pointer transition-all hover:bg-primary/50"></div>
-            <div class="carousel-dot w-2 h-2 bg-outline cursor-pointer transition-all hover:bg-primary/50"></div>
+        <div class="absolute bottom-12 left-6 md:left-12 flex gap-3 z-30 bg-surface/50 backdrop-blur-md px-4 py-3 rounded-full border border-white/5">
+            <div class="carousel-dot w-2.5 h-2.5 rounded-full bg-primary cursor-pointer transition-all shadow-[0_0_10px_rgba(255,107,0,0.5)]"></div>
+            <div class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/30 cursor-pointer transition-all hover:bg-white/60"></div>
+            <div class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/30 cursor-pointer transition-all hover:bg-white/60"></div>
+            <div class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/30 cursor-pointer transition-all hover:bg-white/60"></div>
         </div>
     </section>
 
     <!-- Services Section -->
     <section class="py-stack-lg px-6 md:px-12 max-w-container-max mx-auto relative" id="services">
-        <div class="absolute left-0 top-stack-lg hidden xl:block">
-            <span class="vertical-text text-steel-gray font-bold tracking-[1em] text-xs uppercase opacity-50">SERVIÇOS
-                TÉCNICOS</span>
-        </div>
-
-        <div class="flex flex-col lg:flex-row justify-between items-start mb-24 gap-12">
-            <div class="max-w-2xl">
-                <span class="font-label-tech text-primary block mb-6">// MÓDULO_DE_OPERACÕES</span>
-                <h2 class="font-headline-xl text-headline-xl uppercase">Alpinismo<br /><span
-                        class="text-steel-gray">Industrial</span></h2>
+        <div class="flex flex-col lg:flex-row justify-between items-start mb-20 gap-12">
+            <div class="max-w-2xl relative">
+                <div class="absolute -left-8 -top-8 w-32 h-32 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+                <span class="font-label-tech text-primary block mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-sm">memory</span> MÓDULO_DE_OPERACÕES</span>
+                <h2 class="font-headline-xl text-headline-xl uppercase text-gradient">Alpinismo<br /><span class="text-on-background/50">Industrial</span></h2>
             </div>
-            <div class="max-w-sm border-l-2 border-primary pl-8">
-                <p class="text-zinc-400 text-lg leading-relaxed">
-                    Acesso por corda de alta performance para cenários críticos. Redução de 60% no tempo de setup em
-                    comparação a métodos tradicionais.
+            <div class="max-w-md bg-surface/50 p-8 rounded-3xl border border-white/5 backdrop-blur-sm">
+                <p class="text-on-background/70 text-lg leading-relaxed">
+                    Acesso por corda de alta performance para cenários críticos. Redução de 60% no tempo de setup em comparação a métodos tradicionais com segurança inegociável.
                 </p>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-outline">
-            <div class="p-12 border-outline border-b md:border-r group hover:bg-primary transition-all duration-500">
-                <div class="mb-12">
-                    <span
-                        class="material-symbols-outlined text-5xl text-primary group-hover:text-white transition-colors">engineering</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="glass-card p-10 group hover-lift relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full transition-transform group-hover:scale-110"></div>
+                <div class="w-16 h-16 rounded-2xl bg-surface border border-white/10 flex items-center justify-center mb-8 shadow-lg group-hover:bg-primary group-hover:border-primary transition-colors duration-300">
+                    <span class="material-symbols-outlined text-3xl text-primary group-hover:text-white transition-colors">engineering</span>
                 </div>
-                <h3 class="font-headline-lg text-2xl uppercase mb-6 group-hover:text-white">Manutenção Estrutural</h3>
-                <p class="text-zinc-400 group-hover:text-white/80 leading-relaxed mb-8">Corte, solda e reparos em
-                    estruturas metálicas NR-13 de difícil acesso.</p>
-                <ul class="space-y-2 text-xs font-bold uppercase tracking-widest text-primary group-hover:text-white">
-                    <li>+ Soldagem Especializada</li>
-                    <li>+ Reparo de Fissuras</li>
+                <h3 class="font-headline-lg text-2xl mb-4 text-on-background group-hover:text-primary transition-colors">Manutenção Estrutural</h3>
+                <p class="text-on-background/60 leading-relaxed mb-8">Corte, solda e reparos em estruturas metálicas NR-13 de difícil acesso.</p>
+                <ul class="space-y-3 text-sm font-semibold text-on-background/80">
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Soldagem Especializada</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Reparo de Fissuras</li>
                 </ul>
             </div>
-            <div class="p-12 border-outline border-b lg:border-r group hover:bg-primary transition-all duration-500">
-                <div class="mb-12">
-                    <span
-                        class="material-symbols-outlined text-5xl text-primary group-hover:text-white transition-colors">cleaning_services</span>
+            
+            <div class="glass-card p-10 group hover-lift relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full transition-transform group-hover:scale-110"></div>
+                <div class="w-16 h-16 rounded-2xl bg-surface border border-white/10 flex items-center justify-center mb-8 shadow-lg group-hover:bg-primary group-hover:border-primary transition-colors duration-300">
+                    <span class="material-symbols-outlined text-3xl text-primary group-hover:text-white transition-colors">cleaning_services</span>
                 </div>
-                <h3 class="font-headline-lg text-2xl uppercase mb-6 group-hover:text-white">Limpeza Técnica</h3>
-                <p class="text-zinc-400 group-hover:text-white/80 leading-relaxed mb-8">Limpeza profunda de fachadas
-                    ACM, vidros e silos industriais com químicos específicos.</p>
-                <ul class="space-y-2 text-xs font-bold uppercase tracking-widest text-primary group-hover:text-white">
-                    <li>+ Pele de Vidro</li>
-                    <li>+ Silos e Tanques</li>
+                <h3 class="font-headline-lg text-2xl mb-4 text-on-background group-hover:text-primary transition-colors">Limpeza Técnica</h3>
+                <p class="text-on-background/60 leading-relaxed mb-8">Limpeza profunda de fachadas ACM, vidros e silos industriais com químicos específicos.</p>
+                <ul class="space-y-3 text-sm font-semibold text-on-background/80">
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Pele de Vidro</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Silos e Tanques</li>
                 </ul>
             </div>
-            <div
-                class="p-12 border-outline border-b md:border-r lg:border-r-0 group hover:bg-primary transition-all duration-500">
-                <div class="mb-12">
-                    <span
-                        class="material-symbols-outlined text-5xl text-primary group-hover:text-white transition-colors">format_paint</span>
+
+            <div class="glass-card p-10 group hover-lift relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full transition-transform group-hover:scale-110"></div>
+                <div class="w-16 h-16 rounded-2xl bg-surface border border-white/10 flex items-center justify-center mb-8 shadow-lg group-hover:bg-primary group-hover:border-primary transition-colors duration-300">
+                    <span class="material-symbols-outlined text-3xl text-primary group-hover:text-white transition-colors">format_paint</span>
                 </div>
-                <h3 class="font-headline-lg text-2xl uppercase mb-6 group-hover:text-white">Pintura e Proteção</h3>
-                <p class="text-zinc-400 group-hover:text-white/80 leading-relaxed mb-8">Tratamento anticorrosivo e
-                    pintura técnica em altura com airless.</p>
-                <ul class="space-y-2 text-xs font-bold uppercase tracking-widest text-primary group-hover:text-white">
-                    <li>+ Epóxi e PU</li>
-                    <li>+ Hidrojateamento</li>
+                <h3 class="font-headline-lg text-2xl mb-4 text-on-background group-hover:text-primary transition-colors">Pintura e Proteção</h3>
+                <p class="text-on-background/60 leading-relaxed mb-8">Tratamento anticorrosivo e pintura técnica em altura com airless.</p>
+                <ul class="space-y-3 text-sm font-semibold text-on-background/80">
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Epóxi e PU</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Hidrojateamento</li>
                 </ul>
             </div>
-            <div
-                class="p-12 border-outline border-b md:border-b-0 lg:border-b-0 md:border-r group hover:bg-primary transition-all duration-500">
-                <div class="mb-12">
-                    <span
-                        class="material-symbols-outlined text-5xl text-primary group-hover:text-white transition-colors">assignment_turned_in</span>
+
+            <div class="glass-card p-10 group hover-lift relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full transition-transform group-hover:scale-110"></div>
+                <div class="w-16 h-16 rounded-2xl bg-surface border border-white/10 flex items-center justify-center mb-8 shadow-lg group-hover:bg-primary group-hover:border-primary transition-colors duration-300">
+                    <span class="material-symbols-outlined text-3xl text-primary group-hover:text-white transition-colors">assignment_turned_in</span>
                 </div>
-                <h3 class="font-headline-lg text-2xl uppercase mb-6 group-hover:text-white">Inspeção NR-35</h3>
-                <p class="text-zinc-400 group-hover:text-white/80 leading-relaxed mb-8">Relatórios técnicos detalhados e
-                    inspeção em pontes rolantes e estruturas portuárias.</p>
-                <ul class="space-y-2 text-xs font-bold uppercase tracking-widest text-primary group-hover:text-white">
-                    <li>+ Ensaios Não Destrutivos</li>
-                    <li>+ Laudos Técnicos</li>
+                <h3 class="font-headline-lg text-2xl mb-4 text-on-background group-hover:text-primary transition-colors">Inspeção NR-35</h3>
+                <p class="text-on-background/60 leading-relaxed mb-8">Relatórios técnicos detalhados e inspeção em pontes rolantes e estruturas portuárias.</p>
+                <ul class="space-y-3 text-sm font-semibold text-on-background/80">
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Ensaios Não Destrutivos</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Laudos Técnicos</li>
                 </ul>
             </div>
-            <div class="p-12 border-outline border-r group hover:bg-primary transition-all duration-500">
-                <div class="mb-12">
-                    <span
-                        class="material-symbols-outlined text-5xl text-primary group-hover:text-white transition-colors">construction</span>
+
+            <div class="glass-card p-10 group hover-lift relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full transition-transform group-hover:scale-110"></div>
+                <div class="w-16 h-16 rounded-2xl bg-surface border border-white/10 flex items-center justify-center mb-8 shadow-lg group-hover:bg-primary group-hover:border-primary transition-colors duration-300">
+                    <span class="material-symbols-outlined text-3xl text-primary group-hover:text-white transition-colors">construction</span>
                 </div>
-                <h3 class="font-headline-lg text-2xl uppercase mb-6 group-hover:text-white">Instalações Críticas</h3>
-                <p class="text-zinc-400 group-hover:text-white/80 leading-relaxed mb-8">Montagem de linhas de vida, SPDA
-                    e ornamentações de grande escala.</p>
-                <ul class="space-y-2 text-xs font-bold uppercase tracking-widest text-primary group-hover:text-white">
-                    <li>+ Linhas de Vida</li>
-                    <li>+ Sistemas de Queda</li>
+                <h3 class="font-headline-lg text-2xl mb-4 text-on-background group-hover:text-primary transition-colors">Instalações Críticas</h3>
+                <p class="text-on-background/60 leading-relaxed mb-8">Montagem de linhas de vida, SPDA e ornamentações de grande escala.</p>
+                <ul class="space-y-3 text-sm font-semibold text-on-background/80">
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Linhas de Vida</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Sistemas de Queda</li>
                 </ul>
             </div>
-            <div class="p-12 group hover:bg-primary transition-all duration-500">
-                <div class="mb-12">
-                    <span
-                        class="material-symbols-outlined text-5xl text-primary group-hover:text-white transition-colors">medical_services</span>
+
+            <div class="glass-card p-10 group hover-lift relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full transition-transform group-hover:scale-110"></div>
+                <div class="w-16 h-16 rounded-2xl bg-surface border border-white/10 flex items-center justify-center mb-8 shadow-lg group-hover:bg-primary group-hover:border-primary transition-colors duration-300">
+                    <span class="material-symbols-outlined text-3xl text-primary group-hover:text-white transition-colors">medical_services</span>
                 </div>
-                <h3 class="font-headline-lg text-2xl uppercase mb-6 group-hover:text-white">Resgate Técnico</h3>
-                <p class="text-zinc-400 group-hover:text-white/80 leading-relaxed mb-8">Prontidão para resgate em espaço
-                    confinado e planos de emergência vertical.</p>
-                <ul class="space-y-2 text-xs font-bold uppercase tracking-widest text-primary group-hover:text-white">
-                    <li>+ Equipe de Resgate</li>
-                    <li>+ Treinamento In-company</li>
+                <h3 class="font-headline-lg text-2xl mb-4 text-on-background group-hover:text-primary transition-colors">Resgate Técnico</h3>
+                <p class="text-on-background/60 leading-relaxed mb-8">Prontidão para resgate em espaço confinado e planos de emergência vertical.</p>
+                <ul class="space-y-3 text-sm font-semibold text-on-background/80">
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Equipe de Resgate</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Treinamento In-company</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Archive Section -->
-    <section class="py-stack-lg bg-background relative overflow-hidden" id="portfolio">
-        <div class="absolute right-0 top-0 opacity-10 pointer-events-none">
-            <span class="text-[20rem] font-black text-white leading-none">ARCHIVE</span>
-        </div>
+    <section class="py-stack-lg bg-surface relative overflow-hidden" id="portfolio">
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
 
-        <div class="px-6 md:px-12 max-w-container-max mx-auto relative z-10 mb-12">
-            <div class="flex flex-col md:flex-row justify-between items-end">
+        <div class="px-6 md:px-12 max-w-container-max mx-auto relative z-10 mb-16">
+            <div class="flex flex-col md:flex-row justify-between items-end gap-8">
                 <div>
-                    <span class="font-label-tech text-primary block mb-6">// REGISTRO_DE_CAMPO</span>
-                    <h2 class="font-headline-xl text-headline-xl uppercase">Projetos<br /><span
-                            class="text-steel-gray">Executados</span></h2>
+                    <span class="font-label-tech text-primary block mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-sm">photo_library</span> REGISTRO_DE_CAMPO</span>
+                    <h2 class="font-headline-xl text-headline-xl uppercase text-gradient">Projetos<br /><span class="text-on-background/50">Executados</span></h2>
                 </div>
-                <div class="flex gap-4 mt-8 md:mt-0">
-                    <button id="portfolio-prev"
-                        class="w-12 h-12 border border-outline flex items-center justify-center hover:bg-primary hover:border-primary transition-all">
+                <div class="flex gap-4">
+                    <button id="portfolio-prev" class="w-14 h-14 rounded-full glass-btn flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-on-background">
                         <span class="material-symbols-outlined">west</span>
                     </button>
-                    <button id="portfolio-next"
-                        class="w-12 h-12 border border-outline flex items-center justify-center hover:bg-primary hover:border-primary transition-all">
+                    <button id="portfolio-next" class="w-14 h-14 rounded-full glass-btn flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-on-background">
                         <span class="material-symbols-outlined">east</span>
                     </button>
                 </div>
             </div>
         </div>
 
-        <div class="relative overflow-hidden w-full" id="portfolio-container">
-            <div class="flex transition-transform duration-700 ease-in-out gap-6 px-6 md:px-12 lg:px-[calc((100vw-1440px)/2+48px)]" id="portfolio-track">
-                    <div class="min-w-[70vw] md:min-w-[35vw] lg:min-w-[18vw] tech-border group cursor-pointer overflow-hidden flex-shrink-0" onclick="openLightbox(0)">
-                        <div class="aspect-[3/4] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
-                            <img alt="Refinaria Petroquímica" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img" src="img/img0.png" />
-                        </div>
-                        <div class="p-6 bg-surface border-t border-outline group-hover:bg-primary transition-colors text-center">
-                            <span class="font-label-tech text-[10px] text-steel-gray group-hover:text-white/70">ID: TW-094 / 2024</span>
-                            <h4 class="font-bold uppercase mt-2 text-xl md:text-2xl group-hover:text-white">Refinaria Petroquímica</h4>
-                        </div>
-                    </div>
-                    <div class="min-w-[70vw] md:min-w-[35vw] lg:min-w-[18vw] tech-border group cursor-pointer overflow-hidden flex-shrink-0" onclick="openLightbox(1)">
-                        <div class="aspect-[3/4] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
-                            <img alt="Complexo Logístico" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img" src="img/img1.png" />
-                        </div>
-                        <div class="p-6 bg-surface border-t border-outline group-hover:bg-primary transition-colors text-center">
-                            <span class="font-label-tech text-[10px] text-steel-gray group-hover:text-white/70">ID: TW-102 / 2023</span>
-                            <h4 class="font-bold uppercase mt-2 text-xl md:text-2xl group-hover:text-white">Complexo Logístico</h4>
+        <div class="relative overflow-hidden w-full pl-6 md:pl-12 lg:pl-[calc((100vw-1440px)/2+48px)]" id="portfolio-container">
+            <div class="flex transition-transform duration-700 ease-in-out gap-8" id="portfolio-track">
+                <div class="min-w-[85vw] md:min-w-[45vw] lg:min-w-[28vw] rounded-3xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl" onclick="openLightbox(0)">
+                    <div class="aspect-[4/5] overflow-hidden w-full h-full relative">
+                        <img alt="Refinaria Petroquímica" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img" src="img/img0.png" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <span class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md mb-4 inline-block">TW-094 / 2024</span>
+                            <h4 class="font-bold text-2xl md:text-3xl text-white mb-2">Refinaria Petroquímica</h4>
+                            <p class="text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 line-clamp-2">Manutenção e acesso seguro para estruturas de grande porte no setor petroquímico.</p>
                         </div>
                     </div>
-                    <div class="min-w-[70vw] md:min-w-[35vw] lg:min-w-[18vw] tech-border group cursor-pointer overflow-hidden flex-shrink-0" onclick="openLightbox(2)">
-                        <div class="aspect-[3/4] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
-                            <img alt="Terminal Portuário" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img" src="img/img2.png" />
-                        </div>
-                        <div class="p-6 bg-surface border-t border-outline group-hover:bg-primary transition-colors text-center">
-                            <span class="font-label-tech text-[10px] text-steel-gray group-hover:text-white/70">ID: TW-088 / 2024</span>
-                            <h4 class="font-bold uppercase mt-2 text-xl md:text-2xl group-hover:text-white">Terminal Portuário</h4>
-                        </div>
-                    </div>
-                    <div class="min-w-[70vw] md:min-w-[35vw] lg:min-w-[18vw] tech-border group cursor-pointer overflow-hidden flex-shrink-0" onclick="openLightbox(3)">
-                        <div class="aspect-[3/4] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
-                            <img alt="Estrutura Off-shore" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img" src="img/img4.png" />
-                        </div>
-                        <div class="p-6 bg-surface border-t border-outline group-hover:bg-primary transition-colors text-center">
-                            <span class="font-label-tech text-[10px] text-steel-gray group-hover:text-white/70">ID: TW-115 / 2024</span>
-                            <h4 class="font-bold uppercase mt-2 text-xl md:text-2xl group-hover:text-white">Estrutura Off-shore</h4>
+                </div>
+                
+                <div class="min-w-[85vw] md:min-w-[45vw] lg:min-w-[28vw] rounded-3xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl" onclick="openLightbox(1)">
+                    <div class="aspect-[4/5] overflow-hidden w-full h-full relative">
+                        <img alt="Complexo Logístico" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img" src="img/img1.png" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <span class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md mb-4 inline-block">TW-102 / 2023</span>
+                            <h4 class="font-bold text-2xl md:text-3xl text-white mb-2">Complexo Logístico</h4>
                         </div>
                     </div>
-                    <div class="min-w-[70vw] md:min-w-[35vw] lg:min-w-[18vw] tech-border group cursor-pointer overflow-hidden flex-shrink-0" onclick="openLightbox(4)">
-                        <div class="aspect-[3/4] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
-                            <img alt="Instalação Industrial" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img" src="img/img5.jpg" />
-                        </div>
-                        <div class="p-6 bg-surface border-t border-outline group-hover:bg-primary transition-colors text-center">
-                            <span class="font-label-tech text-[10px] text-steel-gray group-hover:text-white/70">ID: TW-122 / 2024</span>
-                            <h4 class="font-bold uppercase mt-2 text-xl md:text-2xl group-hover:text-white">Instalação Industrial</h4>
+                </div>
+                
+                <div class="min-w-[85vw] md:min-w-[45vw] lg:min-w-[28vw] rounded-3xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl" onclick="openLightbox(2)">
+                    <div class="aspect-[4/5] overflow-hidden w-full h-full relative">
+                        <img alt="Terminal Portuário" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img" src="img/img2.png" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <span class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md mb-4 inline-block">TW-088 / 2024</span>
+                            <h4 class="font-bold text-2xl md:text-3xl text-white mb-2">Terminal Portuário</h4>
                         </div>
                     </div>
-                    <div class="min-w-[70vw] md:min-w-[35vw] lg:min-w-[18vw] tech-border group cursor-pointer overflow-hidden flex-shrink-0" onclick="openLightbox(5)">
-                        <div class="aspect-[3/4] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
-                            <img alt="Manutenção de Fachada" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img" src="img/img6.jpg" />
+                </div>
+
+                <div class="min-w-[85vw] md:min-w-[45vw] lg:min-w-[28vw] rounded-3xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl" onclick="openLightbox(3)">
+                    <div class="aspect-[4/5] overflow-hidden w-full h-full relative">
+                        <img alt="Estrutura Off-shore" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img" src="img/img4.png" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <span class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md mb-4 inline-block">TW-115 / 2024</span>
+                            <h4 class="font-bold text-2xl md:text-3xl text-white mb-2">Estrutura Off-shore</h4>
                         </div>
-                        <div class="p-6 bg-surface border-t border-outline group-hover:bg-primary transition-colors text-center">
-                            <span class="font-label-tech text-[10px] text-steel-gray group-hover:text-white/70">ID: TW-131 / 2024</span>
-                            <h4 class="font-bold uppercase mt-2 text-xl md:text-2xl group-hover:text-white">Manutenção de Fachada</h4>
+                    </div>
+                </div>
+
+                <div class="min-w-[85vw] md:min-w-[45vw] lg:min-w-[28vw] rounded-3xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl" onclick="openLightbox(4)">
+                    <div class="aspect-[4/5] overflow-hidden w-full h-full relative">
+                        <img alt="Instalação Industrial" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img" src="img/img5.png" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <span class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md mb-4 inline-block">TW-122 / 2024</span>
+                            <h4 class="font-bold text-2xl md:text-3xl text-white mb-2">Instalação Industrial</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="min-w-[85vw] md:min-w-[45vw] lg:min-w-[28vw] rounded-3xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl" onclick="openLightbox(5)">
+                    <div class="aspect-[4/5] overflow-hidden w-full h-full relative">
+                        <img alt="Manutenção de Fachada" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img" src="img/img6.png" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <span class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md mb-4 inline-block">TW-131 / 2024</span>
+                            <h4 class="font-bold text-2xl md:text-3xl text-white mb-2">Manutenção de Fachada</h4>
                         </div>
                     </div>
                 </div>
@@ -600,94 +575,66 @@
     <!-- Lightbox Modal -->
     <div class="fixed inset-0 z-[100] bg-background/95 flex items-center justify-center p-4 md:p-6" id="lightbox">
         <!-- Close -->
-        <button
-            class="absolute top-6 right-6 md:top-12 md:right-12 z-20 text-white hover:text-primary transition-colors"
-            onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 md:top-12 md:right-12 z-20 text-white/50 hover:text-primary transition-colors" onclick="closeLightbox()">
             <span class="material-symbols-outlined text-4xl md:text-5xl">close</span>
         </button>
 
         <!-- Prev Arrow -->
-        <button
-            class="lightbox-nav absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-16 md:h-16 bg-background/60 backdrop-blur-sm border border-outline flex items-center justify-center hover:bg-primary hover:border-primary transition-all group"
-            onclick="navigateLightbox(-1)" aria-label="Imagem anterior">
-            <span
-                class="material-symbols-outlined text-2xl md:text-3xl text-white group-hover:scale-110 transition-transform">chevron_left</span>
+        <button class="lightbox-nav absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full glass-btn flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-white/70 group" onclick="navigateLightbox(-1)" aria-label="Imagem anterior">
+            <span class="material-symbols-outlined text-2xl group-hover:-translate-x-1 transition-transform">west</span>
         </button>
 
         <!-- Next Arrow -->
-        <button
-            class="lightbox-nav absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-16 md:h-16 bg-background/60 backdrop-blur-sm border border-outline flex items-center justify-center hover:bg-primary hover:border-primary transition-all group"
-            onclick="navigateLightbox(1)" aria-label="Próxima imagem">
-            <span
-                class="material-symbols-outlined text-2xl md:text-3xl text-white group-hover:scale-110 transition-transform">chevron_right</span>
+        <button class="lightbox-nav absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full glass-btn flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-white/70 group" onclick="navigateLightbox(1)" aria-label="Próxima imagem">
+            <span class="material-symbols-outlined text-2xl group-hover:translate-x-1 transition-transform">east</span>
         </button>
 
         <!-- Content -->
         <div class="max-w-5xl w-full relative" id="lightbox-content">
-            <img class="w-full tech-border select-none" id="lightbox-img" src="" draggable="false" />
-            <div class="mt-6 flex justify-between items-center px-1">
+            <img class="w-full select-none" id="lightbox-img" src="" draggable="false" />
+            <div class="mt-6 flex justify-between items-center px-4">
                 <div>
-                    <h4 class="font-black uppercase text-lg md:text-2xl tracking-tighter" id="lightbox-caption"></h4>
-                    <span class="font-label-tech text-steel-gray text-[10px] mt-1 block" id="lightbox-counter"></span>
-                </div>
-                <div class="flex gap-3">
-                    <button
-                        class="w-10 h-10 md:w-12 md:h-12 border border-outline flex items-center justify-center hover:bg-primary hover:border-primary transition-all"
-                        onclick="navigateLightbox(-1)">
-                        <span class="material-symbols-outlined text-sm">west</span>
-                    </button>
-                    <button
-                        class="w-10 h-10 md:w-12 md:h-12 border border-outline flex items-center justify-center hover:bg-primary hover:border-primary transition-all"
-                        onclick="navigateLightbox(1)">
-                        <span class="material-symbols-outlined text-sm">east</span>
-                    </button>
+                    <h4 class="font-bold text-xl md:text-2xl text-white" id="lightbox-caption"></h4>
+                    <span class="font-label-tech text-on-background/50 text-xs mt-2 block" id="lightbox-counter"></span>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- About Section -->
-    <section class="py-stack-lg bg-surface relative overflow-hidden" id="about">
-        <div class="absolute left-0 bottom-0 opacity-5 pointer-events-none">
-            <span class="text-[30rem] font-black text-primary leading-none">TOWER</span>
-        </div>
-
-        <div
-            class="px-6 md:px-12 max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center relative z-10">
-            <div class="relative">
-                <div class="tech-border">
-                    <img alt="Nossa Equipe" class="w-full grayscale hover:grayscale-0 transition-all duration-700"
-                        src="img/img0.png" />
+    <section class="py-stack-lg bg-background relative overflow-hidden" id="about">
+        <div class="px-6 md:px-12 max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
+            <div class="relative group">
+                <div class="absolute inset-0 bg-primary/20 rounded-3xl blur-2xl transform group-hover:scale-105 transition-transform duration-700"></div>
+                <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                    <img alt="Nossa Equipe" class="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-700" src="img/img0.png" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
                 </div>
-                <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-primary p-8 hidden md:block hard-shadow">
-                    <span class="text-white font-black text-4xl leading-tight">10+ ANOS DE CAMPO</span>
+                <div class="absolute -bottom-8 -right-8 lg:-right-12 glass-card p-8 hidden md:flex flex-col items-center justify-center animate-bounce" style="animation-duration: 3s;">
+                    <span class="text-primary font-black text-5xl leading-none mb-2">10+</span>
+                    <span class="text-on-background/80 font-bold tracking-widest uppercase text-sm">Anos de Campo</span>
                 </div>
             </div>
 
             <div>
-                <span class="font-label-tech text-primary block mb-6">// PERFIL_CORPORATIVO</span>
-                <h2 class="font-headline-xl text-headline-xl uppercase mb-12">Referência em<br /><span
-                        class="text-steel-gray">Engenharia Vertical</span></h2>
-                <div class="space-y-6 text-zinc-400 text-lg leading-relaxed mb-12">
+                <span class="font-label-tech text-primary block mb-6 flex items-center gap-2"><span class="material-symbols-outlined text-sm">domain</span> PERFIL_CORPORATIVO</span>
+                <h2 class="font-headline-xl text-headline-xl uppercase mb-10 text-gradient">Referência em<br /><span class="text-on-background/50">Soluções Verticais</span></h2>
+                <div class="space-y-6 text-on-background/70 text-lg leading-relaxed mb-12">
                     <p>
-                        A <strong class="text-on-background">Tower Alpinismo</strong> nasceu da necessidade de precisão
-                        absoluta em ambientes hostis. Não apenas "limpamos" ou "pintamos", nós executamos Serviços
-                        técnica em locais onde outros não chegam.
+                        A <strong class="text-white font-semibold">Tower Alpinismo</strong> nasceu da necessidade de precisão absoluta em ambientes hostis. Não apenas "limpamos" ou "pintamos", nós executamos serviços técnicos em locais onde outros não chegam.
                     </p>
                     <p>
-                        Nossa cultura é baseada na redução sistemática de riscos e na otimização de tempo operacional.
-                        Atendemos o mercado industrial com a certificação rigorosa exigida por multinacionais e grandes
-                        infraestruturas brasileiras.
+                        Nossa cultura é baseada na redução sistemática de riscos e na otimização de tempo operacional. Atendemos o mercado industrial com a certificação rigorosa exigida por multinacionais e grandes infraestruturas brasileiras.
                     </p>
                 </div>
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="border-l-2 border-primary pl-4">
-                        <span class="block font-black text-2xl uppercase">IRATA</span>
-                        <span class="text-xs text-steel-gray uppercase tracking-widest">Nível 1, 2 e 3</span>
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="glass-card p-6 flex flex-col gap-2">
+                        <span class="block font-black text-3xl text-primary">IRATA</span>
+                        <span class="text-sm text-on-background/60 uppercase font-semibold">Nível 1, 2 e 3</span>
                     </div>
-                    <div class="border-l-2 border-primary pl-4">
-                        <span class="block font-black text-2xl uppercase">NR-35</span>
-                        <span class="text-xs text-steel-gray uppercase tracking-widest">Segurança Total</span>
+                    <div class="glass-card p-6 flex flex-col gap-2">
+                        <span class="block font-black text-3xl text-primary">NR-35</span>
+                        <span class="text-sm text-on-background/60 uppercase font-semibold">Segurança Total</span>
                     </div>
                 </div>
             </div>
@@ -695,95 +642,62 @@
     </section>
 
     <!-- Commitments Section -->
-    <section class="py-stack-lg bg-background" id="commitments">
-        <div
-            class="px-6 md:px-12 max-w-container-max mx-auto border-y border-outline divide-y lg:divide-y-0 lg:divide-x divide-outline grid grid-cols-1 lg:grid-cols-3">
-            <div class="p-16 hover:bg-primary transition-all duration-500 group cursor-default text-center">
-                <div
-                    class="w-20 h-20 border border-outline flex items-center justify-center mb-8 mx-auto group-hover:bg-white/20 group-hover:border-white/30 transition-all">
-                    <span
-                        class="material-symbols-outlined text-4xl text-primary group-hover:text-white transition-colors">target</span>
+    <section class="py-stack-lg bg-surface relative" id="commitments">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+        <div class="px-6 md:px-12 max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 relative z-10">
+            <div class="glass-card p-12 hover-lift group text-center">
+                <div class="w-20 h-20 rounded-full bg-background border border-white/5 flex items-center justify-center mb-8 mx-auto shadow-lg group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                    <span class="material-symbols-outlined text-4xl text-primary group-hover:text-white transition-colors">target</span>
                 </div>
-                <span
-                    class="font-label-tech text-primary block mb-8 group-hover:text-white/70 transition-colors">MISSÃO</span>
-                <h3 class="font-headline-lg text-2xl uppercase mb-6 group-hover:text-white transition-colors">Precisão
-                    Operacional</h3>
-                <p class="text-zinc-400 group-hover:text-white/80 transition-colors">Transformar desafios verticais em
-                    soluções ágeis, mantendo a integridade total
-                    de ativos e pessoas através de técnicas avançadas.</p>
+                <span class="font-label-tech text-primary block mb-4 group-hover:text-primary/80 transition-colors">MISSÃO</span>
+                <h3 class="font-headline-lg text-2xl mb-4 text-white">Precisão Operacional</h3>
+                <p class="text-on-background/60 leading-relaxed group-hover:text-on-background/80 transition-colors">Transformar desafios verticais em soluções ágeis, mantendo a integridade total de ativos e pessoas através de técnicas avançadas.</p>
             </div>
-            <div class="p-16 hover:bg-primary transition-all duration-500 group cursor-default text-center">
-                <div
-                    class="w-20 h-20 border border-outline flex items-center justify-center mb-8 mx-auto group-hover:bg-white/20 group-hover:border-white/30 transition-all">
-                    <span
-                        class="material-symbols-outlined text-4xl text-primary group-hover:text-white transition-colors">visibility</span>
+            
+            <div class="glass-card p-12 hover-lift group text-center">
+                <div class="w-20 h-20 rounded-full bg-background border border-white/5 flex items-center justify-center mb-8 mx-auto shadow-lg group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                    <span class="material-symbols-outlined text-4xl text-primary group-hover:text-white transition-colors">visibility</span>
                 </div>
-                <span
-                    class="font-label-tech text-primary block mb-8 group-hover:text-white/70 transition-colors">VISÃO</span>
-                <h3 class="font-headline-lg text-2xl uppercase mb-6 group-hover:text-white transition-colors">Referência
-                    Técnica</h3>
-                <p class="text-zinc-400 group-hover:text-white/80 transition-colors">Ser o padrão ouro em acesso por
-                    corda no Brasil, definindo novos critérios de
-                    excelência e segurança para a indústria.</p>
+                <span class="font-label-tech text-primary block mb-4 group-hover:text-primary/80 transition-colors">VISÃO</span>
+                <h3 class="font-headline-lg text-2xl mb-4 text-white">Referência Técnica</h3>
+                <p class="text-on-background/60 leading-relaxed group-hover:text-on-background/80 transition-colors">Ser o padrão ouro em acesso por corda no Brasil, definindo novos critérios de excelência e segurança para a indústria.</p>
             </div>
-            <div class="p-16 hover:bg-primary transition-all duration-500 group cursor-default text-center">
-                <div
-                    class="w-20 h-20 border border-outline flex items-center justify-center mb-8 mx-auto group-hover:bg-white/20 group-hover:border-white/30 transition-all">
-                    <span
-                        class="material-symbols-outlined text-4xl text-primary group-hover:text-white transition-colors">work</span>
+            
+            <div class="glass-card p-12 hover-lift group text-center">
+                <div class="w-20 h-20 rounded-full bg-background border border-white/5 flex items-center justify-center mb-8 mx-auto shadow-lg group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                    <span class="material-symbols-outlined text-4xl text-primary group-hover:text-white transition-colors">security</span>
                 </div>
-                <span
-                    class="font-label-tech text-primary block mb-8 group-hover:text-white/70 transition-colors">VALORES</span>
-                <h3 class="font-headline-lg text-2xl uppercase mb-6 group-hover:text-white transition-colors">Cultura de
-                    Segurança</h3>
-                <p class="text-zinc-400 group-hover:text-white/80 transition-colors">Ética radical, transparência
-                    absoluta em laudos e a vida como prioridade
-                    inegociável em cada metro de subida.</p>
+                <span class="font-label-tech text-primary block mb-4 group-hover:text-primary/80 transition-colors">VALORES</span>
+                <h3 class="font-headline-lg text-2xl mb-4 text-white">Cultura de Segurança</h3>
+                <p class="text-on-background/60 leading-relaxed group-hover:text-on-background/80 transition-colors">Ética radical, transparência absoluta em laudos e a vida como prioridade inegociável em cada metro de subida.</p>
             </div>
         </div>
     </section>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/5581999999999" target="_blank"
-        class="fixed bottom-8 right-8 bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-        aria-label="Contact via WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white">
-            <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-        </svg>
-    </a>
-
     <!-- Contact Section -->
-    <section class="py-stack-lg bg-surface relative overflow-hidden" id="contact">
-        <div class="absolute right-0 bottom-0 opacity-5 pointer-events-none">
-            <span class="text-[18rem] font-black text-primary leading-none">CONTATO</span>
-        </div>
+    <section class="py-stack-lg bg-background relative overflow-hidden" id="contact">
+        <div class="absolute left-0 bottom-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
 
         <div class="px-6 md:px-12 max-w-container-max mx-auto relative z-10">
-            <div class="mb-20">
-                <span class="font-label-tech text-primary block mb-6">// CANAL_DE_COMUNICAÇÃO</span>
-                <h2 class="font-headline-xl text-headline-xl uppercase">Fale<br /><span
-                        class="text-steel-gray">Conosco</span></h2>
-                <p class="text-zinc-400 text-lg leading-relaxed mt-6 max-w-xl">
-                    Projetos para atender projetos em todo o Brasil. Entre em contato para uma consultoria técnica
-                    especializada.
+            <div class="mb-16 text-center max-w-3xl mx-auto">
+                <span class="font-label-tech text-primary block mb-6 flex items-center justify-center gap-2"><span class="material-symbols-outlined text-sm">chat_bubble</span> CANAL_DE_COMUNICAÇÃO</span>
+                <h2 class="font-headline-xl text-headline-xl uppercase text-gradient">Fale<br /><span class="text-on-background/50">Conosco</span></h2>
+                <p class="text-on-background/70 text-lg leading-relaxed mt-6">
+                    Prontos para atender projetos em todo o Brasil. Entre em contato para uma consultoria técnica especializada.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
                 <!-- Info Column -->
-                <div class="space-y-12">
-                    <!-- Location -->
-                    <div class="flex gap-6 group">
-                        <div
-                            class="w-14 h-14 border border-outline flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:border-primary transition-all">
-                            <span
-                                class="material-symbols-outlined text-2xl text-primary group-hover:text-white transition-colors">location_on</span>
+                <div class="space-y-8 lg:col-span-2">
+                    <div class="glass-card p-8 flex gap-6 items-start group">
+                        <div class="w-14 h-14 rounded-2xl bg-surface border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:border-primary shadow-lg transition-all">
+                            <span class="material-symbols-outlined text-2xl text-primary group-hover:text-white transition-colors">location_on</span>
                         </div>
                         <div>
-                            <h3 class="font-bold uppercase tracking-widest text-xs text-primary mb-3">Localização</h3>
-                            <p class="text-on-background font-bold text-lg">Sede Operacional</p>
-                            <p class="text-zinc-400 leading-relaxed">
+                            <h3 class="font-bold uppercase tracking-widest text-xs text-primary mb-2">Localização</h3>
+                            <p class="text-white font-bold text-lg mb-2">Sede Operacional</p>
+                            <p class="text-on-background/60 leading-relaxed text-sm">
                                 Av. Industrial, 1250<br />
                                 São Paulo — SP, Brasil<br />
                                 CEP: 01000-000
@@ -791,83 +705,128 @@
                         </div>
                     </div>
 
-                    <!-- Phone -->
-                    <div class="flex gap-6 group">
-                        <div
-                            class="w-14 h-14 border border-outline flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:border-primary transition-all">
-                            <span
-                                class="material-symbols-outlined text-2xl text-primary group-hover:text-white transition-colors">call</span>
+                    <div class="glass-card p-8 flex gap-6 items-start group">
+                        <div class="w-14 h-14 rounded-2xl bg-surface border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:border-primary shadow-lg transition-all">
+                            <span class="material-symbols-outlined text-2xl text-primary group-hover:text-white transition-colors">call</span>
                         </div>
                         <div>
-                            <h3 class="font-bold uppercase tracking-widest text-xs text-primary mb-3">Telefone</h3>
-                            <p class="text-on-background leading-relaxed">
-                                <a href="tel:+5581999999999"
-                                    class="hover:text-primary transition-colors font-bold text-lg">+55 (81)
-                                    99999-9999</a>
+                            <h3 class="font-bold uppercase tracking-widest text-xs text-primary mb-2">Telefone</h3>
+                            <p class="text-white font-bold text-lg mb-2">
+                                <a href="tel:+5581999999999" class="hover:text-primary transition-colors">+55 (81) 99999-9999</a>
                             </p>
-                            <p class="text-zinc-400 text-sm mt-1">
+                            <p class="text-on-background/60 text-sm">
                                 Comercial: +55 (81) 4002-8922
                             </p>
                         </div>
                     </div>
 
-                    <!-- Email -->
-                    <div class="flex gap-6 group">
-                        <div
-                            class="w-14 h-14 border border-outline flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:border-primary transition-all">
-                            <span
-                                class="material-symbols-outlined text-2xl text-primary group-hover:text-white transition-colors">mail</span>
+                    <div class="glass-card p-8 flex gap-6 items-start group">
+                        <div class="w-14 h-14 rounded-2xl bg-surface border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:border-primary shadow-lg transition-all">
+                            <span class="material-symbols-outlined text-2xl text-primary group-hover:text-white transition-colors">mail</span>
                         </div>
                         <div>
-                            <h3 class="font-bold uppercase tracking-widest text-xs text-primary mb-3">E-mail</h3>
-                            <p class="text-on-background leading-relaxed">
-                                <a href="mailto:contato@toweralpinismo.com.br"
-                                    class="hover:text-primary transition-colors font-bold text-lg">contato@toweralpinismo.com.br</a>
+                            <h3 class="font-bold uppercase tracking-widest text-xs text-primary mb-2">E-mail</h3>
+                            <p class="text-white font-bold text-lg">
+                                <a href="mailto:contato@toweralpinismo.com.br" class="hover:text-primary transition-colors break-all">contato@toweralpinismo.com.br</a>
                             </p>
                         </div>
-                    </div>
-
-                    <!-- CTA Button -->
-                    <div class="pt-4">
-                        <a href="https://wa.me/5581999999999" target="_blank"
-                            class="inline-flex items-center gap-4 bg-primary text-white px-10 py-5 font-bold uppercase tracking-widest hard-shadow hover-lift transition-all">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="white">
-                                <path
-                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                            </svg>
-                            Chamar no WhatsApp
-                        </a>
                     </div>
                 </div>
 
                 <!-- Map Column -->
-                <div class="tech-border overflow-hidden">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1976831!2d-46.6388!3d-23.5505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzAxLjgiUyA0NsKwMzgnMTkuNyJX!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
-                        width="100%" height="100%"
-                        style="border:0; min-height: 480px; filter: grayscale(0.6) contrast(1.1);" allowfullscreen=""
-                        loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização Tower Alpinismo">
-                    </iframe>
+                <div class="lg:col-span-3 h-full min-h-[500px] glass-card overflow-hidden p-2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1976831!2d-46.6388!3d-23.5505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzAxLjgiUyA0NsKwMzgnMTkuNyJX!5e0!3m2!1spt-BR!2sbr!4v1700000000000" width="100%" height="100%" style="border:0; border-radius: 16px; filter: grayscale(1) invert(0.9) contrast(1.2) hue-rotate(180deg);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização Tower Alpinismo"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5581999999999" target="_blank" class="fixed bottom-8 right-8 bg-[#25D366] text-white rounded-full w-16 h-16 flex items-center justify-center shadow-[0_10px_30px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform pulse-ring z-50" aria-label="Contact via WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
     <!-- Footer -->
-    <footer class="bg-background border-t border-outline py-12 px-6 md:px-12">
-        <div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex items-center">
-                <img src="img/logo.png" alt="Tower Alpinismo" class="h-8 w-auto object-contain">
+    <footer class="bg-surface pt-16 pb-8 px-6 md:px-12 relative overflow-hidden border-t border-white/5">
+        <div class="max-w-container-max mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+                
+                <!-- Col 1: Brand & Info -->
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <img src="img/logo.png" alt="Tower Alpinismo" class="h-10 w-auto object-contain drop-shadow-lg">
+                        <span class="font-headline text-lg font-bold uppercase tracking-widest leading-tight">Tower<br/>Alpinismo</span>
+                    </div>
+                    <p class="text-on-background/60 text-sm leading-relaxed max-w-sm">
+                        Referência em soluções de alpinismo industrial, elevando a segurança e produtividade na manutenção técnica em todo o território nacional.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 rounded-full bg-background border border-white/10 flex items-center justify-center text-on-background/70 hover:text-white hover:bg-primary hover:border-primary transition-all">
+                            <span class="material-symbols-outlined text-[18px]">share</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-background border border-white/10 flex items-center justify-center text-on-background/70 hover:text-white hover:bg-primary hover:border-primary transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-background border border-white/10 flex items-center justify-center text-on-background/70 hover:text-white hover:bg-primary hover:border-primary transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <div>
+                    <h4 class="font-bold uppercase tracking-widest text-primary text-xs mb-6">Navegação</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#home" class="text-on-background/70 hover:text-white transition-colors text-sm font-semibold">Home</a></li>
+                        <li><a href="#services" class="text-on-background/70 hover:text-white transition-colors text-sm font-semibold">Serviços</a></li>
+                        <li><a href="#portfolio" class="text-on-background/70 hover:text-white transition-colors text-sm font-semibold">Portfólio</a></li>
+                        <li><a href="#about" class="text-on-background/70 hover:text-white transition-colors text-sm font-semibold">Sobre Nós</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Normas Técnicas -->
+                <div>
+                    <h4 class="font-bold uppercase tracking-widest text-primary text-xs mb-6">Normas Técnicas</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="px-2 py-1 bg-background border border-white/10 rounded text-[10px] font-bold text-on-background/80">NR-35</span>
+                            <span class="text-sm font-semibold text-on-background/70">Trabalho em Altura</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="px-2 py-1 bg-background border border-white/10 rounded text-[10px] font-bold text-on-background/80">NR-18</span>
+                            <span class="text-sm font-semibold text-on-background/70">Construção Civil</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Col 4: Suporte -->
+                <div>
+                    <h4 class="font-bold uppercase tracking-widest text-primary text-xs mb-6">Suporte</h4>
+                    <div class="space-y-4">
+                        <a href="https://wa.me/5581999999999" target="_blank" class="flex items-center gap-3 w-full bg-primary hover:bg-[#FF8A00] text-white px-6 py-4 rounded-xl transition-colors font-bold text-[10px] sm:text-xs uppercase tracking-widest shadow-lg shadow-primary/20">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            WhatsApp Comercial
+                        </a>
+                        <a href="mailto:contato@toweralpinismo.com.br" class="flex items-center gap-3 w-full bg-background border border-white/10 hover:bg-white/5 text-white px-6 py-4 rounded-xl transition-colors font-bold text-[10px] sm:text-xs uppercase tracking-widest">
+                            <span class="material-symbols-outlined text-[20px]">mail</span>
+                            Enviar E-mail
+                        </a>
+                    </div>
+                </div>
+
             </div>
-            <div class="text-steel-gray text-[10px] font-bold uppercase tracking-widest">
-                © 2024 Tower Alpinismo // High Altitude Engineering
-            </div>
-            <div class="flex gap-6">
-                <a class="text-steel-gray hover:text-primary transition-colors" href="#"><span
-                        class="material-symbols-outlined">share</span></a>
-                <a class="text-steel-gray hover:text-primary transition-colors" href="#"><span
-                        class="material-symbols-outlined">distance</span></a>
+
+            <!-- Bottom Row -->
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-on-background/40 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-center md:text-left">
+                    © 2024 TOWER ALPINISMO. <span class="hidden md:inline">SOLUÇÕES EM ALPINISMO INDUSTRIAL.</span>
+                </div>
+                <div class="flex gap-6 text-on-background/40 text-[10px] md:text-xs font-semibold uppercase tracking-widest">
+                    <a href="#" class="hover:text-primary transition-colors">Privacidade</a>
+                    <a href="#" class="hover:text-primary transition-colors">Termos</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -885,13 +844,13 @@
             slides.forEach(s => s.classList.remove('active'));
             dots.forEach(d => {
                 d.classList.remove('bg-primary');
-                d.classList.add('bg-outline');
+                d.classList.add('bg-white/30');
             });
             if(slides[currentSlide]) {
                 slides[currentSlide].classList.add('active');
             }
             if(dots[currentSlide]) {
-                dots[currentSlide].classList.remove('bg-outline');
+                dots[currentSlide].classList.remove('bg-white/30');
                 dots[currentSlide].classList.add('bg-primary');
             }
         }
@@ -940,18 +899,19 @@
         let portfolioInterval;
 
         function getVisibleSlides() {
-            if (window.innerWidth >= 1024) return 4;
+            if (window.innerWidth >= 1024) return 3;
             if (window.innerWidth >= 768) return 2;
             return 1;
         }
 
         function updatePortfolio() {
+            if (!portfolioTrack) return;
             const visible = getVisibleSlides();
             const maxIndex = portfolioTrack.children.length - visible;
             if (portfolioIndex > maxIndex) portfolioIndex = 0;
             if (portfolioIndex < 0) portfolioIndex = maxIndex;
 
-            const slideWidth = portfolioTrack.children[0].offsetWidth + 24; // Width + gap
+            const slideWidth = portfolioTrack.children[0].offsetWidth + 32; // Width + gap (8 units = 32px)
             portfolioTrack.style.transform = `translateX(-${portfolioIndex * slideWidth}px)`;
         }
 
@@ -1030,6 +990,7 @@
         let isLightboxOpen = false;
 
         function updateLightboxContent(idx) {
+            if (!galleryItems[idx]) return;
             const item = galleryItems[idx];
             lightboxImg.src = item.src;
             lightboxCaption.textContent = item.alt;
@@ -1091,7 +1052,18 @@
                 }
             }, { passive: true });
         }
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('h-20', 'bg-background/80');
+                nav.classList.remove('h-24', 'bg-transparent');
+            } else {
+                nav.classList.add('h-24', 'bg-transparent');
+                nav.classList.remove('h-20', 'bg-background/80');
+            }
+        });
     </script>
 </body>
-
 </html>
