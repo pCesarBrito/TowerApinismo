@@ -64,9 +64,9 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
-        .glass { background: rgba(5, 5, 5, 0.95); border-bottom: 1px solid rgba(255, 107, 0, 0.2); }
+        .glass { background: rgba(5, 5, 5, 0.75); border-bottom: 1px solid rgba(255, 107, 0, 0.2); backdrop-filter: blur(20px); }
         .glass-card {
-            background: rgba(10, 10, 10, 0.9); border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(15, 15, 15, 0.8); border: 1px solid rgba(255, 255, 255, 0.15);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 20px;
         }
@@ -266,9 +266,9 @@
             width: calc(100% - 48px);
             max-width: 450px;
             height: 76px;
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 28px;
             z-index: 100;
@@ -390,7 +390,7 @@
         </div>
     </nav>
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-background/95 flex flex-col p-8 md:hidden">
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-background/80 flex flex-col p-8 md:hidden">
         <div class="flex justify-between items-center mb-16">
             <img src="img/logo.png" alt="Tower Alpinismo" class="h-10 w-auto object-contain">
             <button id="menu-close" class="text-white hover:text-primary transition-colors">
@@ -1338,7 +1338,7 @@
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
-                nav.classList.add('h-20', 'bg-background/80');
+                nav.classList.add('h-20', 'bg-background/60');
                 nav.classList.remove('h-24', 'bg-transparent');
             } else {
                 nav.classList.add('h-24', 'bg-transparent');
