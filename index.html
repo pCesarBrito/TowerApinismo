@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="scroll-smooth" lang="pt-BR">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -52,71 +53,93 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
         :root {
             --primary: #FF6B00;
             --bg: #050505;
         }
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg);
             color: #FAFAFA;
         }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
-        .glass { background: rgba(5, 5, 5, 0.75); border-bottom: 1px solid rgba(255, 107, 0, 0.2); backdrop-filter: blur(20px); }
+
+        .glass {
+            background: rgba(5, 5, 5, 0.75);
+            border-bottom: 1px solid rgba(255, 107, 0, 0.2);
+            backdrop-filter: blur(20px);
+        }
+
         .glass-card {
-            background: rgba(15, 15, 15, 0.8); border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(15, 15, 15, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 20px;
         }
+
         .hover-lift {
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         .hover-lift:hover {
             transform: translate(-6px, -6px);
             box-shadow: 6px 6px 0px 0px rgba(255, 107, 0, 1);
             border-color: var(--primary);
         }
+
         .text-white {
             background: linear-gradient(135deg, #FFFFFF 0%, #888888 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .text-primary {
             background: linear-gradient(135deg, #FF6B00 0%, #FF9840 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: #050505;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #333;
             border-radius: 10px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: var(--primary);
         }
+
         .carousel-slide {
             transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease;
             opacity: 0;
             transform: scale(1.05);
         }
+
         .carousel-slide.active {
             opacity: 1;
             transform: scale(1);
         }
+
         .grid-overlay {
             background-image:
                 linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
             background-size: 60px 60px;
         }
+
         /* Hamburger Icon */
         .hamburger {
             width: 24px;
@@ -127,6 +150,7 @@
             flex-direction: column;
             justify-content: space-between;
         }
+
         .hamburger span {
             display: block;
             width: 100%;
@@ -135,18 +159,22 @@
             transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
             border-radius: 2px;
         }
+
         .hamburger.active span:nth-child(1) {
             transform: translateY(8px) rotate(45deg);
             background: var(--primary);
         }
+
         .hamburger.active span:nth-child(2) {
             opacity: 0;
             transform: scaleX(0);
         }
+
         .hamburger.active span:nth-child(3) {
             transform: translateY(-8px) rotate(-45deg);
             background: var(--primary);
         }
+
         #mobile-menu {
             opacity: 0;
             visibility: hidden;
@@ -154,34 +182,43 @@
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(30px);
         }
+
         #mobile-menu.open {
             opacity: 1;
             visibility: visible;
         }
+
         .mobile-link {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.4s ease, transform 0.4s ease;
         }
+
         #mobile-menu.open .mobile-link {
             opacity: 1;
             transform: translateY(0);
         }
+
         #mobile-menu.open .mobile-link:nth-child(1) {
             transition-delay: 0.1s;
         }
+
         #mobile-menu.open .mobile-link:nth-child(2) {
             transition-delay: 0.2s;
         }
+
         #mobile-menu.open .mobile-link:nth-child(3) {
             transition-delay: 0.3s;
         }
+
         #mobile-menu.open .mobile-link:nth-child(4) {
             transition-delay: 0.4s;
         }
+
         #mobile-menu.open .mobile-link:nth-child(5) {
             transition-delay: 0.5s;
         }
+
         /* Lightbox */
         #lightbox {
             opacity: 0;
@@ -190,72 +227,84 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
+
         #lightbox.is-visible {
             opacity: 1;
             visibility: visible;
         }
+
         #lightbox-img {
             transition: opacity 0.35s ease, transform 0.35s ease;
             border-radius: 16px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
+
         #lightbox-img.switching {
             opacity: 0;
             transform: scale(0.97);
         }
-        .modern-button { 
-            position: relative; 
-            overflow: hidden; 
-            transition: all 0.3s ease; 
-            border-radius: 20px; 
-            z-index: 1; 
-            background: var(--primary) !important; 
+
+        .modern-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border-radius: 20px;
+            z-index: 1;
+            background: var(--primary) !important;
             color: white !important;
-            border: 1px solid var(--primary) !important; 
+            border: 1px solid var(--primary) !important;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
         }
-        .modern-button:hover { 
-            background: transparent !important; 
+
+        .modern-button:hover {
+            background: transparent !important;
             color: var(--primary) !important;
         }
-        .glass-btn { 
-            background: transparent !important; 
-            border: 1px solid rgba(255, 255, 255, 0.5) !important; 
-            border-radius: 20px; 
-            transition: all 0.3s ease; 
+
+        .glass-btn {
+            background: transparent !important;
+            border: 1px solid rgba(255, 255, 255, 0.5) !important;
+            border-radius: 20px;
+            transition: all 0.3s ease;
             color: white !important;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
         }
-        .glass-btn:hover { 
-            background: rgba(255, 107, 0, 0.1) !important; 
-            border-color: var(--primary) !important; 
-            transform: translate(-4px, -4px); 
-            box-shadow: 4px 4px 0px 0px rgba(255, 107, 0, 1); 
+
+        .glass-btn:hover {
+            background: rgba(255, 107, 0, 0.1) !important;
+            border-color: var(--primary) !important;
+            transform: translate(-4px, -4px);
+            box-shadow: 4px 4px 0px 0px rgba(255, 107, 0, 1);
             color: var(--primary) !important;
         }
+
         .pulse-ring {
             animation: pulse 2s infinite;
         }
+
         @keyframes pulse {
             0% {
                 transform: scale(1);
                 box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.7);
             }
+
             70% {
                 transform: scale(1.05);
                 box-shadow: 0 0 0 15px rgba(255, 107, 0, 0);
             }
+
             100% {
                 transform: scale(1);
                 box-shadow: 0 0 0 0 rgba(255, 107, 0, 0);
             }
         }
+
         /* Mobile Bottom Nav */
         .mobile-bottom-nav {
             display: none;
@@ -278,10 +327,12 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 107, 0, 0.05);
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         @media (max-width: 768px) {
             .mobile-bottom-nav {
                 display: flex;
             }
+
             /* Adjust WhatsApp button position if mobile nav is present */
             #whatsapp-floating {
                 bottom: 115px !important;
@@ -290,6 +341,7 @@
                 height: 56px !important;
             }
         }
+
         .nav-item {
             display: flex;
             flex-direction: column;
@@ -306,25 +358,31 @@
             padding: 8px 4px;
             flex: 1;
         }
+
         .nav-item.active {
             color: #FF6B00;
         }
+
         .nav-item .material-symbols-outlined {
             font-size: 22px;
             margin-bottom: 2px;
             transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
+
         .nav-item.active .material-symbols-outlined {
             transform: translateY(-5px);
             font-variation-settings: 'FILL' 1;
             text-shadow: 0 0 15px rgba(255, 107, 0, 0.4);
         }
+
         .nav-item span:not(.material-symbols-outlined) {
             transition: all 0.3s ease;
         }
+
         .nav-item.active span:not(.material-symbols-outlined) {
             transform: scale(1.1);
         }
+
         .nav-item::after {
             content: '';
             position: absolute;
@@ -338,9 +396,11 @@
             transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
         }
+
         .nav-item.active::after {
             transform: translateX(-50%) scaleX(1);
         }
+
         /* Scroll Reveal Animation */
         .reveal-left {
             opacity: 0;
@@ -348,34 +408,45 @@
             transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: transform, opacity;
         }
+
         @media (max-width: 768px) {
             .reveal-left {
                 transform: translateX(-40px);
                 /* Slightly less offset on mobile */
             }
         }
+
         .reveal-left.is-visible {
             opacity: 1;
             transform: translateX(0);
         }
     </style>
 </head>
+
 <body class="bg-background text-on-background font-body overflow-x-hidden selection:bg-primary selection:text-white">
     <!-- TopNavBar -->
-        <nav class="fixed top-0 w-full z-50 glass h-24 transition-all duration-300" id="navbar">
+    <nav class="fixed top-0 w-full z-50 glass h-24 transition-all duration-300" id="navbar">
         <div class="flex justify-between items-center h-full px-6 md:px-12 max-w-container-max mx-auto">
             <a href="#home" class="flex items-center">
                 <img src="img/logo.png" alt="Tower Alpinismo" class="h-10 md:h-12 w-auto object-contain drop-shadow-lg">
             </a>
-            <div class="hidden md:flex items-center gap-10 bg-surface border-t-2 border-primary/50 px-8 py-3 rounded-2xl border border-white/5">
-                <a class="text-on-background/70 hover:text-primary transition-colors font-semibold text-sm" href="#home">Home</a>
-                <a class="text-on-background/70 hover:text-primary transition-colors font-semibold text-sm" href="#services">Serviços</a>
-                <a class="text-on-background/70 hover:text-primary transition-colors font-semibold text-sm" href="#portfolio">Portfólio</a>
-                <a class="text-on-background/70 hover:text-primary transition-colors font-semibold text-sm" href="#about">Sobre</a>
-                <a class="text-on-background/70 hover:text-primary transition-colors font-semibold text-sm" href="#contact">Contato</a>
+            <div
+                class="hidden md:flex items-center gap-10 bg-surface border-t-2 border-primary/50 px-8 py-3 rounded-2xl border border-white/5">
+                <a class="text-on-background/70 hover:text-primary transition-colors font-semibold text-sm"
+                    href="#home">Home</a>
+                <a class="text-on-background/70 hover:text-primary transition-colors font-semibold text-sm"
+                    href="#services">Serviços</a>
+                <a class="text-on-background/70 hover:text-primary transition-colors font-semibold text-sm"
+                    href="#portfolio">Portfólio</a>
+                <a class="text-on-background/70 hover:text-primary transition-colors font-semibold text-sm"
+                    href="#about">Sobre</a>
+                <a class="text-on-background/70 hover:text-primary transition-colors font-semibold text-sm"
+                    href="#contact">Contato</a>
             </div>
             <div class="flex items-center gap-6">
-                <button class="hidden lg:flex items-center gap-2 modern-button px-8 py-3 text-sm font-bold shadow-lg shadow-primary/20" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                <button
+                    class="hidden lg:flex items-center gap-2 modern-button px-8 py-3 text-sm font-bold shadow-lg shadow-primary/20"
+                    onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
                     Solicitar Orçamento
                     <span class="material-symbols-outlined text-sm">arrow_forward</span>
                 </button>
@@ -450,7 +521,7 @@
                         qualquer cenário industrial, com tecnologia de ponta e equipe certificada.
                     </p>
                     <div class="flex flex-wrap gap-4">
-                                                <button
+                        <button
                             class="modern-button px-8 py-4 font-bold tracking-wide shadow-xl shadow-primary/20 gap-2"
                             onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">
                             Ver Portfólio
@@ -684,123 +755,66 @@
                     </button>
                 </div>
             </div>
-        </div>
-        <div class="relative overflow-hidden w-full pl-6 md:pl-12 lg:pl-[calc((100vw-1440px)/2+48px)]"
-            id="portfolio-container">
-            <div class="flex transition-transform duration-700 ease-in-out gap-8" id="portfolio-track">
-                <div class="w-[60vw] md:w-[33vw] lg:w-[22vw] rounded-2xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl"
-                    onclick="openLightbox(0)">
-                    <div class="aspect-square overflow-hidden w-full h-full relative">
-                        <img alt="Refinaria Petroquímica"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img"
-                            src="img/img0.png" />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300">
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                            <span
-                                class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-2xl text-xs font-bold  mb-4 inline-block">TW-094
-                                / 2024</span>
-                            <h4 class="font-bold text-2xl md:text-3xl text-white mb-2">Refinaria Petroquímica</h4>
-                            <p
-                                class="text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 line-clamp-2">
-                                Manutenção e acesso seguro para estruturas de grande porte no setor petroquímico.</p>
+            </div>
+            <div class="relative overflow-hidden w-full pl-6 md:pl-12 lg:pl-[calc((100vw-1440px)/2+48px)]"
+                id="portfolio-container">
+                <div class="flex transition-transform duration-700 ease-in-out gap-8" id="portfolio-track">
+                    <div class="w-[60vw] md:w-[33vw] lg:w-[22vw] rounded-2xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl"
+                        onclick="openLightbox(0)">
+                        <div class="aspect-square overflow-hidden w-full h-full relative">
+                            <img alt="Refinaria Petroquímica"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img"
+                                src="img/img0.png" />
+
                         </div>
                     </div>
-                </div>
-                <div class="w-[60vw] md:w-[33vw] lg:w-[22vw] rounded-2xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl"
-                    onclick="openLightbox(1)">
-                    <div class="aspect-square overflow-hidden w-full h-full relative">
-                        <img alt="Complexo Logístico"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img"
-                            src="img/img1.png" />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300">
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                            <span
-                                class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-2xl text-xs font-bold  mb-4 inline-block">TW-102
-                                / 2023</span>
-                            <h4 class="font-bold text-2xl md:text-3xl text-white mb-2">Complexo Logístico</h4>
+                    <div class="w-[60vw] md:w-[33vw] lg:w-[22vw] rounded-2xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl"
+                        onclick="openLightbox(1)">
+                        <div class="aspect-square overflow-hidden w-full h-full relative">
+                            <img alt="Complexo Logístico"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img"
+                                src="img/img1.png" />
+
                         </div>
                     </div>
-                </div>
-                <div class="w-[60vw] md:w-[33vw] lg:w-[22vw] rounded-2xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl"
-                    onclick="openLightbox(2)">
-                    <div class="aspect-square overflow-hidden w-full h-full relative">
-                        <img alt="Terminal Portuário"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img"
-                            src="img/img2.png" />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300">
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                            <span
-                                class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-2xl text-xs font-bold  mb-4 inline-block">TW-088
-                                / 2024</span>
-                            <h4 class="font-bold text-2xl md:text-3xl text-white mb-2">Terminal Portuário</h4>
+                    <div class="w-[60vw] md:w-[33vw] lg:w-[22vw] rounded-2xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl"
+                        onclick="openLightbox(2)">
+                        <div class="aspect-square overflow-hidden w-full h-full relative">
+                            <img alt="Terminal Portuário"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img"
+                                src="img/img2.png" />
+
                         </div>
                     </div>
-                </div>
-                <div class="w-[60vw] md:w-[33vw] lg:w-[22vw] rounded-2xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl"
-                    onclick="openLightbox(3)">
-                    <div class="aspect-square overflow-hidden w-full h-full relative">
-                        <img alt="Estrutura Off-shore"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img"
-                            src="img/img4.png" />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300">
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                            <span
-                                class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-2xl text-xs font-bold  mb-4 inline-block">TW-115
-                                / 2024</span>
-                            <h4 class="font-bold text-2xl md:text-3xl text-white mb-2">Estrutura Off-shore</h4>
+                    <div class="w-[60vw] md:w-[33vw] lg:w-[22vw] rounded-2xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl"
+                        onclick="openLightbox(3)">
+                        <div class="aspect-square overflow-hidden w-full h-full relative">
+                            <img alt="Estrutura Off-shore"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img"
+                                src="img/img4.png" />
+
                         </div>
                     </div>
-                </div>
-                <div class="w-[60vw] md:w-[33vw] lg:w-[22vw] rounded-2xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl"
-                    onclick="openLightbox(4)">
-                    <div class="aspect-square overflow-hidden w-full h-full relative">
-                        <img alt="Instalação Industrial"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img"
-                            src="img/img5.jpg" />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300">
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                            <span
-                                class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-2xl text-xs font-bold  mb-4 inline-block">TW-122
-                                / 2024</span>
-                            <h4 class="font-bold text-2xl md:text-3xl text-white mb-2">Instalação Industrial</h4>
+                    <div class="w-[60vw] md:w-[33vw] lg:w-[22vw] rounded-2xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl"
+                        onclick="openLightbox(4)">
+                        <div class="aspect-square overflow-hidden w-full h-full relative">
+                            <img alt="Instalação Industrial"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img"
+                                src="img/img5.jpg" />
+
                         </div>
                     </div>
-                </div>
-                <div class="w-[60vw] md:w-[33vw] lg:w-[22vw] rounded-2xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl"
-                    onclick="openLightbox(5)">
-                    <div class="aspect-square overflow-hidden w-full h-full relative">
-                        <img alt="Manutenção de Fachada"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img"
-                            src="img/img6.jpg" />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300">
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                            <span
-                                class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-2xl text-xs font-bold  mb-4 inline-block">TW-131
-                                / 2024</span>
-                            <h4 class="font-bold text-2xl md:text-3xl text-white mb-2">Manutenção de Fachada</h4>
+                    <div class="w-[60vw] md:w-[33vw] lg:w-[22vw] rounded-2xl group cursor-pointer overflow-hidden flex-shrink-0 relative shadow-2xl"
+                        onclick="openLightbox(5)">
+                        <div class="aspect-square overflow-hidden w-full h-full relative">
+                            <img alt="Manutenção de Fachada"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 gallery-img"
+                                src="img/img6.jpg" />
+
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
     <!-- Lightbox Modal -->
     <div class="fixed inset-0 z-[100] bg-background/95 flex items-center justify-center p-4 md:p-6" id="lightbox">
@@ -814,13 +828,15 @@
         <button
             class="lightbox-nav flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-primary/80 border-2 border-primary items-center justify-center hover:bg-primary hover:scale-110 transition-all text-white shadow-[0_0_25px_rgba(255,107,0,0.6)]  group"
             onclick="navigateLightbox(-1)" aria-label="Imagem anterior">
-            <span class="material-symbols-outlined text-3xl font-bold group-hover:-translate-x-1 transition-transform">west</span>
+            <span
+                class="material-symbols-outlined text-3xl font-bold group-hover:-translate-x-1 transition-transform">west</span>
         </button>
         <!-- Next Arrow -->
         <button
             class="lightbox-nav flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-primary/80 border-2 border-primary items-center justify-center hover:bg-primary hover:scale-110 transition-all text-white shadow-[0_0_25px_rgba(255,107,0,0.6)]  group"
             onclick="navigateLightbox(1)" aria-label="Próxima imagem">
-            <span class="material-symbols-outlined text-3xl font-bold group-hover:translate-x-1 transition-transform">east</span>
+            <span
+                class="material-symbols-outlined text-3xl font-bold group-hover:translate-x-1 transition-transform">east</span>
         </button>
         <!-- Content -->
         <div class="max-w-5xl w-full relative" id="lightbox-content">
@@ -1134,7 +1150,8 @@
             <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
                 <div
                     class="text-on-background/40 text-[10px] md:text-xs font-semibold uppercase tracking-widest text-center md:text-left">
-                    Ã© 2024 TOWER ALPINISMO. <span class="hidden md:inline">SOLUÃÂÃÂES EM ALPINISMO INDUSTRIAL.</span>
+                    Ã© 2024 TOWER ALPINISMO. <span class="hidden md:inline">SOLUÃÂÃÂES EM ALPINISMO
+                        INDUSTRIAL.</span>
                 </div>
                 <div
                     class="flex gap-6 text-on-background/40 text-[10px] md:text-xs font-semibold uppercase tracking-widest">
@@ -1412,4 +1429,5 @@
         initScrollAnimations();
     </script>
 </body>
+
 </html>
